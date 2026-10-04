@@ -1,0 +1,39 @@
+{
+  "name": "ch8-denial-check",
+  "version": "0.1.0",
+  "private": true,
+  "license": "MIT",
+  "description": "Checks MA skilled-stay denial reasons for long-stay residents against Medicare Benefit Policy Manual Ch. 8. Synthetic data only.",
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "typecheck": "tsc --noEmit",
+    "generate": "tsx --env-file-if-exists=../.env evals/generate.ts",
+    "label": "tsx evals/label.ts",
+    "eval": "tsx --env-file-if-exists=../.env evals/run.ts",
+    "eval:baseline": "tsx evals/run.ts --baseline-only"
+  },
+  "dependencies": {
+    "@astryxdesign/core": "0.6.5",
+    "@astryxdesign/theme-neutral": "0.6.5",
+    "@stylexjs/stylex": "0.19.1",
+    "@upstash/ratelimit": "2.2.0",
+    "@upstash/redis": "1.39.0",
+    "next": "16.3.8",
+    "react": "19.3.0",
+    "react-dom": "19.3.0",
+    "zod": "4.6.5"
+  },
+  "devDependencies": {
+    "@astryxdesign/cli": "0.6.5",
+    "@types/node": "26.6.4",
+    "@types/react": "19.3.0",
+    "@types/react-dom": "19.3.0",
+    "tsx": "4.23.15",
+    "typescript": "7.0.2"
+  }
+}
