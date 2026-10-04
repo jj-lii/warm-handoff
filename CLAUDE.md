@@ -38,6 +38,7 @@ There are no tests or linters. `scrape.py` writes `research/sources/_report.md`,
 
 The rules for this project are in `BRIEF.md` (restrictions, budget, limitations). The ones that bite most often:
 - Synthetic data only, never real patient information, and label it as synthetic.
+- Fake names (patients, residents, staff) in synthetic data and demos are basketball players, in the style of ExaCare's own demos (e.g. Kyle Lowry, Stephen Curry). Kawhi Leonard must appear, and on any team or roster he is on the Raptors.
 - No commits or pushes unless the author asks.
 - Every number in a deliverable needs a cited source. Tag ExaCare's own statistics as company-reported.
 - Be economical with usage: write findings to files, grep before reading, and avoid subagents.
