@@ -1,0 +1,16 @@
+# Verification queue: closed
+
+Archive of resolved rows from `docs/verify.md`. Not read by default; grep by ID.
+
+| ID | Claim | Why it matters | How to verify | Status |
+|---|---|---|---|---|
+| V1 | ExaCare's facility count: 2,000+ (PM posting, site), 2,500+ (homepage), 1,500 growing to 10,000+ (BizOps posting) | Any scale figure in the deck must match one source | Check the current site and the newest postings; use the lowest consistent figure or cite the page and date | decided (author, 2026-10-03): use "2,000+ care teams" |
+| V2 | Funding: $30M Series A (Oct 2025, Insight Partners) vs. "$50M+" raised in total (About page) | Company-reported figures; mixing them overstates | Cross-check the Insight Partners and press release pages | confirmed (author, 2026-10-03): $30M Series A, per job postings |
+| V3 | Time-to-accept benchmark: 256,719 referrals, 981 facilities; "top 20% accept in under 15 minutes" | Strongest data point for a problem statement, but company-reported and the method isn't visible | Get the full gated report; watch the "Turning Data Into an Advantage" video at 06:16-09:40 | partly resolved: full report read (2026-10-03); see V13 (open) for inconsistencies |
+| V4 | Platform "learns from real workflows with 99% accuracy" (Platform page) | Company-reported; measure and method aren't published | Cite only with that caveat, or leave out | dropped (author, 2026-10-03): leave out |
+| V5 | Product Releases talk: which features are shipped vs. roadmap | A deck that treats roadmap as shipped misleads | Watch the talk and check the Platform and blog pages (the old `research/video-visuals-todo.md` was deleted 2026-10-04) | inferred (author, 2026-10-03): slides show no product; shipped list per transcript 02:10-04:26 and blog dates |
+| V7 | OIG OEI-09-24-00331: 12% denied, 18% appealed, 95% overturned, 40% vs 11% for nursing home residents | Lead evidence for problem #1 in `research/problems.md`; read from the summary page only | Open the full PDF from the OIG page and confirm each figure and the June 2024 sample | confirmed (author, 2026-10-03) |
+| V9 | "Over $380K in monthly reimbursement revenue uplift per facility" (prior-auth blog l.27) | Company-reported, internal data, no method; a bulk summary garbled it as "$140K annualized" | Cite only as company-reported, or leave out | dropped (author, 2026-10-03): no further source; don't cite |
+| V11 | JMIR 2023 (Strickland et al.): 627 SNFs; acceptance -67.0% Medicaid, -21.6% managed care | Only outside evidence for problem #3; read from an abstract summary | Read the full text at jmir.org/2023/1/e43518 | confirmed (author, 2026-10-03) |
+| V12 | CMS-0057-F timeframes: 72 h expedited and 7 days standard from 2026 | An automated PDF reading gave 48 h / 30 days; the press release says 72 h / 7 days | Check the Federal Register text of CMS-0057-F | confirmed (author, 2026-10-03) |
+| V29 | No published SNF Council decisions after 2014; Part C IRE and ALJ decisions aren't published | The spike's no-go rests on it | Evidence so far: the author's site search for "SNF" (46 results, 2026-10-04) found no SNF level-of-care decision after M-12-1140 (2014-02-21). Still to check: OMHA and the Part C IRE (Maximus) | confirmed (author, 2026-10-04): no later Council decisions; OMHA's manual has no decisions; the Maximus QIC site (medicareappeal.com) is dead |

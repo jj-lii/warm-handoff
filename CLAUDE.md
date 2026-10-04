@@ -9,7 +9,7 @@ A weekend research-and-prototype project, not an application. It builds a proble
 Pipeline: `research/` -> problem shortlist -> `reports/` (problem statement, deck) -> `poc/`. Each phase leaves a file on disk.
 
 Layout (rationale in `docs/decisions/0007-repo-structure.md`):
-- `research/`: `sources/` (scraped ExaCare material, private), `external/` (one note per credible outside source, tiered), `problems.md`, `evidence.md` (every number mapped to its source)
+- `research/`: `sources/` (ExaCare material, private: scraped pages, `summit-transcripts/`, `kb/` help articles, `local-videos/` transcripts, `summit-screenshots/`, the benchmark PDF), `external/` (one note per credible outside source, tiered), `archive/problems.md` (rejected shortlist, kept for the report), `landscape.md` (narrative of the problem space), `evidence.md` (every number mapped to its source)
 - `poc/`: what the author builds; `poc/data/` holds synthetic data only
 - `reports/`: problem statement, deck
 - `assets/`: screenshots and images
@@ -27,11 +27,14 @@ Use the repo-local venv; there is no global install. On Windows with Git Bash:
 
 There are no tests or linters. `scrape.py` writes `research/sources/_report.md`, which lists pages that were thin or failed.
 
+PDFs: `pdftotext -layout <file> <out.txt>` (Git Bash ships it; the venv has no PDF library). Local video transcription uses faster-whisper in `.venv` (`av` pinned to 16.x). In Bash, never run a command that waits on stdin (`python -` without a heredoc, bare `cat`); it hangs until the timeout.
+
 ## Architecture notes
 
 - `research/sources/` is input only. Treat it as read-only, and don't hand-edit scraped files; re-run the script instead. It is ExaCare's copyrighted material: keep it private, never publish it, and quote only short attributed passages.
 - `research/sources/summit-transcripts/` is about 76K words across 12 files and comes from auto-captions, so it has errors. Never read it whole: grep for terms and read only the relevant sections.
 - Summit videos are email-gated Wistia embeds. Transcripts come from IDs collected in a viewer's own browser; do not submit forms or bypass the gate.
+- ExaCare's help centre (`help.exacare.com`, also served from `exacare-knowledge-base.help.usepylon.com`) disallows all bots in robots.txt. Never fetch it. The author saves articles by hand into `research/sources/kb/` (raw, loosely named); read them from there.
 - `transcripts.py` calls Wistia's public `embed/captions/<id>.json`. A video with no captions returns `NO CAPTIONS`; the fallback is audio download plus local transcription, which needs the author's go-ahead.
 
 ## Working rules
@@ -39,9 +42,9 @@ There are no tests or linters. `scrape.py` writes `research/sources/_report.md`,
 The rules for this project are in `BRIEF.md` (restrictions, budget, limitations). The ones that bite most often:
 - Synthetic data only, never real patient information, and label it as synthetic.
 - Fake names (patients, residents, staff) in synthetic data and demos are basketball players, in the style of ExaCare's own demos (e.g. Kyle Lowry, Stephen Curry). Kawhi Leonard must appear, and on any team or roster he is on the Raptors.
-- No commits or pushes unless the author asks.
+- Trunk-based development.
 - Every number in a deliverable needs a cited source. Tag ExaCare's own statistics as company-reported.
-- Be economical with usage: write findings to files, grep before reading, and avoid subagents.
+- Be economical with usage: write findings to files, grep before reading, and fan bulk work out to cheaper subagents (see `docs/wow.md`).
 - **Flag anything the author should verify by hand.** Mark each one in chat with `VERIFY:` and add it to `docs/verify.md` with why it matters and how to check it.
 
 ## Commits and pull requests

@@ -1,6 +1,8 @@
 # Landscape: how a patient moves from hospital to skilled nursing, and where it breaks
 
-A narrative of the post-acute admissions and reimbursement journey, built from the same sources as `research/problems.md`. It describes the problem space; it does not pick a problem.
+A narrative of the post-acute admissions and reimbursement journey, built from the same sources as `research/archive/problems.md`. It describes the problem space; it does not pick a problem.
+
+**Summary (read this, then grep the sections):** (1) A hospital hands a patient to a skilled nursing facility (SNF) through a referral packet, and the facility decides yes or no. (2) That decision mixes clinical fit, financial fit and facility rules, and is often made centrally. (3) Hospitals tend to go with the first yes, which is why ExaCare stresses speed. (4) Under Medicare Advantage (MA), the plan must authorize the stay, and prior authorization changes the job. (5) Denials are common, appeals are rare, and the gap is widest for nursing home residents. (6) Waiting costs hospitals extra days. (7) After admission, concurrent reviews and the NOMNC decide whether coverage continues. (8) ExaCare's published tech covers much of this, shipped or announced. (9) Tensions and (10) unmeasured areas close the document.
 
 **Tags:** [T1] government or peer-reviewed · [T2] independent policy research · [co.] company-reported by ExaCare · [op.] operator speaking at ExaCare's Summit · *background* = general domain knowledge not yet sourced in `research/external/`. Figures are mapped in `research/evidence.md`; open checks are in `docs/verify.md`.
 

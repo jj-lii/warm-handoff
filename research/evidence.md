@@ -1,6 +1,6 @@
 # Evidence map
 
-Every number used in `research/problems.md`. Tiers per `docs/decisions/0005-evidence-grading.md`. Status: verified-in-source (checked against the source text) / summary-only (from a search or abstract summary; full text not read) / open (see `docs/verify.md`).
+Every number used in `research/archive/problems.md`. Tiers per `docs/decisions/0005-evidence-grading.md`. Status: verified-in-source (checked against the source text) / summary-only (from a search or abstract summary; full text not read) / open (see `docs/verify.md`).
 
 | Claim | Source | Tier | Location | Status |
 |---|---|---|---|---|

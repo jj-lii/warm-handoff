@@ -8,6 +8,7 @@ research/sources/
 private/
 .env
 .env.*
+!.env.example
 *.key
 
 # Downloaded third-party documents and raw captures
