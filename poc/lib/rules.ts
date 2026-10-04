@@ -51,7 +51,7 @@ export const RULES: Record<Label, Rule> = {
     criteria: {
       true: "Living in a nursing facility, being a long-stay or custodial resident, or the reasons the member lives there are offered as grounds for the denial.",
       false:
-        "Residence is not offered as a reason. Merely naming the facility, addressing the member as a resident, or describing their history does not count.",
+        "Residence is not offered as a reason. Describing the member as a long-stay or custodial resident, or saying how long they have lived there, is background and does not count, even at the start of the rationale. Saying the member's needs can be met by the custodial care they already receive is a different reason and does not count here.",
     },
     keywords: [/\b(long[- ]?(stay|term) (care )?resident|resides in|lives in|custodial resident|place of residence|reasons? (the )?(member|enrollee|patient) lives)\b/i],
     argument:
@@ -172,8 +172,9 @@ export const RULES: Record<Label, Rule> = {
     question:
       "Does the denial say that clinical information or documentation was missing, incomplete, insufficient or not received?",
     criteria: {
-      true: "The plan says it lacked information or documents needed to decide.",
-      false: "The plan does not say anything was missing; it reviewed the information and decided on the merits.",
+      true: "The plan says specific records were not received, were incomplete, or that it needs more information before it can decide.",
+      false:
+        "The plan does not say anything was missing; it reviewed the information and decided on the merits. Findings such as 'the documentation does not support', 'does not establish' or 'does not substantiate' a need are merits decisions and do not count.",
     },
     keywords: [/\b(insufficient|incomplete|missing|not (been )?(received|provided|submitted)|unable to (determine|verify)|additional (clinical )?(information|documentation))\b/i],
     argument:
