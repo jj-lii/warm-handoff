@@ -2,6 +2,21 @@
 
 Newest first, last 5 entries only; older ones are in `docs/work-log-archive.md`. Paths are as of the entry.
 
+## 2026-10-04 - Eval runner built
+Output: `poc/evals/{run,metrics,haiku}.ts`; `verdictOf` exported from `poc/lib/check.ts`; `@anthropic-ai/sdk` 0.131.0; `docs/verify.md` V30-V31
+Notes:
+- Engines: keyword, Claude Haiku 4.5 (same six questions, structured output, temperature 0, no reasoning field), Jev. Answers cached in `poc/.eval-cache/` by prompt and letter; never for the holdout.
+- Metric definitions (in `metrics.ts`; freeze them in the pre-registration): gold next step = `verdictOf(labels)`; top of queue = top quarter by max rules-conflict probability, ties averaged; wrongly contested = share of "contest on the rules" flags whose gold differs; sent to a person = no reason, or any probability in the review band.
+- Holdout guard: `--final` only; needs a committed `poc/evals/PREREGISTRATION.md` naming the sha256 of `rules.ts` and every split and label file; writes `private/holdout-final-run.json` so it can't run twice.
+- Smoke test on the first 3 dev labels: keyword and Jev work; Haiku blocked (`ANTHROPIC_API_KEY` empty in root `.env`).
+- `dev.jsonl` has duplicate ids with different texts: two `generate -- dev` runs overlapped. The runner keeps the first row per id.
+Next: author fixes the dev duplicates and adds the Anthropic key; full dev run; golden adjudication.
+
+## 2026-10-04 - Verification queue pass (Claude-checkable items)
+Output: `docs/verify.md` (V10, V13, V16, V18, V20, V21, V22, V27 annotated), `docs/verify-closed.md` (V26)
+Notes: PSI PDF returns 403 to bots; checked via trade press only. PMC13127000 would not load in the fetch tool. Statuses stay open until the author confirms.
+Next: author confirms or rejects the annotated rows; remaining browser-only items (V6, V8, V14, V15, V17, V19, V24, V25, V28).
+
 ## 2026-10-04 - POC planned; eval data generated; real-data spike (no-go)
 Output: branch `poc-denial-check`; ADRs 0010-0015; `LICENSE`; `poc/lib/{rules,jev,classify,check}.ts` (draft, untested; `rules.ts` holds the frozen keyword baseline); `poc/evals/{recipes,generate,label}.ts`; `poc/evals/data/{dev,golden}.jsonl` (40 each, Gemini 3.8 Flash); `private/real-slice.jsonl` (21 Council passages, gitignored); `research/external/dab-council-decisions-spike.md`; `research/sources/dab/` (32 decisions, indexed, private)
 Notes:
@@ -30,9 +45,4 @@ Next: author review; then `reports/deck.md`.
 Output: `research/sources/local-videos/push-to-pointclickcare-tutorial.md` (about 1,400 words, 9 min)
 Notes: Local mp4 from the author, not Wistia. Transcribed locally with faster-whisper `small.en` (installed in `.venv`, `av` pinned to 16.x because 19 breaks it); auto-captions, so names and terms may be wrong. ExaCare material: keep private.
 Next: use the PCC push steps (3-step flow, required NPI/phone) in the problem statement if relevant.
-
-## 2026-10-04 - Problem chosen: long-stay residents under MA
-Output: `docs/decisions/0008-narrow-shortlist.md`, `docs/decisions/0009-problem-long-stay-residents.md`, `research/problems.md` (decision section), 8 new notes in `research/external/`, `research/evidence.md`, `docs/verify.md` V14-V20
-Notes: Second research round on payer power and incentives (Senate PSI, CMS-4201-F, KFF 2026 metrics, NOMNC rules, Lokken, SNN operators), Medicare manual Ch. 8 (read locally) and public data sources. Full OIG report read by a Sonnet subagent; key quotes re-checked in the PDF. Help articles on the Residents tab, Tasks and Push to PCC saved by the author; no in-house prior-auth start point found (V17).
-Next: `reports/problem-statement.md`.
 

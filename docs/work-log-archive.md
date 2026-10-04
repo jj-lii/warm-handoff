@@ -2,6 +2,11 @@
 
 Older entries moved from `docs/work-log.md`. Not read by default. Newest first.
 
+## 2026-10-04 - Problem chosen: long-stay residents under MA
+Output: `docs/decisions/0008-narrow-shortlist.md`, `docs/decisions/0009-problem-long-stay-residents.md`, `research/problems.md` (decision section), 8 new notes in `research/external/`, `research/evidence.md`, `docs/verify.md` V14-V20
+Notes: Second research round on payer power and incentives (Senate PSI, CMS-4201-F, KFF 2026 metrics, NOMNC rules, Lokken, SNN operators), Medicare manual Ch. 8 (read locally) and public data sources. Full OIG report read by a Sonnet subagent; key quotes re-checked in the PDF. Help articles on the Residents tab, Tasks and Push to PCC saved by the author; no in-house prior-auth start point found (V17).
+Next: `reports/problem-statement.md`.
+
 ## 2026-10-04 - Landscape narrative
 Output: `research/landscape.md`
 Notes: Ten-part walk through the hospital-to-SNF journey (handoff, decision, speed, payers, denials, hospital waits, the stay, technology map, tensions, unknowns). Same sources as `research/problems.md`; items marked *background* are general domain knowledge not yet sourced in `research/external/` (3-day rule, NOMNC process, appeal levels, hospital per-stay payment).
