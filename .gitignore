@@ -19,3 +19,7 @@ assets/raw/
 node_modules/
 .DS_Store
 *.log
+
+# Eval answer cache (Jev and Haiku responses keyed by prompt and letter)
+poc/.eval-cache/
+*.tsbuildinfo

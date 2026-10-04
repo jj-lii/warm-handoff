@@ -18,7 +18,7 @@ export type Classification = {
   latency_ms: number;
 };
 
-const CONTEXT =
+export const CONTEXT =
   "A Medicare Advantage plan's letter denying a request for a short-term skilled nursing facility (SNF) stay for a member who is a long-stay nursing home resident. Judge only the reasons the plan gives for its decision.";
 
 function questions(): Record<Label, NoulQuestion> {

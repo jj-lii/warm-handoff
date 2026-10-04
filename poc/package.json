@@ -18,6 +18,7 @@
     "eval:baseline": "tsx evals/run.ts --baseline-only"
   },
   "dependencies": {
+    "@anthropic-ai/sdk": "0.131.0",
     "@astryxdesign/core": "0.6.5",
     "@astryxdesign/theme-neutral": "0.6.5",
     "@stylexjs/stylex": "0.19.1",

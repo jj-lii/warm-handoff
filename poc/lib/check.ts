@@ -42,6 +42,13 @@ export type CheckResult = {
   latency_ms: number;
 };
 
+// The next step for a set of reasons: the highest-precedence action wins. Also used
+// by the evals to turn blind labels into the gold next step.
+export function verdictOf(labels: readonly Label[]): Verdict {
+  const top = ACTION_ORDER.find((a) => labels.some((l) => RULES[l].action === a));
+  return top ? VERDICT[top] : "manual_review";
+}
+
 export async function checkDenial(text: string, engine: Engine, kase?: Case): Promise<CheckResult> {
   const c = await classify(text, engine);
   const hits = new Set(detected(c.probabilities));
@@ -60,8 +67,7 @@ export async function checkDenial(text: string, engine: Engine, kase?: Case): Pr
     };
   }).sort((a, b) => b.probability - a.probability);
 
-  const top = ACTION_ORDER.find((a) => findings.some((f) => f.detected && f.action === a));
-  const verdict: Verdict = top ? VERDICT[top] : "manual_review";
+  const verdict = verdictOf(findings.filter((f) => f.detected).map((f) => f.label));
 
   return {
     engine,
