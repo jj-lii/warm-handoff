@@ -1,0 +1,20 @@
+.venv/
+__pycache__/
+
+# ExaCare copyrighted material: keep private
+research/sources/
+
+# Local-only notes and secrets
+private/
+.env
+.env.*
+*.key
+
+# Downloaded third-party documents and raw captures
+research/external/*.pdf
+assets/raw/
+
+# Misc
+node_modules/
+.DS_Store
+*.log
