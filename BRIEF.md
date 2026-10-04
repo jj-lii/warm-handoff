@@ -36,8 +36,7 @@ Tool usage limits are rolling, so be economical:
 - Avoid subagents and large re-reads of files already in context.
 - Keep outputs short; write findings to files, not long chat replies.
 - If a limit is hit, stop and resume after reset; every phase leaves its output on disk.
-- API spend to date (author-reported, 2026-10-04): TypeSafe (Jev) $5 CAD, Gemini $8 CAD, Anthropic $5 USD. Large test runs go to local inference (`docs/wow.md`).
-
+- API spend to date (author-reported, 2026-10-04): TypeSafe (Jev) $5 CAD, Gemini $8 CAD, Anthropic $5 USD.
 ## Restrictions
 - **No patient data.** Synthetic or invented data only, labeled as such everywhere. No real PHI, ever.
 - **Public sources only.** Gated content is reached only through the normal public flow in a viewer's own browser; no workarounds. Video transcripts come from public captions once a viewer has opened the page.

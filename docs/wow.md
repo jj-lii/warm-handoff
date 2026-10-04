@@ -4,7 +4,6 @@
 - **Write findings to files, not long chat replies.** Reason: output survives usage limits and context resets.
 - **Fan bulk work out to cheaper subagents; keep judgment on the main model.** The author runs Opus as the main session. Haiku takes bulk reading and summarising, Sonnet takes drafting and structured extraction, and the main model decides, verifies and writes the final text. Reason: cheaper than doing it all on Opus. Standing approval from the author (2026-10-04).
 - **Subagents are fresh, not forks.** Use `fork` only when the task needs the session's context. Give each a self-contained prompt, a file path to write findings to, and a length cap. Run independent ones in parallel. Re-check every cited figure against the source before using it. Reason: forks inherit and re-pay for the whole context, and summaries have garbled numbers before (V9, V12).
-- **Large test runs use local inference, not paid APIs.** Ollama on the author's RTX 3070 (8 GB). Paid APIs only for the engines under test (Jev, the Haiku baseline) and generation, cached and run on small splits. Reason: API spend is real money (author, 2026-10-04); see the Budget section of `BRIEF.md`.
 - **One phase, one output file, then stop.** Reason: the author decides what happens next (e.g. picking the problem).
 - **Ask before moves, deletes, installs and anything outward-facing.** Includes restructuring, `rm`, new dependencies and form submissions. Reason: these are hard to undo.
 - **No commits or pushes unless asked.**
