@@ -2,6 +2,16 @@
 
 Newest first, last 5 entries only; older ones are in `docs/work-log-archive.md`. Paths are as of the entry.
 
+## 2026-10-04 - First full dev run (40 letters, all labelled)
+Output: `poc/evals/data/labels/dev.jsonl` (author); `poc/evals/results/dev.{json,md}`
+Notes:
+- Right next step: keyword 63%, Haiku 93%, Jev 93% (37/40 each, 95% CI 80-97%). Haiku and Jev can't be told apart at n=40. Jev is 7x faster (p50 193 vs 1,413 ms); Haiku costs $0.0016 per letter; Jev's cost is unknown (V31).
+- Jev's weak spot: 53% sent to a person (21/40), mostly residency (8) and missing documentation (6) probabilities in the 0.3-0.7 band. Haiku sends 15%, but its probabilities cluster at a few values (0.92 etc.), so its threshold sweep is flat.
+- Label question: 7 of 9 letters written with a therapy-participation reason are labelled without it, though each says the member can't participate in or tolerate daily therapy; both engines say yes at 0.92-0.98. Therapy precision (22%) depends on this.
+- Labels add reasons Gemini didn't intend (custodial +13, residency +7, no daily skilled need +7, no improvement +5); intent matches the labels exactly on 16/40 (40%).
+- The threshold sweep keeps the review band fixed, so "sent to a person" doesn't move with the threshold.
+Next: author decides the therapy labels (relabel or tighten the criterion); then tune Jev's residency and missing-documentation questions on dev; golden labelling and adjudication.
+
 ## 2026-10-04 - Eval runner built
 Output: `poc/evals/{run,metrics,haiku}.ts`; `verdictOf` exported from `poc/lib/check.ts`; `@anthropic-ai/sdk` 0.131.0; `docs/verify.md` V30-V31
 Notes:
@@ -40,9 +50,4 @@ Next: on a new branch, `reports/deck.md` (6-8 slides), then the prototype (synth
 Output: `reports/problem-statement.md`; `docs/verify.md` V21
 Notes: One page per BRIEF: who has it, evidence, cost, ask-vs-problem, hypotheses, no-list, pilot measures. The Push to PCC video transcript matches the help article (one-way push at admission), consistent with V17. Cost per denied stay is unsourced (V21).
 Next: author review; then `reports/deck.md`.
-
-## 2026-10-04 - Transcribed Push to PointClickCare tutorial
-Output: `research/sources/local-videos/push-to-pointclickcare-tutorial.md` (about 1,400 words, 9 min)
-Notes: Local mp4 from the author, not Wistia. Transcribed locally with faster-whisper `small.en` (installed in `.venv`, `av` pinned to 16.x because 19 breaks it); auto-captions, so names and terms may be wrong. ExaCare material: keep private.
-Next: use the PCC push steps (3-step flow, required NPI/phone) in the problem statement if relevant.
 
