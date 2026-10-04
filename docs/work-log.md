@@ -2,6 +2,36 @@
 
 Newest first. Paths are as of the entry; see later entries for moves.
 
+## 2026-10-04 - Problem statement drafted
+Output: `reports/problem-statement.md`; `docs/verify.md` V21
+Notes: One page per BRIEF: who has it, evidence, cost, ask-vs-problem, hypotheses, no-list, pilot measures. The Push to PCC video transcript matches the help article (one-way push at admission), consistent with V17. Cost per denied stay is unsourced (V21).
+Next: author review; then `reports/deck.md`.
+
+## 2026-10-04 - Transcribed Push to PointClickCare tutorial
+Output: `research/sources/local-videos/push-to-pointclickcare-tutorial.md` (about 1,400 words, 9 min)
+Notes: Local mp4 from the author, not Wistia. Transcribed locally with faster-whisper `small.en` (installed in `.venv`, `av` pinned to 16.x because 19 breaks it); auto-captions, so names and terms may be wrong. ExaCare material: keep private.
+Next: use the PCC push steps (3-step flow, required NPI/phone) in the problem statement if relevant.
+
+## 2026-10-04 - Problem chosen: long-stay residents under MA
+Output: `docs/decisions/0008-narrow-shortlist.md`, `docs/decisions/0009-problem-long-stay-residents.md`, `research/problems.md` (decision section), 8 new notes in `research/external/`, `research/evidence.md`, `docs/verify.md` V14-V20
+Notes: Second research round on payer power and incentives (Senate PSI, CMS-4201-F, KFF 2026 metrics, NOMNC rules, Lokken, SNN operators), Medicare manual Ch. 8 (read locally) and public data sources. Full OIG report read by a Sonnet subagent; key quotes re-checked in the PDF. Help articles on the Residents tab, Tasks and Push to PCC saved by the author; no in-house prior-auth start point found (V17).
+Next: `reports/problem-statement.md`.
+
+## 2026-10-04 - Landscape narrative
+Output: `research/landscape.md`
+Notes: Ten-part walk through the hospital-to-SNF journey (handoff, decision, speed, payers, denials, hospital waits, the stay, technology map, tensions, unknowns). Same sources as `research/problems.md`; items marked *background* are general domain knowledge not yet sourced in `research/external/` (3-day rule, NOMNC process, appeal levels, hospital per-stay payment).
+Next: the author decides on a problem; consider sourcing the *background* items if they go into the deck.
+
+## 2026-10-03 - Shortlist update from benchmark, help centre and slides
+Output: `research/problems.md` (re-ranked), `research/evidence.md`, `docs/verify.md` (V1-V5, V9 statuses; V13 added)
+Notes: Help articles show Managed Care Agent tracks Denied/Peer-to-Peer but has no appeal step (supports #1) and already picks the level of care (old #2 dropped). New #2 is rule tuning (benchmark p.11: 70% AI "Maybe"). Speed figures differ across ExaCare documents (V13). Help articles were saved by the author in a browser; robots.txt blocks bots.
+Next: the author picks between #1 and #2; then `reports/problem-statement.md` and an ADR.
+
+## 2026-10-03 - Problem shortlist
+Output: `research/problems.md`, `research/evidence.md`, 5 notes in `research/external/`, `docs/verify.md` V7-V12
+Notes: 4 problems ranked; recommends #1 (MA SNF denials/appeals, tier 1 OIG) with #3 (decline-pattern sizing) as fallback. Bulk summaries came from Haiku subagents; every cited figure was re-checked in the source. Outside evidence is thin for #2 and #4; the JMIR note is abstract-only.
+Next: the author picks a problem; then `reports/problem-statement.md` and an ADR for the pick.
+
 ## 2026-10-03 - Docs tidy and gitignore
 Output: `docs/decisions/0001-scope-and-deliverables.md`, updated `BRIEF.md`, `CLAUDE.md`, `docs/wow.md`, `docs/verify.md`, `.gitignore`
 Notes: Docs reworded so they read neutrally for any reader ("company-reported" instead of "vendor claim", "the author" instead of "the user"). `.gitignore` now also covers `.env*`, downloaded PDFs under `research/external/`, `assets/raw/` and local-only notes.
