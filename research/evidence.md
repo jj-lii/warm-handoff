@@ -11,13 +11,12 @@ Every number used in `research/problems.md`. Tiers per `docs/decisions/0005-evid
 | MA SNF-discharge admissions 3.1 pp more likely to last 14+ days (Q3 2023) | McGarry et al., JAMA IM 2025 | 1 | `research/external/jama-2025-ma-extended-hospital-stays.md` | verified-in-source (abstract) |
 | Prior-auth decisions within 72 h (expedited) and 7 days (standard) from 2026; specific denial reason required | CMS-0057-F press release (2024) | 1 | `research/external/cms-2024-prior-auth-final-rule.md` | verified-in-source (press release; V12) |
 | Acceptance falls 67.0% (Medicaid) and 21.6% (managed care); 627 SNFs | Strickland et al., JMIR 2023 | 1 | `research/external/jmir-2023-snf-admission-decisions.md` | summary-only (V11) |
-| Time-to-accept fell from 30 to 21 minutes in 12 months | ExaCare Summit, Turning Data | 4 | `research/sources/summit-transcripts/turning-data-into-advantage-v2.md` 05:07 | open (V6) |
+| Referral-level median TTA fell from 33.8 (Jul 2025) to 21.3 min (May 2026), facilities with 6+ months on platform | ExaCare benchmark report; Summit slide | 4 | report p.7; `research/sources/summit-screenshots/time-to-accept-drop.png` (caption at 05:07 says "thirty ... twenty one") | verified-in-source (V13) |
 | 20% of clinical declines driven by trach needs | ExaCare Summit, Turning Data | 4 | same, 14:08 | open (V6) |
 | 50% of "payer not accepted" declines due to Humana out of network | ExaCare Summit, Turning Data | 4 | same, 13:03 | open (V6) |
 | 70 rules trimmed: 20x more AI accepts; 10% higher accept rate | ExaCare Summit, Turning Data | 4 | same, 16:24 | open (V6) |
-| Top 10% of ~825 facilities decide in 7.1 minutes | ExaCare blog | 4 | `research/sources/blogPost/steps-in-the-snf-referral-process.md` l.26 | verified-in-source |
-| 256,719 referrals, 981 facilities | ExaCare benchmark teaser | 4 | `research/sources/insightsPost/time-to-accept-benchmark-report.md` l.19 | open (V3) |
-| Ignite: 22 to 10 minutes per managed-care referral | ExaCare customer story | 4 | `research/sources/customerStory/ignite-medical-resorts.md` l.127 | verified-in-source |
-| Over $380K monthly reimbursement uplift per facility (internal data) | ExaCare blog | 4 | `research/sources/blogPost/prior-authorization-snf-admissions.md` l.27 | open (V9) |
-| Creative Solutions: 24-48 h turnaround before; 300-page packets | ExaCare customer story | 4 | `research/sources/customerStory/creative-solutions-in-healthcare.md` l.39, l.90 | verified-in-source |
-| $800 medication carve-out example | ExaCare Summit, Managed Care in Action | 4 | `research/sources/summit-transcripts/managed-care-in-action-v2.md` 06:11 | open (V6) |
+| 256,719 referrals, 981 facilities, Q1 2026, platform timestamps, weekday working hours, decisions within 300 min | ExaCare benchmark report | 4 | report p.5 | verified-in-source |
+| Facility median TTA: 11 min (10th pct), 17 (25th), 30 (50th) | ExaCare benchmark report; Summit slide | 4 | report p.6, p.10, p.12; `summit-screenshots/distribution-chart-top-20-under-15-min.png` | verified-in-source (V13) |
+| Win rate = moved-in residents / accepted referrals; "time-to-accept accounts for 70% of win rate performance" (method not given) | ExaCare benchmark report | 4 | report p.4-5 | verified-in-source |
+| 70% of referrals got AI "Maybe"; one operator 80%+; after rules review 20x AI Accepts, +10% acceptance, TTA 22 to 18 min | ExaCare benchmark report | 4 | report p.11 | verified-in-source |
+| Creative Solutions: 300-page packets ("You can't read 300 pages in 30 minutes") | ExaCare customer story | 4 | `research/sources/customerStory/creative-solutions-in-healthcare.md` l.39, l.90 | verified-in-source |

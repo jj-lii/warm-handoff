@@ -2,6 +2,11 @@
 
 Newest first. Paths are as of the entry; see later entries for moves.
 
+## 2026-10-03 - Shortlist update from benchmark, help centre and slides
+Output: `research/problems.md` (re-ranked), `research/evidence.md`, `docs/verify.md` (V1-V5, V9 statuses; V13 added)
+Notes: Help articles show Managed Care Agent tracks Denied/Peer-to-Peer but has no appeal step (supports #1) and already picks the level of care (old #2 dropped). New #2 is rule tuning (benchmark p.11: 70% AI "Maybe"). Speed figures differ across ExaCare documents (V13). Help articles were saved by the author in a browser; robots.txt blocks bots.
+Next: the author picks between #1 and #2; then `reports/problem-statement.md` and an ADR.
+
 ## 2026-10-03 - Problem shortlist
 Output: `research/problems.md`, `research/evidence.md`, 5 notes in `research/external/`, `docs/verify.md` V7-V12
 Notes: 4 problems ranked; recommends #1 (MA SNF denials/appeals, tier 1 OIG) with #3 (decline-pattern sizing) as fallback. Bulk summaries came from Haiku subagents; every cited figure was re-checked in the source. Outside evidence is thin for #2 and #4; the JMIR note is abstract-only.
