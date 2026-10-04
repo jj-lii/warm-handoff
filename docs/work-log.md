@@ -2,6 +2,11 @@
 
 Newest first. Paths are as of the entry; see later entries for moves.
 
+## 2026-10-03 - Problem shortlist
+Output: `research/problems.md`, `research/evidence.md`, 5 notes in `research/external/`, `docs/verify.md` V7-V12
+Notes: 4 problems ranked; recommends #1 (MA SNF denials/appeals, tier 1 OIG) with #3 (decline-pattern sizing) as fallback. Bulk summaries came from Haiku subagents; every cited figure was re-checked in the source. Outside evidence is thin for #2 and #4; the JMIR note is abstract-only.
+Next: the author picks a problem; then `reports/problem-statement.md` and an ADR for the pick.
+
 ## 2026-10-03 - Docs tidy and gitignore
 Output: `docs/decisions/0001-scope-and-deliverables.md`, updated `BRIEF.md`, `CLAUDE.md`, `docs/wow.md`, `docs/verify.md`, `.gitignore`
 Notes: Docs reworded so they read neutrally for any reader ("company-reported" instead of "vendor claim", "the author" instead of "the user"). `.gitignore` now also covers `.env*`, downloaded PDFs under `research/external/`, `assets/raw/` and local-only notes.
