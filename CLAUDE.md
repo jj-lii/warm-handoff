@@ -43,6 +43,28 @@ The rules for this project are in `BRIEF.md` (restrictions, budget, limitations)
 - Be economical with usage: write findings to files, grep before reading, and avoid subagents.
 - **Flag anything the author should verify by hand.** Mark each one in chat with `VERIFY:` and add it to `docs/verify.md` with why it matters and how to check it.
 
+## Commits and pull requests
+
+Same format for both. Keep it short.
+
+**Title:** `type(scope): summary`, imperative, at most 72 characters. Types: `feat`, `fix`, `docs`, `refactor`, `test`, `build`, `ci`, `perf`, `chore`. Scope is optional (e.g. `docs(research)`, `chore(scripts)`).
+
+**Body:** exactly these three sections, in this order, bullets only:
+```
+## What changed
+- technical-leaning: what was added, removed or modified
+
+## What this impacts
+- product-leaning: what this changes for the work, readers or the prototype
+
+## What are the risks
+- product and technical risks; write "None" if there are none
+```
+
+**Hard limit: six bullets in total across the three sections, one line each.** If it takes more than six, split it into more than one commit or PR. A PR is not a changelog.
+
+Commits use the same three headings (written as `What changed:`, `What this impacts:`, `What are the risks:`), then the attribution trailer. PRs end with the attribution line and no test-plan checklist; testing gaps go under risks.
+
 ## Documentation conventions
 
 Keep four kinds of record separate. Each entry is short (a few lines) and goes in its own place, never mixed.
