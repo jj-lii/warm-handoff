@@ -1,6 +1,6 @@
-// Eval runner (ADR 0015): keyword baseline, Claude Haiku and Jev on one split,
+// Eval runner (ADR 0015, 0016): keyword baseline, Claude Haiku, Gemini Flash-Lite and Jev on one split,
 // scored against the author's blind labels.
-//   npm run eval -- dev|golden|real [--engines=keyword,haiku,jev] [--no-cache]
+//   npm run eval -- dev|golden|real [--engines=keyword,haiku,gemini,jev] [--no-cache]
 //   npm run eval:baseline -- dev          keyword only, no keys or network
 //   npm run eval -- holdout --final       once, after PREREGISTRATION.md is committed
 // dev and golden write evals/results/<split>.{json,md} (synthetic, committable).
@@ -12,19 +12,20 @@ import { dirname, join } from "node:path";
 import { verdictOf } from "../lib/check";
 import { classify, CONTEXT, THRESHOLD } from "../lib/classify";
 import { LABELS, RULES, type Label } from "../lib/rules";
+import { classifyGemini, GEMINI_PRICE } from "./gemini";
 import { classifyHaiku, HAIKU_PRICE, SYSTEM as HAIKU_SYSTEM } from "./haiku";
 import { brier, costLatency, goldVerdict, headline, perLabel, predicted, predictedVerdict, sweep, wilson, type Interval, type Scored } from "./metrics";
 
 const SPLITS = ["dev", "golden", "holdout", "real"] as const;
 type Split = (typeof SPLITS)[number];
-const ENGINES = ["keyword", "haiku", "jev"] as const;
+const ENGINES = ["keyword", "haiku", "gemini", "jev"] as const;
 type EngineName = (typeof ENGINES)[number];
 
 const args = process.argv.slice(2);
 const flag = (name: string) => args.includes(`--${name}`);
 const opt = (name: string) => args.find((a) => a.startsWith(`--${name}=`))?.split("=")[1];
 const split = args.find((a) => !a.startsWith("--")) as Split;
-if (!SPLITS.includes(split)) throw new Error(`usage: eval <${SPLITS.join("|")}> [--engines=keyword,haiku,jev] [--baseline-only] [--no-cache] [--final]`);
+if (!SPLITS.includes(split)) throw new Error(`usage: eval <${SPLITS.join("|")}> [--engines=keyword,haiku,gemini,jev] [--baseline-only] [--no-cache] [--final]`);
 const final = flag("final");
 const engines = (flag("baseline-only") ? ["keyword"] : (opt("engines")?.split(",") ?? [...ENGINES])) as EngineName[];
 if (!engines.every((e) => ENGINES.includes(e))) throw new Error(`unknown engine in ${engines.join(",")}`);
@@ -79,6 +80,7 @@ function guardHoldout() {
 const promptKey: Record<EngineName, () => string> = {
   keyword: () => "", // free and instant: never cached
   haiku: () => sha256(`${process.env.HAIKU_MODEL ?? ""}|${HAIKU_SYSTEM}`),
+  gemini: () => sha256(`gemini|${process.env.GEMINI_CLASSIFIER_MODEL ?? ""}|${HAIKU_SYSTEM}`),
   jev: () => sha256(`${process.env.JEV_MODEL ?? ""}|${CONTEXT}|${JSON.stringify(LABELS.map((l) => [RULES[l].question, RULES[l].criteria]))}`),
 };
 
@@ -88,7 +90,13 @@ async function runOne(engine: EngineName, text: string): Promise<Run & { cached:
   const file = join(cacheDir, engine, `${sha256(promptKey[engine]() + "\n" + text)}.json`);
   if (engine !== "keyword" && useCache && existsSync(file)) return { ...(JSON.parse(readFileSync(file, "utf8")) as Run), cached: true };
   const r: Run =
-    engine === "keyword" ? await classify(text, "baseline") : engine === "jev" ? await classify(text, "jev") : await classifyHaiku(text);
+    engine === "keyword"
+      ? await classify(text, "baseline")
+      : engine === "jev"
+        ? await classify(text, "jev")
+        : engine === "gemini"
+          ? await classifyGemini(text)
+          : await classifyHaiku(text);
   const run: Run = { model: r.model, probabilities: r.probabilities, latency_ms: r.latency_ms, usage: r.usage };
   if (engine !== "keyword" && useCache) {
     mkdirSync(dirname(file), { recursive: true });
@@ -119,8 +127,8 @@ async function main() {
   const labelled = items.filter((x) => labels.has(x.id));
   if (!labelled.length) throw new Error(`no labelled items for ${split} (labels: ${labelsPath})`);
 
-  const results: Record<EngineName, Scored[]> = { keyword: [], haiku: [], jev: [] };
-  const errors: Record<EngineName, number> = { keyword: 0, haiku: 0, jev: 0 };
+  const results: Record<EngineName, Scored[]> = { keyword: [], haiku: [], gemini: [], jev: [] };
+  const errors: Record<EngineName, number> = { keyword: 0, haiku: 0, gemini: 0, jev: 0 };
   const models: Partial<Record<EngineName, string>> = {};
   let cached = 0;
   const perItem: Record<string, Record<string, unknown>> = {};
@@ -181,7 +189,7 @@ type Ctx = {
 };
 
 function summarize({ items, labelled, labels, blind, dupes, results, errors, models }: Ctx) {
-  const price: Partial<Record<EngineName, { input: number; output: number }>> = { haiku: HAIKU_PRICE }; // Jev price: V31
+  const price: Partial<Record<EngineName, { input: number; output: number }>> = { haiku: HAIKU_PRICE, gemini: GEMINI_PRICE }; // Jev price: V31
   return {
     split,
     run_at: new Date().toISOString(),
