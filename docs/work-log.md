@@ -2,6 +2,11 @@
 
 Newest first. Paths are as of the entry; see later entries for moves.
 
+## 2026-10-04 - Landscape narrative
+Output: `research/landscape.md`
+Notes: Ten-part walk through the hospital-to-SNF journey (handoff, decision, speed, payers, denials, hospital waits, the stay, technology map, tensions, unknowns). Same sources as `research/problems.md`; items marked *background* are general domain knowledge not yet sourced in `research/external/` (3-day rule, NOMNC process, appeal levels, hospital per-stay payment).
+Next: the author decides on a problem; consider sourcing the *background* items if they go into the deck.
+
 ## 2026-10-03 - Shortlist update from benchmark, help centre and slides
 Output: `research/problems.md` (re-ranked), `research/evidence.md`, `docs/verify.md` (V1-V5, V9 statuses; V13 added)
 Notes: Help articles show Managed Care Agent tracks Denied/Peer-to-Peer but has no appeal step (supports #1) and already picks the level of care (old #2 dropped). New #2 is rule tuning (benchmark p.11: 70% AI "Maybe"). Speed figures differ across ExaCare documents (V13). Help articles were saved by the author in a browser; robots.txt blocks bots.
