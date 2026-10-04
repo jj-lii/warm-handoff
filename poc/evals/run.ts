@@ -9,6 +9,7 @@ import { createHash } from "node:crypto";
 import { execFileSync } from "node:child_process";
 import { existsSync, mkdirSync, readFileSync, writeFileSync } from "node:fs";
 import { dirname, join } from "node:path";
+import { verdictOf } from "../lib/check";
 import { classify, CONTEXT, THRESHOLD } from "../lib/classify";
 import { LABELS, RULES, type Label } from "../lib/rules";
 import { classifyHaiku, HAIKU_PRICE, SYSTEM as HAIKU_SYSTEM } from "./haiku";
@@ -42,7 +43,7 @@ const sha256 = (s: string | Buffer) => createHash("sha256").update(s).digest("he
 const readJsonl = <T,>(p: string): T[] => (existsSync(p) ? readFileSync(p, "utf8").split("\n").filter((l) => l.trim()).map((l) => JSON.parse(l) as T) : []);
 
 type Item = { id: string; text: string; intent?: Label[]; distractor?: string | null; out_of_scope?: string | null };
-type LabelRow = { id: string; labels: Label[]; unsure: boolean };
+type LabelRow = { id: string; labels: Label[]; unsure: boolean; labeler?: string };
 
 // The holdout runs once (ADR 0015): only with --final, only after a committed
 // pre-registration that names the hash of every split and of rules.ts.
@@ -111,7 +112,10 @@ async function main() {
   const all = readJsonl<Item>(itemsPath);
   const items = [...new Map(all.reverse().map((x) => [x.id, x])).values()].reverse();
   const dupes = all.length - items.length;
-  const labels = new Map(readJsonl<LabelRow>(labelsPath).map((r) => [r.id, r]));
+  const labelRows = readJsonl<LabelRow>(labelsPath);
+  const labels = new Map(labelRows.map((r) => [r.id, r]));
+  // The author's last blind label per id, before any adjudicated correction.
+  const blind = new Map(labelRows.filter((r) => (r.labeler ?? "author") === "author").map((r) => [r.id, r]));
   const labelled = items.filter((x) => labels.has(x.id));
   if (!labelled.length) throw new Error(`no labelled items for ${split} (labels: ${labelsPath})`);
 
@@ -154,7 +158,7 @@ async function main() {
     results[engine].sort((a, b) => a.id.localeCompare(b.id));
   }
 
-  const summary = summarize({ items, labelled, labels, dupes, results, errors, models });
+  const summary = summarize({ items, labelled, labels, blind, dupes, results, errors, models });
 
   mkdirSync(outDir, { recursive: true });
   const base = join(outDir, final ? `${split}-final` : split);
@@ -169,13 +173,14 @@ type Ctx = {
   items: Item[];
   labelled: Item[];
   labels: Map<string, LabelRow>;
+  blind: Map<string, LabelRow>;
   dupes: number;
   results: Record<EngineName, Scored[]>;
   errors: Record<EngineName, number>;
   models: Partial<Record<EngineName, string>>;
 };
 
-function summarize({ items, labelled, labels, dupes, results, errors, models }: Ctx) {
+function summarize({ items, labelled, labels, blind, dupes, results, errors, models }: Ctx) {
   const price: Partial<Record<EngineName, { input: number; output: number }>> = { haiku: HAIKU_PRICE }; // Jev price: V31
   return {
     split,
@@ -185,7 +190,13 @@ function summarize({ items, labelled, labels, dupes, results, errors, models }: 
     rules_sha256: sha256(readFileSync(join(POC, "lib/rules.ts"))),
     items: { total: items.length, labelled: labelled.length, unsure: labelled.filter((x) => labels.get(x.id)!.unsure).length, duplicate_rows_dropped: dupes },
     // Data quality: how often Gemini's intended reasons match the blind labels exactly.
-    intent_matches_labels: agreement(labelled.filter((x) => x.intent).map((x) => sameSet(x.intent!, labels.get(x.id)!.labels))),
+    intent_matches_labels: agreement(labelled.filter((x) => x.intent).map((x) => sameSet(x.intent!, blind.get(x.id)?.labels ?? labels.get(x.id)!.labels))),
+    // How often the author's blind labels survive adjudication: reason set, and next step.
+    blind_matches_adjudicated: {
+      adjudicated: labelled.filter((x) => labels.get(x.id)!.labeler === "adjudicated").length,
+      reasons: agreement(labelled.map((x) => sameSet(blind.get(x.id)?.labels ?? [], labels.get(x.id)!.labels))),
+      next_step: agreement(labelled.map((x) => verdictOf(blind.get(x.id)?.labels ?? []) === verdictOf(labels.get(x.id)!.labels))),
+    },
     engines: Object.fromEntries(
       engines.map((e) => {
         const s = results[e];
@@ -227,6 +238,9 @@ function report(s: Summary): string {
     `Synthetic letters${s.split === "real" ? " (real slice: public Council passages)" : ""}. Gold = author's blind labels. Threshold ${s.threshold}. rules.ts ${s.rules_sha256.slice(0, 12)}. ${s.run_at}`,
     `Items: ${s.items.labelled} labelled of ${s.items.total} (${s.items.unsure} marked unsure)${s.items.duplicate_rows_dropped ? `; ${s.items.duplicate_rows_dropped} duplicate rows dropped (first row per id kept)` : ""}.`,
     s.intent_matches_labels.n ? `Generator intent matches blind labels exactly: ${ci(s.intent_matches_labels)}.` : "",
+    s.blind_matches_adjudicated.adjudicated
+      ? `Gold is adjudicated (${s.blind_matches_adjudicated.adjudicated} letters corrected). Blind labels match it: reasons ${ci(s.blind_matches_adjudicated.reasons)}; next step ${ci(s.blind_matches_adjudicated.next_step)}.`
+      : "",
     "",
     "## Headline",
     "",

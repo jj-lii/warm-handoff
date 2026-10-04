@@ -38,3 +38,6 @@
 {"id":"golden-037","labels":["residency","therapy_participation","custodial_substitute"],"unsure":false,"notes":"","labeler":"author","labeled_at":"2026-10-04T23:24:49.017Z"}
 {"id":"golden-038","labels":["no_improvement"],"unsure":false,"notes":"","labeler":"author","labeled_at":"2026-10-04T23:33:41.789Z"}
 {"id":"golden-040","labels":["residency","custodial_substitute"],"unsure":false,"notes":"","labeler":"author","labeled_at":"2026-10-04T23:34:26.281Z"}
+{"id":"golden-007","labels":["custodial_substitute","no_daily_skilled_need"],"unsure":false,"notes":"Adjudicated, golden v2: see evals/data/golden-adjudication.md. Accepted by author 2026-10-04.","labeler":"adjudicated","labeled_at":"2026-10-04T23:42:46.943Z"}
+{"id":"golden-031","labels":["residency","therapy_participation","no_improvement","custodial_substitute","no_daily_skilled_need"],"unsure":false,"notes":"Adjudicated, golden v2: see evals/data/golden-adjudication.md. Accepted by author 2026-10-04.","labeler":"adjudicated","labeled_at":"2026-10-04T23:42:46.943Z"}
+{"id":"golden-040","labels":["residency","custodial_substitute","no_daily_skilled_need"],"unsure":false,"notes":"Adjudicated, golden v2: see evals/data/golden-adjudication.md. Accepted by author 2026-10-04.","labeler":"adjudicated","labeled_at":"2026-10-04T23:42:46.943Z"}
