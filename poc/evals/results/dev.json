@@ -1,7 +1,7 @@
 {
   "summary": {
     "split": "dev",
-    "run_at": "2026-10-04T22:41:13.406Z",
+    "run_at": "2026-10-04T22:54:20.541Z",
     "final": false,
     "threshold": 0.5,
     "rules_sha256": "b6fc6ea5e889d57393fcdcbae2abefc7ae751cef90d462261c657e0e5f772fa1",
@@ -12,10 +12,10 @@
       "duplicate_rows_dropped": 0
     },
     "intent_matches_labels": {
-      "value": 0.4,
-      "lo": 0.2634811061240136,
-      "hi": 0.5540438017260649,
-      "k": 16,
+      "value": 0.375,
+      "lo": 0.2422277353579172,
+      "hi": 0.529678399454681,
+      "k": 15,
       "n": 40
     },
     "engines": {
@@ -137,7 +137,7 @@
         "brier": null,
         "per_label": {
           "residency": {
-            "support": 16,
+            "support": 17,
             "precision": {
               "value": 0.6,
               "lo": 0.3126695474501864,
@@ -146,34 +146,34 @@
               "n": 10
             },
             "recall": {
-              "value": 0.375,
-              "lo": 0.18480982554752806,
-              "hi": 0.613593529020652,
+              "value": 0.35294117647058826,
+              "lo": 0.17309486143904904,
+              "hi": 0.5870003327878818,
               "k": 6,
-              "n": 16
+              "n": 17
             },
-            "brier": 0.35
+            "brier": 0.375
           },
           "therapy_participation": {
-            "support": 2,
+            "support": 9,
             "precision": {
-              "value": 0.25,
-              "lo": 0.07147768885802763,
-              "hi": 0.5907301208974108,
-              "k": 2,
+              "value": 0.875,
+              "lo": 0.5291051942301386,
+              "hi": 0.9775830911367038,
+              "k": 7,
               "n": 8
             },
             "recall": {
-              "value": 1,
-              "lo": 0.34237195288961925,
-              "hi": 1,
-              "k": 2,
-              "n": 2
+              "value": 0.7777777777777778,
+              "lo": 0.4525833436728054,
+              "hi": 0.9367762376877727,
+              "k": 7,
+              "n": 9
             },
-            "brier": 0.15
+            "brier": 0.075
           },
           "no_improvement": {
-            "support": 14,
+            "support": 13,
             "precision": {
               "value": 0.6,
               "lo": 0.23071993220883708,
@@ -182,13 +182,13 @@
               "n": 5
             },
             "recall": {
-              "value": 0.21428571428571427,
-              "lo": 0.0757124833691637,
-              "hi": 0.4758972377320828,
+              "value": 0.23076923076923078,
+              "lo": 0.08179379092465713,
+              "hi": 0.5025687399512693,
               "k": 3,
-              "n": 14
+              "n": 13
             },
-            "brier": 0.325
+            "brier": 0.3
           },
           "custodial_substitute": {
             "support": 21,
@@ -369,10 +369,10 @@
             "n": 40
           }
         },
-        "brier": 0.13845458333333344,
+        "brier": 0.11520458333333343,
         "per_label": {
           "residency": {
-            "support": 16,
+            "support": 17,
             "precision": {
               "value": 0.5925925925925926,
               "lo": 0.4072638305536409,
@@ -381,34 +381,34 @@
               "n": 27
             },
             "recall": {
-              "value": 1,
-              "lo": 0.8063865817272802,
-              "hi": 1,
+              "value": 0.9411764705882353,
+              "lo": 0.730174547964372,
+              "hi": 0.9895398693548358,
               "k": 16,
-              "n": 16
+              "n": 17
             },
-            "brier": 0.22774999999999998
+            "brier": 0.2527499999999999
           },
           "therapy_participation": {
-            "support": 2,
+            "support": 9,
             "precision": {
-              "value": 0.2222222222222222,
-              "lo": 0.06322376231222723,
-              "hi": 0.5474166563271946,
-              "k": 2,
+              "value": 1,
+              "lo": 0.7008472464490407,
+              "hi": 1,
+              "k": 9,
               "n": 9
             },
             "recall": {
               "value": 1,
-              "lo": 0.34237195288961925,
+              "lo": 0.7008472464490407,
               "hi": 1,
-              "k": 2,
-              "n": 2
+              "k": 9,
+              "n": 9
             },
-            "brier": 0.148565
+            "brier": 0.0015649999999999987
           },
           "no_improvement": {
-            "support": 14,
+            "support": 13,
             "precision": {
               "value": 0.8571428571428571,
               "lo": 0.600580922361363,
@@ -417,13 +417,13 @@
               "n": 14
             },
             "recall": {
-              "value": 0.8571428571428571,
-              "lo": 0.600580922361363,
-              "hi": 0.9599069262620787,
+              "value": 0.9230769230769231,
+              "lo": 0.6668546607175265,
+              "hi": 0.9862899336203037,
               "k": 12,
-              "n": 14
+              "n": 13
             },
-            "brier": 0.07771249999999999
+            "brier": 0.06021249999999999
           },
           "custodial_substitute": {
             "support": 21,
@@ -644,10 +644,10 @@
             "n": 40
           }
         },
-        "brier": 0.13831875000000002,
+        "brier": 0.11631875000000003,
         "per_label": {
           "residency": {
-            "support": 16,
+            "support": 17,
             "precision": {
               "value": 0.6956521739130435,
               "lo": 0.49133870939427393,
@@ -656,49 +656,49 @@
               "n": 23
             },
             "recall": {
-              "value": 1,
-              "lo": 0.8063865817272802,
-              "hi": 1,
+              "value": 0.9411764705882353,
+              "lo": 0.730174547964372,
+              "hi": 0.9895398693548358,
               "k": 16,
-              "n": 16
+              "n": 17
             },
-            "brier": 0.12379999999999995
+            "brier": 0.13679999999999998
           },
           "therapy_participation": {
-            "support": 2,
+            "support": 9,
             "precision": {
-              "value": 0.2222222222222222,
-              "lo": 0.06322376231222723,
-              "hi": 0.5474166563271946,
-              "k": 2,
+              "value": 1,
+              "lo": 0.7008472464490407,
+              "hi": 1,
+              "k": 9,
               "n": 9
             },
             "recall": {
               "value": 1,
-              "lo": 0.34237195288961925,
+              "lo": 0.7008472464490407,
               "hi": 1,
-              "k": 2,
-              "n": 2
+              "k": 9,
+              "n": 9
             },
-            "brier": 0.1709325
+            "brier": 0.004432500000000001
           },
           "no_improvement": {
-            "support": 14,
+            "support": 13,
             "precision": {
-              "value": 0.8235294117647058,
-              "lo": 0.5897007098262422,
-              "hi": 0.9380898628745101,
-              "k": 14,
+              "value": 0.7647058823529411,
+              "lo": 0.5273775411082839,
+              "hi": 0.9044511092832406,
+              "k": 13,
               "n": 17
             },
             "recall": {
               "value": 1,
-              "lo": 0.7846829880728186,
+              "lo": 0.7718981569447083,
               "hi": 1,
-              "k": 14,
-              "n": 14
+              "k": 13,
+              "n": 13
             },
-            "brier": 0.07349250000000004
+            "brier": 0.09499250000000004
           },
           "custodial_substitute": {
             "support": 21,
@@ -1066,7 +1066,7 @@
         ],
         "verdict": "contest_on_rules",
         "latency_ms": 368,
-        "cached": false
+        "cached": true
       }
     },
     {
@@ -1116,7 +1116,7 @@
         ],
         "verdict": "contest_on_rules",
         "latency_ms": 1428,
-        "cached": false
+        "cached": true
       },
       "jev": {
         "probabilities": {
@@ -1135,7 +1135,7 @@
         ],
         "verdict": "contest_on_rules",
         "latency_ms": 370,
-        "cached": false
+        "cached": true
       }
     },
     {
@@ -1182,7 +1182,7 @@
         ],
         "verdict": "contest_on_rules",
         "latency_ms": 1337,
-        "cached": false
+        "cached": true
       },
       "jev": {
         "probabilities": {
@@ -1199,7 +1199,7 @@
         ],
         "verdict": "contest_on_rules",
         "latency_ms": 314,
-        "cached": false
+        "cached": true
       }
     },
     {
@@ -1248,7 +1248,7 @@
         ],
         "verdict": "contest_on_rules",
         "latency_ms": 1703,
-        "cached": false
+        "cached": true
       },
       "jev": {
         "probabilities": {
@@ -1266,7 +1266,7 @@
         ],
         "verdict": "contest_on_rules",
         "latency_ms": 367,
-        "cached": false
+        "cached": true
       }
     },
     {
@@ -1308,7 +1308,7 @@
         ],
         "verdict": "contest_on_facts",
         "latency_ms": 1878,
-        "cached": false
+        "cached": true
       },
       "jev": {
         "probabilities": {
@@ -1325,7 +1325,7 @@
         ],
         "verdict": "contest_on_rules",
         "latency_ms": 286,
-        "cached": false
+        "cached": true
       }
     },
     {
@@ -1369,7 +1369,7 @@
         ],
         "verdict": "contest_on_facts",
         "latency_ms": 1413,
-        "cached": false
+        "cached": true
       },
       "jev": {
         "probabilities": {
@@ -1386,7 +1386,7 @@
         ],
         "verdict": "contest_on_rules",
         "latency_ms": 220,
-        "cached": false
+        "cached": true
       }
     },
     {
@@ -1422,7 +1422,7 @@
         "detected": [],
         "verdict": "manual_review",
         "latency_ms": 1630,
-        "cached": false
+        "cached": true
       },
       "jev": {
         "probabilities": {
@@ -1436,7 +1436,7 @@
         "detected": [],
         "verdict": "manual_review",
         "latency_ms": 254,
-        "cached": false
+        "cached": true
       }
     },
     {
@@ -1481,7 +1481,7 @@
         ],
         "verdict": "contest_on_rules",
         "latency_ms": 1095,
-        "cached": false
+        "cached": true
       },
       "jev": {
         "probabilities": {
@@ -1500,7 +1500,7 @@
         ],
         "verdict": "contest_on_rules",
         "latency_ms": 255,
-        "cached": false
+        "cached": true
       }
     },
     {
@@ -1538,7 +1538,7 @@
         "detected": [],
         "verdict": "manual_review",
         "latency_ms": 1478,
-        "cached": false
+        "cached": true
       },
       "jev": {
         "probabilities": {
@@ -1552,13 +1552,14 @@
         "detected": [],
         "verdict": "manual_review",
         "latency_ms": 199,
-        "cached": false
+        "cached": true
       }
     },
     {
       "id": "dev-013",
       "gold": [
         "residency",
+        "therapy_participation",
         "no_improvement",
         "custodial_substitute"
       ],
@@ -1606,7 +1607,7 @@
         ],
         "verdict": "contest_on_rules",
         "latency_ms": 1041,
-        "cached": false
+        "cached": true
       },
       "jev": {
         "probabilities": {
@@ -1626,7 +1627,7 @@
         ],
         "verdict": "contest_on_rules",
         "latency_ms": 167,
-        "cached": false
+        "cached": true
       }
     },
     {
@@ -1676,7 +1677,7 @@
         ],
         "verdict": "contest_on_rules",
         "latency_ms": 1026,
-        "cached": false
+        "cached": true
       },
       "jev": {
         "probabilities": {
@@ -1695,7 +1696,7 @@
         ],
         "verdict": "contest_on_rules",
         "latency_ms": 147,
-        "cached": false
+        "cached": true
       }
     },
     {
@@ -1744,7 +1745,7 @@
         ],
         "verdict": "contest_on_rules",
         "latency_ms": 1593,
-        "cached": false
+        "cached": true
       },
       "jev": {
         "probabilities": {
@@ -1763,7 +1764,7 @@
         ],
         "verdict": "contest_on_rules",
         "latency_ms": 142,
-        "cached": false
+        "cached": true
       }
     },
     {
@@ -1799,7 +1800,7 @@
         "detected": [],
         "verdict": "manual_review",
         "latency_ms": 920,
-        "cached": false
+        "cached": true
       },
       "jev": {
         "probabilities": {
@@ -1813,7 +1814,7 @@
         "detected": [],
         "verdict": "manual_review",
         "latency_ms": 115,
-        "cached": false
+        "cached": true
       }
     },
     {
@@ -1849,7 +1850,7 @@
         "detected": [],
         "verdict": "manual_review",
         "latency_ms": 871,
-        "cached": false
+        "cached": true
       },
       "jev": {
         "probabilities": {
@@ -1863,7 +1864,7 @@
         "detected": [],
         "verdict": "manual_review",
         "latency_ms": 146,
-        "cached": false
+        "cached": true
       }
     },
     {
@@ -1912,7 +1913,7 @@
         ],
         "verdict": "contest_on_rules",
         "latency_ms": 1049,
-        "cached": false
+        "cached": true
       },
       "jev": {
         "probabilities": {
@@ -1931,13 +1932,14 @@
         ],
         "verdict": "contest_on_rules",
         "latency_ms": 114,
-        "cached": false
+        "cached": true
       }
     },
     {
       "id": "dev-019",
       "gold": [
         "residency",
+        "therapy_participation",
         "no_improvement"
       ],
       "gold_verdict": "contest_on_rules",
@@ -1980,7 +1982,7 @@
         ],
         "verdict": "contest_on_rules",
         "latency_ms": 1644,
-        "cached": false
+        "cached": true
       },
       "jev": {
         "probabilities": {
@@ -2000,7 +2002,7 @@
         ],
         "verdict": "contest_on_rules",
         "latency_ms": 288,
-        "cached": false
+        "cached": true
       }
     },
     {
@@ -2049,7 +2051,7 @@
         ],
         "verdict": "contest_on_rules",
         "latency_ms": 1069,
-        "cached": false
+        "cached": true
       },
       "jev": {
         "probabilities": {
@@ -2067,13 +2069,14 @@
         ],
         "verdict": "contest_on_rules",
         "latency_ms": 197,
-        "cached": false
+        "cached": true
       }
     },
     {
       "id": "dev-021",
       "gold": [
         "residency",
+        "therapy_participation",
         "no_improvement"
       ],
       "gold_verdict": "contest_on_rules",
@@ -2114,7 +2117,7 @@
         ],
         "verdict": "contest_on_rules",
         "latency_ms": 1248,
-        "cached": false
+        "cached": true
       },
       "jev": {
         "probabilities": {
@@ -2134,7 +2137,7 @@
         ],
         "verdict": "contest_on_rules",
         "latency_ms": 193,
-        "cached": false
+        "cached": true
       }
     },
     {
@@ -2182,7 +2185,7 @@
         ],
         "verdict": "contest_on_rules",
         "latency_ms": 1018,
-        "cached": false
+        "cached": true
       },
       "jev": {
         "probabilities": {
@@ -2200,7 +2203,7 @@
         ],
         "verdict": "contest_on_rules",
         "latency_ms": 200,
-        "cached": false
+        "cached": true
       }
     },
     {
@@ -2249,7 +2252,7 @@
         ],
         "verdict": "contest_on_rules",
         "latency_ms": 1622,
-        "cached": false
+        "cached": true
       },
       "jev": {
         "probabilities": {
@@ -2265,7 +2268,7 @@
         ],
         "verdict": "send_documents",
         "latency_ms": 212,
-        "cached": false
+        "cached": true
       }
     },
     {
@@ -2317,7 +2320,7 @@
         ],
         "verdict": "contest_on_rules",
         "latency_ms": 1406,
-        "cached": false
+        "cached": true
       },
       "jev": {
         "probabilities": {
@@ -2336,7 +2339,7 @@
         ],
         "verdict": "contest_on_rules",
         "latency_ms": 273,
-        "cached": false
+        "cached": true
       }
     },
     {
@@ -2380,7 +2383,7 @@
         ],
         "verdict": "contest_on_rules",
         "latency_ms": 1003,
-        "cached": false
+        "cached": true
       },
       "jev": {
         "probabilities": {
@@ -2397,12 +2400,13 @@
         ],
         "verdict": "contest_on_rules",
         "latency_ms": 211,
-        "cached": false
+        "cached": true
       }
     },
     {
       "id": "dev-026",
       "gold": [
+        "residency",
         "no_improvement"
       ],
       "gold_verdict": "contest_on_rules",
@@ -2440,7 +2444,7 @@
         ],
         "verdict": "contest_on_rules",
         "latency_ms": 1137,
-        "cached": false
+        "cached": true
       },
       "jev": {
         "probabilities": {
@@ -2457,7 +2461,7 @@
         ],
         "verdict": "contest_on_rules",
         "latency_ms": 128,
-        "cached": false
+        "cached": true
       }
     },
     {
@@ -2506,7 +2510,7 @@
         ],
         "verdict": "contest_on_rules",
         "latency_ms": 991,
-        "cached": false
+        "cached": true
       },
       "jev": {
         "probabilities": {
@@ -2522,12 +2526,13 @@
         ],
         "verdict": "send_documents",
         "latency_ms": 131,
-        "cached": false
+        "cached": true
       }
     },
     {
       "id": "dev-028",
       "gold": [
+        "therapy_participation",
         "no_improvement",
         "custodial_substitute"
       ],
@@ -2574,7 +2579,7 @@
         ],
         "verdict": "contest_on_rules",
         "latency_ms": 1291,
-        "cached": false
+        "cached": true
       },
       "jev": {
         "probabilities": {
@@ -2594,7 +2599,7 @@
         ],
         "verdict": "contest_on_rules",
         "latency_ms": 112,
-        "cached": false
+        "cached": true
       }
     },
     {
@@ -2641,7 +2646,7 @@
         ],
         "verdict": "contest_on_rules",
         "latency_ms": 1216,
-        "cached": false
+        "cached": true
       },
       "jev": {
         "probabilities": {
@@ -2660,7 +2665,7 @@
         ],
         "verdict": "contest_on_rules",
         "latency_ms": 121,
-        "cached": false
+        "cached": true
       }
     },
     {
@@ -2707,7 +2712,7 @@
         ],
         "verdict": "contest_on_rules",
         "latency_ms": 1001,
-        "cached": false
+        "cached": true
       },
       "jev": {
         "probabilities": {
@@ -2723,7 +2728,7 @@
         ],
         "verdict": "send_documents",
         "latency_ms": 127,
-        "cached": false
+        "cached": true
       }
     },
     {
@@ -2775,7 +2780,7 @@
         ],
         "verdict": "contest_on_rules",
         "latency_ms": 2009,
-        "cached": false
+        "cached": true
       },
       "jev": {
         "probabilities": {
@@ -2794,7 +2799,7 @@
         ],
         "verdict": "contest_on_rules",
         "latency_ms": 130,
-        "cached": false
+        "cached": true
       }
     },
     {
@@ -2841,7 +2846,7 @@
         ],
         "verdict": "contest_on_rules",
         "latency_ms": 1577,
-        "cached": false
+        "cached": true
       },
       "jev": {
         "probabilities": {
@@ -2859,7 +2864,7 @@
         ],
         "verdict": "contest_on_rules",
         "latency_ms": 136,
-        "cached": false
+        "cached": true
       }
     },
     {
@@ -2908,7 +2913,7 @@
         ],
         "verdict": "contest_on_rules",
         "latency_ms": 1567,
-        "cached": false
+        "cached": true
       },
       "jev": {
         "probabilities": {
@@ -2926,14 +2931,14 @@
         ],
         "verdict": "contest_on_rules",
         "latency_ms": 149,
-        "cached": false
+        "cached": true
       }
     },
     {
       "id": "dev-034",
       "gold": [
         "residency",
-        "no_improvement",
+        "therapy_participation",
         "no_daily_skilled_need"
       ],
       "gold_verdict": "contest_on_rules",
@@ -2977,7 +2982,7 @@
         ],
         "verdict": "contest_on_rules",
         "latency_ms": 1408,
-        "cached": false
+        "cached": true
       },
       "jev": {
         "probabilities": {
@@ -2997,7 +3002,7 @@
         ],
         "verdict": "contest_on_rules",
         "latency_ms": 136,
-        "cached": false
+        "cached": true
       }
     },
     {
@@ -3045,7 +3050,7 @@
         ],
         "verdict": "contest_on_rules",
         "latency_ms": 1578,
-        "cached": false
+        "cached": true
       },
       "jev": {
         "probabilities": {
@@ -3061,7 +3066,7 @@
         ],
         "verdict": "send_documents",
         "latency_ms": 287,
-        "cached": false
+        "cached": true
       }
     },
     {
@@ -3109,7 +3114,7 @@
         ],
         "verdict": "contest_on_rules",
         "latency_ms": 1988,
-        "cached": false
+        "cached": true
       },
       "jev": {
         "probabilities": {
@@ -3127,13 +3132,14 @@
         ],
         "verdict": "contest_on_rules",
         "latency_ms": 125,
-        "cached": false
+        "cached": true
       }
     },
     {
       "id": "dev-037",
       "gold": [
         "residency",
+        "therapy_participation",
         "no_improvement",
         "custodial_substitute"
       ],
@@ -3181,7 +3187,7 @@
         ],
         "verdict": "contest_on_rules",
         "latency_ms": 1607,
-        "cached": false
+        "cached": true
       },
       "jev": {
         "probabilities": {
@@ -3201,7 +3207,7 @@
         ],
         "verdict": "contest_on_rules",
         "latency_ms": 134,
-        "cached": false
+        "cached": true
       }
     },
     {
@@ -3239,7 +3245,7 @@
         "detected": [],
         "verdict": "manual_review",
         "latency_ms": 1628,
-        "cached": false
+        "cached": true
       },
       "jev": {
         "probabilities": {
@@ -3253,12 +3259,13 @@
         "detected": [],
         "verdict": "manual_review",
         "latency_ms": 160,
-        "cached": false
+        "cached": true
       }
     },
     {
       "id": "dev-039",
       "gold": [
+        "therapy_participation",
         "no_improvement",
         "custodial_substitute"
       ],
@@ -3303,7 +3310,7 @@
         ],
         "verdict": "contest_on_rules",
         "latency_ms": 1035,
-        "cached": false
+        "cached": true
       },
       "jev": {
         "probabilities": {
@@ -3323,7 +3330,7 @@
         ],
         "verdict": "contest_on_rules",
         "latency_ms": 105,
-        "cached": false
+        "cached": true
       }
     },
     {
@@ -3371,7 +3378,7 @@
         ],
         "verdict": "contest_on_rules",
         "latency_ms": 1066,
-        "cached": false
+        "cached": true
       },
       "jev": {
         "probabilities": {
@@ -3389,7 +3396,7 @@
         ],
         "verdict": "contest_on_rules",
         "latency_ms": 132,
-        "cached": false
+        "cached": true
       }
     }
   ]

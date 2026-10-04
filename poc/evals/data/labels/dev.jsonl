@@ -39,3 +39,12 @@
 {"id":"dev-038","labels":[],"unsure":false,"notes":"","labeler":"author","labeled_at":"2026-10-04T22:39:36.468Z"}
 {"id":"dev-039","labels":["no_improvement","custodial_substitute"],"unsure":false,"notes":"","labeler":"author","labeled_at":"2026-10-04T22:39:55.448Z"}
 {"id":"dev-040","labels":["residency","custodial_substitute","no_daily_skilled_need"],"unsure":false,"notes":"","labeler":"author","labeled_at":"2026-10-04T22:40:23.638Z"}
+{"id":"dev-013","labels":["residency","therapy_participation","no_improvement","custodial_substitute"],"unsure":false,"notes":"","labeler":"author","labeled_at":"2026-10-04T22:48:08.062Z"}
+{"id":"dev-019","labels":["residency","therapy_participation","no_improvement"],"unsure":false,"notes":"","labeler":"author","labeled_at":"2026-10-04T22:49:07.647Z"}
+{"id":"dev-021","labels":["residency","therapy_participation","no_improvement"],"unsure":false,"notes":"","labeler":"author","labeled_at":"2026-10-04T22:49:51.411Z"}
+{"id":"dev-021","labels":["residency","therapy_participation","no_improvement"],"unsure":false,"notes":"","labeler":"author","labeled_at":"2026-10-04T22:49:59.069Z"}
+{"id":"dev-026","labels":["residency","no_improvement"],"unsure":false,"notes":"","labeler":"author","labeled_at":"2026-10-04T22:51:30.221Z"}
+{"id":"dev-028","labels":["therapy_participation","no_improvement","custodial_substitute"],"unsure":false,"notes":"","labeler":"author","labeled_at":"2026-10-04T22:51:43.138Z"}
+{"id":"dev-034","labels":["residency","therapy_participation","no_daily_skilled_need"],"unsure":false,"notes":"","labeler":"author","labeled_at":"2026-10-04T22:53:18.996Z"}
+{"id":"dev-037","labels":["residency","therapy_participation","no_improvement","custodial_substitute"],"unsure":false,"notes":"","labeler":"author","labeled_at":"2026-10-04T22:53:35.584Z"}
+{"id":"dev-039","labels":["therapy_participation","no_improvement","custodial_substitute"],"unsure":false,"notes":"","labeler":"author","labeled_at":"2026-10-04T22:53:49.066Z"}
