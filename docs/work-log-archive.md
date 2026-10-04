@@ -2,6 +2,11 @@
 
 Older entries moved from `docs/work-log.md`. Not read by default. Newest first.
 
+## 2026-10-04 - Problem statement drafted
+Output: `reports/problem-statement.md`; `docs/verify.md` V21
+Notes: One page per BRIEF: who has it, evidence, cost, ask-vs-problem, hypotheses, no-list, pilot measures. The Push to PCC video transcript matches the help article (one-way push at admission), consistent with V17. Cost per denied stay is unsourced (V21).
+Next: author review; then `reports/deck.md`.
+
 ## 2026-10-04 - Transcribed Push to PointClickCare tutorial
 Output: `research/sources/local-videos/push-to-pointclickcare-tutorial.md` (about 1,400 words, 9 min)
 Notes: Local mp4 from the author, not Wistia. Transcribed locally with faster-whisper `small.en` (installed in `.venv`, `av` pinned to 16.x because 19 breaks it); auto-captions, so names and terms may be wrong. ExaCare material: keep private.

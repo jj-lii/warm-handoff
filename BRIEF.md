@@ -51,6 +51,7 @@ Tool usage limits are rolling, so be economical:
 - The 12 Summit 2026 videos are email-gated Wistia embeds. Transcripts are pulled from auto-captions, so quotes and numbers must be checked against the video.
 - The 2026 Time-to-Accept Benchmark Report (256,719 referrals, 981 facilities) is a gated teaser only.
 - The prototype can't connect to real EHRs or referral data, so it demos a workflow on fake packets.
+- Residency labels are not applied consistently: letters that describe the member as a long-stay resident are sometimes labelled residency and sometimes not (e.g. dev-018 vs dev-031). The author chose not to set a rule (2026-10-04), so residency precision and recall are unreliable, and Jev scores residency in the uncertain middle on these letters. The next-step metrics are mostly unaffected, because these letters also give another reason that leads to the same next step.
 
 ## Still open
 - POC scope and stack (clickable demo vs. a working pipeline with a model call on fake packets). Decide after the problem is chosen.

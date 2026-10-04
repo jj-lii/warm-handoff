@@ -2,6 +2,15 @@
 
 Newest first, last 5 entries only; older ones are in `docs/work-log-archive.md`. Paths are as of the entry.
 
+## 2026-10-04 - Golden labelled, adjudicated (proposed) and run
+Output: `poc/evals/data/labels/golden.jsonl` (author); `poc/evals/data/golden-adjudication.md` (v1, 19 kept, 3 changes proposed); `poc/evals/results/golden.{json,md}`; `BRIEF.md` limitation (residency labels)
+Notes:
+- Rulings were written before any engine ran on golden. The run uses the author's labels as they stand; re-run once the 3 changes are decided.
+- Right next step on golden: keyword 70%, Haiku 90%, Jev 90% (36/40 each, 95% CI 77-96%). Haiku fell from 100% on dev (tuned) to 90%. Jev sends 48% to a person; Haiku 13%. Jev p50 137 ms vs Haiku 1,091 ms.
+- 4 of 5 next-step misses are the same boundary: "can be rendered at a custodial level / by non-licensed staff" read as custodial substitute (contest on rules) when the gold is no daily skilled need (contest on facts). Under Ch. 8 a custodial substitute is a rules conflict only when a daily skilled need exists. Golden has now been seen, so any fix must be tuned on dev and can't be judged fairly on golden.
+- Residency labels were left as the author labelled them (limitation in `BRIEF.md`).
+Next: author accepts or rejects the 3 golden changes; decide whether to fix the custodial-vs-skilled boundary on dev; then holdout and real slice (author).
+
 ## 2026-10-04 - First full dev run (40 letters, all labelled)
 Output: `poc/evals/data/labels/dev.jsonl` (author); `poc/evals/results/dev.{json,md}`
 Notes:
@@ -45,9 +54,4 @@ Next, in order:
 Output: PR #2 merged to `main` (`c53bea0`)
 Notes: Problem chosen and written up: long-stay residents on MA denied short-term skilled care (39.5% vs 11.5%, OIG), reasoning that conflicts with Medicare manual Ch. 8 / Jimmo / CMS-4201-F, in a referral-first workflow. Start from `reports/problem-statement.md`, `docs/decisions/0009-problem-long-stay-residents.md` and `research/landscape.md`. Open checks before the deck: V17 (no in-house start point), V21 (cost per denied stay, try MedPAC/MACPAC), V18 (I-SNP share).
 Next: on a new branch, `reports/deck.md` (6-8 slides), then the prototype (synthetic resident cases plus real Ch. 8 and plan policies; Jev for denial-reason classification). The prototype is a stretch goal per BRIEF.
-
-## 2026-10-04 - Problem statement drafted
-Output: `reports/problem-statement.md`; `docs/verify.md` V21
-Notes: One page per BRIEF: who has it, evidence, cost, ask-vs-problem, hypotheses, no-list, pilot measures. The Push to PCC video transcript matches the help article (one-way push at admission), consistent with V17. Cost per denied stay is unsourced (V21).
-Next: author review; then `reports/deck.md`.
 

@@ -1,0 +1,3304 @@
+{
+  "summary": {
+    "split": "golden",
+    "run_at": "2026-10-04T23:36:28.341Z",
+    "final": false,
+    "threshold": 0.5,
+    "rules_sha256": "507021cafa415c94cbffaedfc35ffc7aef3a648f4f67fae69d37bf953e818bb6",
+    "items": {
+      "total": 40,
+      "labelled": 40,
+      "unsure": 0,
+      "duplicate_rows_dropped": 0
+    },
+    "intent_matches_labels": {
+      "value": 0.45,
+      "lo": 0.30705075280944694,
+      "hi": 0.6017117011155924,
+      "k": 18,
+      "n": 40
+    },
+    "engines": {
+      "keyword": {
+        "model": "keyword-baseline",
+        "errors": 0,
+        "headline": {
+          "n": 40,
+          "precision_at_top": {
+            "k": 10,
+            "value": 0.8214285714285715
+          },
+          "right_next_step": {
+            "value": 0.7,
+            "lo": 0.545696893456796,
+            "hi": 0.8192532908430471,
+            "k": 28,
+            "n": 40
+          },
+          "contestable_caught": {
+            "value": 0.8518518518518519,
+            "lo": 0.6752093665317052,
+            "hi": 0.9408416814035512,
+            "k": 23,
+            "n": 27
+          },
+          "wrongly_contested": {
+            "value": 0.17857142857142858,
+            "lo": 0.0787838582943011,
+            "hi": 0.355917915485911,
+            "k": 5,
+            "n": 28
+          },
+          "sent_to_person": {
+            "value": 0.175,
+            "lo": 0.08745302996883066,
+            "hi": 0.3195029205439244,
+            "k": 7,
+            "n": 40
+          }
+        },
+        "label_set_agreement": {
+          "value": 0.125,
+          "lo": 0.05459419773541284,
+          "hi": 0.26112420670238146,
+          "k": 5,
+          "n": 40
+        },
+        "hard_cases": {
+          "n": 10,
+          "precision_at_top": {
+            "k": 3,
+            "value": 0.3333333333333333
+          },
+          "right_next_step": {
+            "value": 0.4,
+            "lo": 0.16817758120350967,
+            "hi": 0.6873304525498135,
+            "k": 4,
+            "n": 10
+          },
+          "contestable_caught": {
+            "value": 0.6666666666666666,
+            "lo": 0.2076549551264879,
+            "hi": 0.9385096847238394,
+            "k": 2,
+            "n": 3
+          },
+          "wrongly_contested": {
+            "value": 0.6666666666666666,
+            "lo": 0.29998832134152864,
+            "hi": 0.9032306674407831,
+            "k": 4,
+            "n": 6
+          },
+          "sent_to_person": {
+            "value": 0.4,
+            "lo": 0.16817758120350967,
+            "hi": 0.6873304525498135,
+            "k": 4,
+            "n": 10
+          }
+        },
+        "excluding_unsure": {
+          "n": 40,
+          "precision_at_top": {
+            "k": 10,
+            "value": 0.8214285714285715
+          },
+          "right_next_step": {
+            "value": 0.7,
+            "lo": 0.545696893456796,
+            "hi": 0.8192532908430471,
+            "k": 28,
+            "n": 40
+          },
+          "contestable_caught": {
+            "value": 0.8518518518518519,
+            "lo": 0.6752093665317052,
+            "hi": 0.9408416814035512,
+            "k": 23,
+            "n": 27
+          },
+          "wrongly_contested": {
+            "value": 0.17857142857142858,
+            "lo": 0.0787838582943011,
+            "hi": 0.355917915485911,
+            "k": 5,
+            "n": 28
+          },
+          "sent_to_person": {
+            "value": 0.175,
+            "lo": 0.08745302996883066,
+            "hi": 0.3195029205439244,
+            "k": 7,
+            "n": 40
+          }
+        },
+        "brier": null,
+        "per_label": {
+          "residency": {
+            "support": 9,
+            "precision": {
+              "value": 0.23076923076923078,
+              "lo": 0.08179379092465713,
+              "hi": 0.5025687399512693,
+              "k": 3,
+              "n": 13
+            },
+            "recall": {
+              "value": 0.3333333333333333,
+              "lo": 0.12058159868274293,
+              "hi": 0.6458026525009102,
+              "k": 3,
+              "n": 9
+            },
+            "brier": 0.4
+          },
+          "therapy_participation": {
+            "support": 9,
+            "precision": {
+              "value": 0.75,
+              "lo": 0.40926987910258916,
+              "hi": 0.9285223111419724,
+              "k": 6,
+              "n": 8
+            },
+            "recall": {
+              "value": 0.6666666666666666,
+              "lo": 0.35419734749908977,
+              "hi": 0.879418401317257,
+              "k": 6,
+              "n": 9
+            },
+            "brier": 0.125
+          },
+          "no_improvement": {
+            "support": 15,
+            "precision": {
+              "value": 0.6,
+              "lo": 0.23071993220883708,
+              "hi": 0.8823817688407467,
+              "k": 3,
+              "n": 5
+            },
+            "recall": {
+              "value": 0.2,
+              "lo": 0.07047420643610414,
+              "hi": 0.4518593533465045,
+              "k": 3,
+              "n": 15
+            },
+            "brier": 0.35
+          },
+          "custodial_substitute": {
+            "support": 17,
+            "precision": {
+              "value": 0.5714285714285714,
+              "lo": 0.3654621629703244,
+              "hi": 0.7553030051347894,
+              "k": 12,
+              "n": 21
+            },
+            "recall": {
+              "value": 0.7058823529411765,
+              "lo": 0.468664666737861,
+              "hi": 0.8672020613444361,
+              "k": 12,
+              "n": 17
+            },
+            "brier": 0.35
+          },
+          "no_daily_skilled_need": {
+            "support": 18,
+            "precision": {
+              "value": 0.5,
+              "lo": 0.09452865480086614,
+              "hi": 0.9054713451991339,
+              "k": 1,
+              "n": 2
+            },
+            "recall": {
+              "value": 0.05555555555555555,
+              "lo": 0.009874935830924525,
+              "hi": 0.2575779980200754,
+              "k": 1,
+              "n": 18
+            },
+            "brier": 0.45
+          },
+          "missing_documentation": {
+            "support": 8,
+            "precision": {
+              "value": 0.8888888888888888,
+              "lo": 0.5649937852319399,
+              "hi": 0.9801096286728695,
+              "k": 8,
+              "n": 9
+            },
+            "recall": {
+              "value": 1,
+              "lo": 0.6755843804891231,
+              "hi": 1,
+              "k": 8,
+              "n": 8
+            },
+            "brier": 0.025
+          }
+        },
+        "cost": {
+          "latency_ms": {
+            "p50": 0,
+            "p90": 0
+          },
+          "tokens_per_letter": null,
+          "usd_per_letter": null
+        }
+      },
+      "haiku": {
+        "model": "claude-haiku-4-5-20251001",
+        "errors": 0,
+        "headline": {
+          "n": 40,
+          "precision_at_top": {
+            "k": 10,
+            "value": 0.8761904761904763
+          },
+          "right_next_step": {
+            "value": 0.9,
+            "lo": 0.7694792561952611,
+            "hi": 0.9604211124044252,
+            "k": 36,
+            "n": 40
+          },
+          "contestable_caught": {
+            "value": 1,
+            "lo": 0.8754409628553641,
+            "hi": 1,
+            "k": 27,
+            "n": 27
+          },
+          "wrongly_contested": {
+            "value": 0.12903225806451613,
+            "lo": 0.05134201164644764,
+            "hi": 0.28852756954385356,
+            "k": 4,
+            "n": 31
+          },
+          "sent_to_person": {
+            "value": 0.125,
+            "lo": 0.05459419773541284,
+            "hi": 0.26112420670238146,
+            "k": 5,
+            "n": 40
+          }
+        },
+        "label_set_agreement": {
+          "value": 0.425,
+          "lo": 0.28509168524815875,
+          "hi": 0.5780519956394001,
+          "k": 17,
+          "n": 40
+        },
+        "hard_cases": {
+          "n": 10,
+          "precision_at_top": {
+            "k": 3,
+            "value": 1
+          },
+          "right_next_step": {
+            "value": 1,
+            "lo": 0.7224598312333834,
+            "hi": 1,
+            "k": 10,
+            "n": 10
+          },
+          "contestable_caught": {
+            "value": 1,
+            "lo": 0.43849391955098227,
+            "hi": 1,
+            "k": 3,
+            "n": 3
+          },
+          "wrongly_contested": {
+            "value": 0,
+            "lo": 0,
+            "hi": 0.5615060804490177,
+            "k": 0,
+            "n": 3
+          },
+          "sent_to_person": {
+            "value": 0.5,
+            "lo": 0.23658959361548731,
+            "hi": 0.7634104063845126,
+            "k": 5,
+            "n": 10
+          }
+        },
+        "excluding_unsure": {
+          "n": 40,
+          "precision_at_top": {
+            "k": 10,
+            "value": 0.8761904761904763
+          },
+          "right_next_step": {
+            "value": 0.9,
+            "lo": 0.7694792561952611,
+            "hi": 0.9604211124044252,
+            "k": 36,
+            "n": 40
+          },
+          "contestable_caught": {
+            "value": 1,
+            "lo": 0.8754409628553641,
+            "hi": 1,
+            "k": 27,
+            "n": 27
+          },
+          "wrongly_contested": {
+            "value": 0.12903225806451613,
+            "lo": 0.05134201164644764,
+            "hi": 0.28852756954385356,
+            "k": 4,
+            "n": 31
+          },
+          "sent_to_person": {
+            "value": 0.125,
+            "lo": 0.05459419773541284,
+            "hi": 0.26112420670238146,
+            "k": 5,
+            "n": 40
+          }
+        },
+        "brier": 0.10010583333333341,
+        "per_label": {
+          "residency": {
+            "support": 9,
+            "precision": {
+              "value": 0.5,
+              "lo": 0.2903070395897999,
+              "hi": 0.7096929604102,
+              "k": 9,
+              "n": 18
+            },
+            "recall": {
+              "value": 1,
+              "lo": 0.7008472464490407,
+              "hi": 1,
+              "k": 9,
+              "n": 9
+            },
+            "brier": 0.19843750000000004
+          },
+          "therapy_participation": {
+            "support": 9,
+            "precision": {
+              "value": 1,
+              "lo": 0.7008472464490407,
+              "hi": 1,
+              "k": 9,
+              "n": 9
+            },
+            "recall": {
+              "value": 1,
+              "lo": 0.7008472464490407,
+              "hi": 1,
+              "k": 9,
+              "n": 9
+            },
+            "brier": 0.001182499999999999
+          },
+          "no_improvement": {
+            "support": 15,
+            "precision": {
+              "value": 0.8823529411764706,
+              "lo": 0.6566315750229009,
+              "hi": 0.967120919987079,
+              "k": 15,
+              "n": 17
+            },
+            "recall": {
+              "value": 1,
+              "lo": 0.7961107336956521,
+              "hi": 1,
+              "k": 15,
+              "n": 15
+            },
+            "brier": 0.042097499999999996
+          },
+          "custodial_substitute": {
+            "support": 17,
+            "precision": {
+              "value": 0.6071428571428571,
+              "lo": 0.42408726034906297,
+              "hi": 0.7643454817241996,
+              "k": 17,
+              "n": 28
+            },
+            "recall": {
+              "value": 1,
+              "lo": 0.8156763396284354,
+              "hi": 1,
+              "k": 17,
+              "n": 17
+            },
+            "brier": 0.2287925
+          },
+          "no_daily_skilled_need": {
+            "support": 18,
+            "precision": {
+              "value": 0.6923076923076923,
+              "lo": 0.5001138848576876,
+              "hi": 0.8349887906020732,
+              "k": 18,
+              "n": 26
+            },
+            "recall": {
+              "value": 1,
+              "lo": 0.8241154494176252,
+              "hi": 1,
+              "k": 18,
+              "n": 18
+            },
+            "brier": 0.1298125
+          },
+          "missing_documentation": {
+            "support": 8,
+            "precision": {
+              "value": 1,
+              "lo": 0.6755843804891231,
+              "hi": 1,
+              "k": 8,
+              "n": 8
+            },
+            "recall": {
+              "value": 1,
+              "lo": 0.6755843804891231,
+              "hi": 1,
+              "k": 8,
+              "n": 8
+            },
+            "brier": 0.0003125000000000004
+          }
+        },
+        "cost": {
+          "latency_ms": {
+            "p50": 1091,
+            "p90": 1591
+          },
+          "tokens_per_letter": {
+            "input": 1396,
+            "output": 64
+          },
+          "usd_per_letter": 0.00171615
+        }
+      },
+      "jev": {
+        "model": "jev-1.13.0",
+        "errors": 0,
+        "headline": {
+          "n": 40,
+          "precision_at_top": {
+            "k": 10,
+            "value": 1
+          },
+          "right_next_step": {
+            "value": 0.9,
+            "lo": 0.7694792561952611,
+            "hi": 0.9604211124044252,
+            "k": 36,
+            "n": 40
+          },
+          "contestable_caught": {
+            "value": 1,
+            "lo": 0.8754409628553641,
+            "hi": 1,
+            "k": 27,
+            "n": 27
+          },
+          "wrongly_contested": {
+            "value": 0.12903225806451613,
+            "lo": 0.05134201164644764,
+            "hi": 0.28852756954385356,
+            "k": 4,
+            "n": 31
+          },
+          "sent_to_person": {
+            "value": 0.475,
+            "lo": 0.32935229550181694,
+            "hi": 0.6250289314607027,
+            "k": 19,
+            "n": 40
+          }
+        },
+        "label_set_agreement": {
+          "value": 0.45,
+          "lo": 0.30705075280944694,
+          "hi": 0.6017117011155924,
+          "k": 18,
+          "n": 40
+        },
+        "hard_cases": {
+          "n": 10,
+          "precision_at_top": {
+            "k": 3,
+            "value": 1
+          },
+          "right_next_step": {
+            "value": 0.9,
+            "lo": 0.5958436145024278,
+            "hi": 0.9821242504842788,
+            "k": 9,
+            "n": 10
+          },
+          "contestable_caught": {
+            "value": 1,
+            "lo": 0.43849391955098227,
+            "hi": 1,
+            "k": 3,
+            "n": 3
+          },
+          "wrongly_contested": {
+            "value": 0.25,
+            "lo": 0.045586062644636216,
+            "hi": 0.6993639475573634,
+            "k": 1,
+            "n": 4
+          },
+          "sent_to_person": {
+            "value": 0.6,
+            "lo": 0.3126695474501864,
+            "hi": 0.8318224187964902,
+            "k": 6,
+            "n": 10
+          }
+        },
+        "excluding_unsure": {
+          "n": 40,
+          "precision_at_top": {
+            "k": 10,
+            "value": 1
+          },
+          "right_next_step": {
+            "value": 0.9,
+            "lo": 0.7694792561952611,
+            "hi": 0.9604211124044252,
+            "k": 36,
+            "n": 40
+          },
+          "contestable_caught": {
+            "value": 1,
+            "lo": 0.8754409628553641,
+            "hi": 1,
+            "k": 27,
+            "n": 27
+          },
+          "wrongly_contested": {
+            "value": 0.12903225806451613,
+            "lo": 0.05134201164644764,
+            "hi": 0.28852756954385356,
+            "k": 4,
+            "n": 31
+          },
+          "sent_to_person": {
+            "value": 0.475,
+            "lo": 0.32935229550181694,
+            "hi": 0.6250289314607027,
+            "k": 19,
+            "n": 40
+          }
+        },
+        "brier": 0.10253583333333337,
+        "per_label": {
+          "residency": {
+            "support": 9,
+            "precision": {
+              "value": 0.6666666666666666,
+              "lo": 0.35419734749908977,
+              "hi": 0.879418401317257,
+              "k": 6,
+              "n": 9
+            },
+            "recall": {
+              "value": 0.6666666666666666,
+              "lo": 0.35419734749908977,
+              "hi": 0.879418401317257,
+              "k": 6,
+              "n": 9
+            },
+            "brier": 0.11233500000000003
+          },
+          "therapy_participation": {
+            "support": 9,
+            "precision": {
+              "value": 1,
+              "lo": 0.7008472464490407,
+              "hi": 1,
+              "k": 9,
+              "n": 9
+            },
+            "recall": {
+              "value": 1,
+              "lo": 0.7008472464490407,
+              "hi": 1,
+              "k": 9,
+              "n": 9
+            },
+            "brier": 0.0066949999999999996
+          },
+          "no_improvement": {
+            "support": 15,
+            "precision": {
+              "value": 0.75,
+              "lo": 0.5312949900419365,
+              "hi": 0.888139947210597,
+              "k": 15,
+              "n": 20
+            },
+            "recall": {
+              "value": 1,
+              "lo": 0.7961107336956521,
+              "hi": 1,
+              "k": 15,
+              "n": 15
+            },
+            "brier": 0.0736725
+          },
+          "custodial_substitute": {
+            "support": 17,
+            "precision": {
+              "value": 0.6538461538461539,
+              "lo": 0.46220229009632996,
+              "hi": 0.8058798502714787,
+              "k": 17,
+              "n": 26
+            },
+            "recall": {
+              "value": 1,
+              "lo": 0.8156763396284354,
+              "hi": 1,
+              "k": 17,
+              "n": 17
+            },
+            "brier": 0.18480999999999997
+          },
+          "no_daily_skilled_need": {
+            "support": 18,
+            "precision": {
+              "value": 0.6,
+              "lo": 0.42320052498273836,
+              "hi": 0.7540960567391659,
+              "k": 18,
+              "n": 30
+            },
+            "recall": {
+              "value": 1,
+              "lo": 0.8241154494176252,
+              "hi": 1,
+              "k": 18,
+              "n": 18
+            },
+            "brier": 0.23562499999999997
+          },
+          "missing_documentation": {
+            "support": 8,
+            "precision": {
+              "value": 1,
+              "lo": 0.6755843804891231,
+              "hi": 1,
+              "k": 8,
+              "n": 8
+            },
+            "recall": {
+              "value": 1,
+              "lo": 0.6755843804891231,
+              "hi": 1,
+              "k": 8,
+              "n": 8
+            },
+            "brier": 0.0020775000000000004
+          }
+        },
+        "cost": {
+          "latency_ms": {
+            "p50": 137,
+            "p90": 210
+          },
+          "tokens_per_letter": {
+            "input": 1366,
+            "output": 120
+          },
+          "usd_per_letter": null
+        }
+      }
+    }
+  },
+  "items": [
+    {
+      "id": "golden-001",
+      "gold": [
+        "no_daily_skilled_need",
+        "missing_documentation"
+      ],
+      "gold_verdict": "contest_on_facts",
+      "unsure": false,
+      "hard": false,
+      "intent": [
+        "no_daily_skilled_need",
+        "missing_documentation"
+      ],
+      "keyword": {
+        "probabilities": {
+          "residency": 0,
+          "therapy_participation": 0,
+          "no_improvement": 0,
+          "custodial_substitute": 0,
+          "no_daily_skilled_need": 0,
+          "missing_documentation": 1
+        },
+        "detected": [
+          "missing_documentation"
+        ],
+        "verdict": "send_documents",
+        "latency_ms": 0,
+        "cached": false
+      },
+      "haiku": {
+        "probabilities": {
+          "residency": 0,
+          "therapy_participation": 0,
+          "no_improvement": 0,
+          "custodial_substitute": 0.85,
+          "no_daily_skilled_need": 0.9,
+          "missing_documentation": 0.95
+        },
+        "detected": [
+          "custodial_substitute",
+          "no_daily_skilled_need",
+          "missing_documentation"
+        ],
+        "verdict": "contest_on_rules",
+        "latency_ms": 1305,
+        "cached": false
+      },
+      "jev": {
+        "probabilities": {
+          "residency": 0.06,
+          "therapy_participation": 0.03,
+          "no_improvement": 0.78,
+          "custodial_substitute": 0.63,
+          "no_daily_skilled_need": 0.97,
+          "missing_documentation": 0.98
+        },
+        "detected": [
+          "no_improvement",
+          "custodial_substitute",
+          "no_daily_skilled_need",
+          "missing_documentation"
+        ],
+        "verdict": "contest_on_rules",
+        "latency_ms": 205,
+        "cached": false
+      }
+    },
+    {
+      "id": "golden-002",
+      "gold": [],
+      "gold_verdict": "manual_review",
+      "unsure": false,
+      "hard": true,
+      "intent": [],
+      "keyword": {
+        "probabilities": {
+          "residency": 1,
+          "therapy_participation": 0,
+          "no_improvement": 0,
+          "custodial_substitute": 1,
+          "no_daily_skilled_need": 0,
+          "missing_documentation": 0
+        },
+        "detected": [
+          "residency",
+          "custodial_substitute"
+        ],
+        "verdict": "contest_on_rules",
+        "latency_ms": 0,
+        "cached": false
+      },
+      "haiku": {
+        "probabilities": {
+          "residency": 0.15,
+          "therapy_participation": 0,
+          "no_improvement": 0,
+          "custodial_substitute": 0.2,
+          "no_daily_skilled_need": 0,
+          "missing_documentation": 0
+        },
+        "detected": [],
+        "verdict": "manual_review",
+        "latency_ms": 1720,
+        "cached": false
+      },
+      "jev": {
+        "probabilities": {
+          "residency": 0.08,
+          "therapy_participation": 0.02,
+          "no_improvement": 0.03,
+          "custodial_substitute": 0.05,
+          "no_daily_skilled_need": 0.03,
+          "missing_documentation": 0.05
+        },
+        "detected": [],
+        "verdict": "manual_review",
+        "latency_ms": 268,
+        "cached": false
+      }
+    },
+    {
+      "id": "golden-003",
+      "gold": [
+        "no_daily_skilled_need"
+      ],
+      "gold_verdict": "contest_on_facts",
+      "unsure": false,
+      "hard": false,
+      "intent": [
+        "no_daily_skilled_need"
+      ],
+      "keyword": {
+        "probabilities": {
+          "residency": 0,
+          "therapy_participation": 0,
+          "no_improvement": 0,
+          "custodial_substitute": 0,
+          "no_daily_skilled_need": 1,
+          "missing_documentation": 0
+        },
+        "detected": [
+          "no_daily_skilled_need"
+        ],
+        "verdict": "contest_on_facts",
+        "latency_ms": 0,
+        "cached": false
+      },
+      "haiku": {
+        "probabilities": {
+          "residency": 0,
+          "therapy_participation": 0,
+          "no_improvement": 0,
+          "custodial_substitute": 0.95,
+          "no_daily_skilled_need": 0.95,
+          "missing_documentation": 0
+        },
+        "detected": [
+          "custodial_substitute",
+          "no_daily_skilled_need"
+        ],
+        "verdict": "contest_on_rules",
+        "latency_ms": 1419,
+        "cached": false
+      },
+      "jev": {
+        "probabilities": {
+          "residency": 0.12,
+          "therapy_participation": 0.03,
+          "no_improvement": 0.05,
+          "custodial_substitute": 0.94,
+          "no_daily_skilled_need": 0.98,
+          "missing_documentation": 0.07
+        },
+        "detected": [
+          "custodial_substitute",
+          "no_daily_skilled_need"
+        ],
+        "verdict": "contest_on_rules",
+        "latency_ms": 210,
+        "cached": false
+      }
+    },
+    {
+      "id": "golden-004",
+      "gold": [
+        "missing_documentation"
+      ],
+      "gold_verdict": "send_documents",
+      "unsure": false,
+      "hard": false,
+      "intent": [
+        "missing_documentation"
+      ],
+      "keyword": {
+        "probabilities": {
+          "residency": 0,
+          "therapy_participation": 0,
+          "no_improvement": 0,
+          "custodial_substitute": 0,
+          "no_daily_skilled_need": 0,
+          "missing_documentation": 1
+        },
+        "detected": [
+          "missing_documentation"
+        ],
+        "verdict": "send_documents",
+        "latency_ms": 0,
+        "cached": false
+      },
+      "haiku": {
+        "probabilities": {
+          "residency": 0,
+          "therapy_participation": 0,
+          "no_improvement": 0,
+          "custodial_substitute": 0,
+          "no_daily_skilled_need": 0,
+          "missing_documentation": 1
+        },
+        "detected": [
+          "missing_documentation"
+        ],
+        "verdict": "send_documents",
+        "latency_ms": 1198,
+        "cached": false
+      },
+      "jev": {
+        "probabilities": {
+          "residency": 0.08,
+          "therapy_participation": 0.03,
+          "no_improvement": 0.03,
+          "custodial_substitute": 0.08,
+          "no_daily_skilled_need": 0.05,
+          "missing_documentation": 0.99
+        },
+        "detected": [
+          "missing_documentation"
+        ],
+        "verdict": "send_documents",
+        "latency_ms": 207,
+        "cached": false
+      }
+    },
+    {
+      "id": "golden-005",
+      "gold": [
+        "residency",
+        "therapy_participation",
+        "no_improvement"
+      ],
+      "gold_verdict": "contest_on_rules",
+      "unsure": false,
+      "hard": false,
+      "intent": [
+        "residency",
+        "therapy_participation"
+      ],
+      "keyword": {
+        "probabilities": {
+          "residency": 0,
+          "therapy_participation": 0,
+          "no_improvement": 0,
+          "custodial_substitute": 1,
+          "no_daily_skilled_need": 0,
+          "missing_documentation": 0
+        },
+        "detected": [
+          "custodial_substitute"
+        ],
+        "verdict": "contest_on_rules",
+        "latency_ms": 0,
+        "cached": false
+      },
+      "haiku": {
+        "probabilities": {
+          "residency": 0.95,
+          "therapy_participation": 0.92,
+          "no_improvement": 0.88,
+          "custodial_substitute": 0.9,
+          "no_daily_skilled_need": 0.75,
+          "missing_documentation": 0.05
+        },
+        "detected": [
+          "residency",
+          "therapy_participation",
+          "no_improvement",
+          "custodial_substitute",
+          "no_daily_skilled_need"
+        ],
+        "verdict": "contest_on_rules",
+        "latency_ms": 1019,
+        "cached": false
+      },
+      "jev": {
+        "probabilities": {
+          "residency": 0.57,
+          "therapy_participation": 0.98,
+          "no_improvement": 0.98,
+          "custodial_substitute": 0.93,
+          "no_daily_skilled_need": 0.97,
+          "missing_documentation": 0.1
+        },
+        "detected": [
+          "residency",
+          "therapy_participation",
+          "no_improvement",
+          "custodial_substitute",
+          "no_daily_skilled_need"
+        ],
+        "verdict": "contest_on_rules",
+        "latency_ms": 112,
+        "cached": false
+      }
+    },
+    {
+      "id": "golden-006",
+      "gold": [
+        "therapy_participation",
+        "no_improvement"
+      ],
+      "gold_verdict": "contest_on_rules",
+      "unsure": false,
+      "hard": false,
+      "intent": [
+        "therapy_participation",
+        "no_improvement"
+      ],
+      "keyword": {
+        "probabilities": {
+          "residency": 1,
+          "therapy_participation": 1,
+          "no_improvement": 0,
+          "custodial_substitute": 1,
+          "no_daily_skilled_need": 1,
+          "missing_documentation": 0
+        },
+        "detected": [
+          "residency",
+          "therapy_participation",
+          "custodial_substitute",
+          "no_daily_skilled_need"
+        ],
+        "verdict": "contest_on_rules",
+        "latency_ms": 0,
+        "cached": false
+      },
+      "haiku": {
+        "probabilities": {
+          "residency": 0.95,
+          "therapy_participation": 0.92,
+          "no_improvement": 0.88,
+          "custodial_substitute": 0.85,
+          "no_daily_skilled_need": 0.8,
+          "missing_documentation": 0
+        },
+        "detected": [
+          "residency",
+          "therapy_participation",
+          "no_improvement",
+          "custodial_substitute",
+          "no_daily_skilled_need"
+        ],
+        "verdict": "contest_on_rules",
+        "latency_ms": 1481,
+        "cached": false
+      },
+      "jev": {
+        "probabilities": {
+          "residency": 0.29,
+          "therapy_participation": 0.98,
+          "no_improvement": 0.99,
+          "custodial_substitute": 0.89,
+          "no_daily_skilled_need": 0.95,
+          "missing_documentation": 0.05
+        },
+        "detected": [
+          "therapy_participation",
+          "no_improvement",
+          "custodial_substitute",
+          "no_daily_skilled_need"
+        ],
+        "verdict": "contest_on_rules",
+        "latency_ms": 126,
+        "cached": false
+      }
+    },
+    {
+      "id": "golden-007",
+      "gold": [
+        "residency",
+        "no_daily_skilled_need"
+      ],
+      "gold_verdict": "contest_on_rules",
+      "unsure": false,
+      "hard": false,
+      "intent": [
+        "custodial_substitute"
+      ],
+      "keyword": {
+        "probabilities": {
+          "residency": 0,
+          "therapy_participation": 0,
+          "no_improvement": 0,
+          "custodial_substitute": 1,
+          "no_daily_skilled_need": 0,
+          "missing_documentation": 0
+        },
+        "detected": [
+          "custodial_substitute"
+        ],
+        "verdict": "contest_on_rules",
+        "latency_ms": 0,
+        "cached": false
+      },
+      "haiku": {
+        "probabilities": {
+          "residency": 0.85,
+          "therapy_participation": 0,
+          "no_improvement": 0,
+          "custodial_substitute": 0.95,
+          "no_daily_skilled_need": 0.9,
+          "missing_documentation": 0
+        },
+        "detected": [
+          "residency",
+          "custodial_substitute",
+          "no_daily_skilled_need"
+        ],
+        "verdict": "contest_on_rules",
+        "latency_ms": 1528,
+        "cached": false
+      },
+      "jev": {
+        "probabilities": {
+          "residency": 0.19,
+          "therapy_participation": 0.04,
+          "no_improvement": 0.08,
+          "custodial_substitute": 0.98,
+          "no_daily_skilled_need": 0.97,
+          "missing_documentation": 0.03
+        },
+        "detected": [
+          "custodial_substitute",
+          "no_daily_skilled_need"
+        ],
+        "verdict": "contest_on_rules",
+        "latency_ms": 152,
+        "cached": false
+      }
+    },
+    {
+      "id": "golden-008",
+      "gold": [],
+      "gold_verdict": "manual_review",
+      "unsure": false,
+      "hard": true,
+      "intent": [],
+      "keyword": {
+        "probabilities": {
+          "residency": 1,
+          "therapy_participation": 0,
+          "no_improvement": 0,
+          "custodial_substitute": 1,
+          "no_daily_skilled_need": 0,
+          "missing_documentation": 0
+        },
+        "detected": [
+          "residency",
+          "custodial_substitute"
+        ],
+        "verdict": "contest_on_rules",
+        "latency_ms": 0,
+        "cached": false
+      },
+      "haiku": {
+        "probabilities": {
+          "residency": 0,
+          "therapy_participation": 0,
+          "no_improvement": 0,
+          "custodial_substitute": 0,
+          "no_daily_skilled_need": 0,
+          "missing_documentation": 0
+        },
+        "detected": [],
+        "verdict": "manual_review",
+        "latency_ms": 1349,
+        "cached": false
+      },
+      "jev": {
+        "probabilities": {
+          "residency": 0.05,
+          "therapy_participation": 0.02,
+          "no_improvement": 0.03,
+          "custodial_substitute": 0.05,
+          "no_daily_skilled_need": 0.03,
+          "missing_documentation": 0.04
+        },
+        "detected": [],
+        "verdict": "manual_review",
+        "latency_ms": 118,
+        "cached": false
+      }
+    },
+    {
+      "id": "golden-009",
+      "gold": [],
+      "gold_verdict": "manual_review",
+      "unsure": false,
+      "hard": true,
+      "intent": [],
+      "keyword": {
+        "probabilities": {
+          "residency": 0,
+          "therapy_participation": 0,
+          "no_improvement": 0,
+          "custodial_substitute": 0,
+          "no_daily_skilled_need": 0,
+          "missing_documentation": 0
+        },
+        "detected": [],
+        "verdict": "manual_review",
+        "latency_ms": 0,
+        "cached": false
+      },
+      "haiku": {
+        "probabilities": {
+          "residency": 0,
+          "therapy_participation": 0,
+          "no_improvement": 0,
+          "custodial_substitute": 0,
+          "no_daily_skilled_need": 0,
+          "missing_documentation": 0
+        },
+        "detected": [],
+        "verdict": "manual_review",
+        "latency_ms": 4739,
+        "cached": false
+      },
+      "jev": {
+        "probabilities": {
+          "residency": 0.05,
+          "therapy_participation": 0.02,
+          "no_improvement": 0.02,
+          "custodial_substitute": 0.03,
+          "no_daily_skilled_need": 0.03,
+          "missing_documentation": 0.03
+        },
+        "detected": [],
+        "verdict": "manual_review",
+        "latency_ms": 171,
+        "cached": false
+      }
+    },
+    {
+      "id": "golden-010",
+      "gold": [
+        "no_improvement",
+        "custodial_substitute",
+        "no_daily_skilled_need"
+      ],
+      "gold_verdict": "contest_on_rules",
+      "unsure": false,
+      "hard": false,
+      "intent": [
+        "no_improvement",
+        "custodial_substitute"
+      ],
+      "keyword": {
+        "probabilities": {
+          "residency": 1,
+          "therapy_participation": 0,
+          "no_improvement": 1,
+          "custodial_substitute": 1,
+          "no_daily_skilled_need": 0,
+          "missing_documentation": 0
+        },
+        "detected": [
+          "residency",
+          "no_improvement",
+          "custodial_substitute"
+        ],
+        "verdict": "contest_on_rules",
+        "latency_ms": 1,
+        "cached": false
+      },
+      "haiku": {
+        "probabilities": {
+          "residency": 0.95,
+          "therapy_participation": 0,
+          "no_improvement": 0.95,
+          "custodial_substitute": 0.95,
+          "no_daily_skilled_need": 0.9,
+          "missing_documentation": 0
+        },
+        "detected": [
+          "residency",
+          "no_improvement",
+          "custodial_substitute",
+          "no_daily_skilled_need"
+        ],
+        "verdict": "contest_on_rules",
+        "latency_ms": 1576,
+        "cached": false
+      },
+      "jev": {
+        "probabilities": {
+          "residency": 0.26,
+          "therapy_participation": 0.14,
+          "no_improvement": 0.99,
+          "custodial_substitute": 0.99,
+          "no_daily_skilled_need": 0.97,
+          "missing_documentation": 0.03
+        },
+        "detected": [
+          "no_improvement",
+          "custodial_substitute",
+          "no_daily_skilled_need"
+        ],
+        "verdict": "contest_on_rules",
+        "latency_ms": 132,
+        "cached": false
+      }
+    },
+    {
+      "id": "golden-011",
+      "gold": [
+        "custodial_substitute",
+        "no_daily_skilled_need"
+      ],
+      "gold_verdict": "contest_on_rules",
+      "unsure": false,
+      "hard": false,
+      "intent": [
+        "custodial_substitute"
+      ],
+      "keyword": {
+        "probabilities": {
+          "residency": 0,
+          "therapy_participation": 0,
+          "no_improvement": 0,
+          "custodial_substitute": 1,
+          "no_daily_skilled_need": 0,
+          "missing_documentation": 0
+        },
+        "detected": [
+          "custodial_substitute"
+        ],
+        "verdict": "contest_on_rules",
+        "latency_ms": 0,
+        "cached": false
+      },
+      "haiku": {
+        "probabilities": {
+          "residency": 0.15,
+          "therapy_participation": 0,
+          "no_improvement": 0,
+          "custodial_substitute": 0.95,
+          "no_daily_skilled_need": 0.85,
+          "missing_documentation": 0
+        },
+        "detected": [
+          "custodial_substitute",
+          "no_daily_skilled_need"
+        ],
+        "verdict": "contest_on_rules",
+        "latency_ms": 1498,
+        "cached": false
+      },
+      "jev": {
+        "probabilities": {
+          "residency": 0.2,
+          "therapy_participation": 0.05,
+          "no_improvement": 0.11,
+          "custodial_substitute": 0.98,
+          "no_daily_skilled_need": 0.96,
+          "missing_documentation": 0.03
+        },
+        "detected": [
+          "custodial_substitute",
+          "no_daily_skilled_need"
+        ],
+        "verdict": "contest_on_rules",
+        "latency_ms": 142,
+        "cached": false
+      }
+    },
+    {
+      "id": "golden-012",
+      "gold": [
+        "therapy_participation",
+        "no_improvement",
+        "custodial_substitute",
+        "no_daily_skilled_need"
+      ],
+      "gold_verdict": "contest_on_rules",
+      "unsure": false,
+      "hard": false,
+      "intent": [
+        "residency",
+        "therapy_participation",
+        "custodial_substitute"
+      ],
+      "keyword": {
+        "probabilities": {
+          "residency": 1,
+          "therapy_participation": 1,
+          "no_improvement": 0,
+          "custodial_substitute": 1,
+          "no_daily_skilled_need": 0,
+          "missing_documentation": 0
+        },
+        "detected": [
+          "residency",
+          "therapy_participation",
+          "custodial_substitute"
+        ],
+        "verdict": "contest_on_rules",
+        "latency_ms": 0,
+        "cached": false
+      },
+      "haiku": {
+        "probabilities": {
+          "residency": 0.95,
+          "therapy_participation": 0.92,
+          "no_improvement": 0.88,
+          "custodial_substitute": 0.9,
+          "no_daily_skilled_need": 0.75,
+          "missing_documentation": 0
+        },
+        "detected": [
+          "residency",
+          "therapy_participation",
+          "no_improvement",
+          "custodial_substitute",
+          "no_daily_skilled_need"
+        ],
+        "verdict": "contest_on_rules",
+        "latency_ms": 1475,
+        "cached": false
+      },
+      "jev": {
+        "probabilities": {
+          "residency": 0.73,
+          "therapy_participation": 0.98,
+          "no_improvement": 0.96,
+          "custodial_substitute": 0.98,
+          "no_daily_skilled_need": 0.93,
+          "missing_documentation": 0.06
+        },
+        "detected": [
+          "residency",
+          "therapy_participation",
+          "no_improvement",
+          "custodial_substitute",
+          "no_daily_skilled_need"
+        ],
+        "verdict": "contest_on_rules",
+        "latency_ms": 137,
+        "cached": false
+      }
+    },
+    {
+      "id": "golden-013",
+      "gold": [
+        "custodial_substitute",
+        "no_daily_skilled_need"
+      ],
+      "gold_verdict": "contest_on_rules",
+      "unsure": false,
+      "hard": false,
+      "intent": [
+        "residency",
+        "custodial_substitute"
+      ],
+      "keyword": {
+        "probabilities": {
+          "residency": 0,
+          "therapy_participation": 0,
+          "no_improvement": 0,
+          "custodial_substitute": 1,
+          "no_daily_skilled_need": 0,
+          "missing_documentation": 0
+        },
+        "detected": [
+          "custodial_substitute"
+        ],
+        "verdict": "contest_on_rules",
+        "latency_ms": 0,
+        "cached": false
+      },
+      "haiku": {
+        "probabilities": {
+          "residency": 0.95,
+          "therapy_participation": 0,
+          "no_improvement": 0.85,
+          "custodial_substitute": 0.9,
+          "no_daily_skilled_need": 0.85,
+          "missing_documentation": 0
+        },
+        "detected": [
+          "residency",
+          "no_improvement",
+          "custodial_substitute",
+          "no_daily_skilled_need"
+        ],
+        "verdict": "contest_on_rules",
+        "latency_ms": 1067,
+        "cached": false
+      },
+      "jev": {
+        "probabilities": {
+          "residency": 0.45,
+          "therapy_participation": 0.06,
+          "no_improvement": 0.54,
+          "custodial_substitute": 0.98,
+          "no_daily_skilled_need": 0.97,
+          "missing_documentation": 0.06
+        },
+        "detected": [
+          "no_improvement",
+          "custodial_substitute",
+          "no_daily_skilled_need"
+        ],
+        "verdict": "contest_on_rules",
+        "latency_ms": 118,
+        "cached": false
+      }
+    },
+    {
+      "id": "golden-014",
+      "gold": [
+        "custodial_substitute",
+        "no_daily_skilled_need"
+      ],
+      "gold_verdict": "contest_on_rules",
+      "unsure": false,
+      "hard": false,
+      "intent": [
+        "no_daily_skilled_need"
+      ],
+      "keyword": {
+        "probabilities": {
+          "residency": 0,
+          "therapy_participation": 0,
+          "no_improvement": 0,
+          "custodial_substitute": 1,
+          "no_daily_skilled_need": 0,
+          "missing_documentation": 0
+        },
+        "detected": [
+          "custodial_substitute"
+        ],
+        "verdict": "contest_on_rules",
+        "latency_ms": 0,
+        "cached": false
+      },
+      "haiku": {
+        "probabilities": {
+          "residency": 0,
+          "therapy_participation": 0,
+          "no_improvement": 0,
+          "custodial_substitute": 1,
+          "no_daily_skilled_need": 1,
+          "missing_documentation": 0
+        },
+        "detected": [
+          "custodial_substitute",
+          "no_daily_skilled_need"
+        ],
+        "verdict": "contest_on_rules",
+        "latency_ms": 972,
+        "cached": false
+      },
+      "jev": {
+        "probabilities": {
+          "residency": 0.14,
+          "therapy_participation": 0.04,
+          "no_improvement": 0.2,
+          "custodial_substitute": 0.93,
+          "no_daily_skilled_need": 0.98,
+          "missing_documentation": 0.06
+        },
+        "detected": [
+          "custodial_substitute",
+          "no_daily_skilled_need"
+        ],
+        "verdict": "contest_on_rules",
+        "latency_ms": 135,
+        "cached": false
+      }
+    },
+    {
+      "id": "golden-015",
+      "gold": [
+        "custodial_substitute",
+        "no_daily_skilled_need"
+      ],
+      "gold_verdict": "contest_on_rules",
+      "unsure": false,
+      "hard": true,
+      "intent": [
+        "no_daily_skilled_need"
+      ],
+      "keyword": {
+        "probabilities": {
+          "residency": 1,
+          "therapy_participation": 0,
+          "no_improvement": 0,
+          "custodial_substitute": 0,
+          "no_daily_skilled_need": 0,
+          "missing_documentation": 0
+        },
+        "detected": [
+          "residency"
+        ],
+        "verdict": "contest_on_rules",
+        "latency_ms": 0,
+        "cached": false
+      },
+      "haiku": {
+        "probabilities": {
+          "residency": 0.15,
+          "therapy_participation": 0,
+          "no_improvement": 0,
+          "custodial_substitute": 0.85,
+          "no_daily_skilled_need": 0.9,
+          "missing_documentation": 0
+        },
+        "detected": [
+          "custodial_substitute",
+          "no_daily_skilled_need"
+        ],
+        "verdict": "contest_on_rules",
+        "latency_ms": 1030,
+        "cached": false
+      },
+      "jev": {
+        "probabilities": {
+          "residency": 0.14,
+          "therapy_participation": 0.04,
+          "no_improvement": 0.04,
+          "custodial_substitute": 0.93,
+          "no_daily_skilled_need": 0.98,
+          "missing_documentation": 0.05
+        },
+        "detected": [
+          "custodial_substitute",
+          "no_daily_skilled_need"
+        ],
+        "verdict": "contest_on_rules",
+        "latency_ms": 128,
+        "cached": false
+      }
+    },
+    {
+      "id": "golden-016",
+      "gold": [
+        "missing_documentation"
+      ],
+      "gold_verdict": "send_documents",
+      "unsure": false,
+      "hard": false,
+      "intent": [
+        "missing_documentation"
+      ],
+      "keyword": {
+        "probabilities": {
+          "residency": 0,
+          "therapy_participation": 0,
+          "no_improvement": 0,
+          "custodial_substitute": 1,
+          "no_daily_skilled_need": 0,
+          "missing_documentation": 1
+        },
+        "detected": [
+          "custodial_substitute",
+          "missing_documentation"
+        ],
+        "verdict": "contest_on_rules",
+        "latency_ms": 0,
+        "cached": false
+      },
+      "haiku": {
+        "probabilities": {
+          "residency": 0,
+          "therapy_participation": 0,
+          "no_improvement": 0,
+          "custodial_substitute": 0.15,
+          "no_daily_skilled_need": 0.2,
+          "missing_documentation": 0.95
+        },
+        "detected": [
+          "missing_documentation"
+        ],
+        "verdict": "send_documents",
+        "latency_ms": 1005,
+        "cached": false
+      },
+      "jev": {
+        "probabilities": {
+          "residency": 0.14,
+          "therapy_participation": 0.03,
+          "no_improvement": 0.05,
+          "custodial_substitute": 0.14,
+          "no_daily_skilled_need": 0.08,
+          "missing_documentation": 0.99
+        },
+        "detected": [
+          "missing_documentation"
+        ],
+        "verdict": "send_documents",
+        "latency_ms": 117,
+        "cached": false
+      }
+    },
+    {
+      "id": "golden-017",
+      "gold": [
+        "no_improvement",
+        "missing_documentation"
+      ],
+      "gold_verdict": "contest_on_rules",
+      "unsure": false,
+      "hard": false,
+      "intent": [
+        "no_improvement",
+        "missing_documentation"
+      ],
+      "keyword": {
+        "probabilities": {
+          "residency": 1,
+          "therapy_participation": 0,
+          "no_improvement": 1,
+          "custodial_substitute": 0,
+          "no_daily_skilled_need": 0,
+          "missing_documentation": 1
+        },
+        "detected": [
+          "residency",
+          "no_improvement",
+          "missing_documentation"
+        ],
+        "verdict": "contest_on_rules",
+        "latency_ms": 0,
+        "cached": false
+      },
+      "haiku": {
+        "probabilities": {
+          "residency": 0.85,
+          "therapy_participation": 0,
+          "no_improvement": 0.9,
+          "custodial_substitute": 0,
+          "no_daily_skilled_need": 0,
+          "missing_documentation": 0.95
+        },
+        "detected": [
+          "residency",
+          "no_improvement",
+          "missing_documentation"
+        ],
+        "verdict": "contest_on_rules",
+        "latency_ms": 949,
+        "cached": false
+      },
+      "jev": {
+        "probabilities": {
+          "residency": 0.51,
+          "therapy_participation": 0.09,
+          "no_improvement": 0.99,
+          "custodial_substitute": 0.33,
+          "no_daily_skilled_need": 0.72,
+          "missing_documentation": 0.98
+        },
+        "detected": [
+          "residency",
+          "no_improvement",
+          "no_daily_skilled_need",
+          "missing_documentation"
+        ],
+        "verdict": "contest_on_rules",
+        "latency_ms": 124,
+        "cached": false
+      }
+    },
+    {
+      "id": "golden-018",
+      "gold": [
+        "custodial_substitute",
+        "no_daily_skilled_need"
+      ],
+      "gold_verdict": "contest_on_rules",
+      "unsure": false,
+      "hard": false,
+      "intent": [
+        "residency",
+        "custodial_substitute"
+      ],
+      "keyword": {
+        "probabilities": {
+          "residency": 1,
+          "therapy_participation": 0,
+          "no_improvement": 1,
+          "custodial_substitute": 1,
+          "no_daily_skilled_need": 0,
+          "missing_documentation": 0
+        },
+        "detected": [
+          "residency",
+          "no_improvement",
+          "custodial_substitute"
+        ],
+        "verdict": "contest_on_rules",
+        "latency_ms": 0,
+        "cached": false
+      },
+      "haiku": {
+        "probabilities": {
+          "residency": 0.95,
+          "therapy_participation": 0,
+          "no_improvement": 0,
+          "custodial_substitute": 0.95,
+          "no_daily_skilled_need": 0.85,
+          "missing_documentation": 0
+        },
+        "detected": [
+          "residency",
+          "custodial_substitute",
+          "no_daily_skilled_need"
+        ],
+        "verdict": "contest_on_rules",
+        "latency_ms": 1091,
+        "cached": false
+      },
+      "jev": {
+        "probabilities": {
+          "residency": 0.65,
+          "therapy_participation": 0.06,
+          "no_improvement": 0.68,
+          "custodial_substitute": 0.98,
+          "no_daily_skilled_need": 0.97,
+          "missing_documentation": 0.03
+        },
+        "detected": [
+          "residency",
+          "no_improvement",
+          "custodial_substitute",
+          "no_daily_skilled_need"
+        ],
+        "verdict": "contest_on_rules",
+        "latency_ms": 137,
+        "cached": false
+      }
+    },
+    {
+      "id": "golden-019",
+      "gold": [],
+      "gold_verdict": "manual_review",
+      "unsure": false,
+      "hard": true,
+      "intent": [],
+      "keyword": {
+        "probabilities": {
+          "residency": 0,
+          "therapy_participation": 0,
+          "no_improvement": 0,
+          "custodial_substitute": 0,
+          "no_daily_skilled_need": 0,
+          "missing_documentation": 0
+        },
+        "detected": [],
+        "verdict": "manual_review",
+        "latency_ms": 0,
+        "cached": false
+      },
+      "haiku": {
+        "probabilities": {
+          "residency": 0,
+          "therapy_participation": 0,
+          "no_improvement": 0,
+          "custodial_substitute": 0,
+          "no_daily_skilled_need": 0,
+          "missing_documentation": 0
+        },
+        "detected": [],
+        "verdict": "manual_review",
+        "latency_ms": 864,
+        "cached": false
+      },
+      "jev": {
+        "probabilities": {
+          "residency": 0.05,
+          "therapy_participation": 0.02,
+          "no_improvement": 0.03,
+          "custodial_substitute": 0.03,
+          "no_daily_skilled_need": 0.03,
+          "missing_documentation": 0.03
+        },
+        "detected": [],
+        "verdict": "manual_review",
+        "latency_ms": 130,
+        "cached": false
+      }
+    },
+    {
+      "id": "golden-020",
+      "gold": [
+        "custodial_substitute",
+        "no_daily_skilled_need",
+        "missing_documentation"
+      ],
+      "gold_verdict": "contest_on_rules",
+      "unsure": false,
+      "hard": false,
+      "intent": [
+        "custodial_substitute",
+        "missing_documentation"
+      ],
+      "keyword": {
+        "probabilities": {
+          "residency": 0,
+          "therapy_participation": 0,
+          "no_improvement": 0,
+          "custodial_substitute": 1,
+          "no_daily_skilled_need": 0,
+          "missing_documentation": 1
+        },
+        "detected": [
+          "custodial_substitute",
+          "missing_documentation"
+        ],
+        "verdict": "contest_on_rules",
+        "latency_ms": 0,
+        "cached": false
+      },
+      "haiku": {
+        "probabilities": {
+          "residency": 0.95,
+          "therapy_participation": 0,
+          "no_improvement": 0,
+          "custodial_substitute": 0.85,
+          "no_daily_skilled_need": 0.75,
+          "missing_documentation": 0.95
+        },
+        "detected": [
+          "residency",
+          "custodial_substitute",
+          "no_daily_skilled_need",
+          "missing_documentation"
+        ],
+        "verdict": "contest_on_rules",
+        "latency_ms": 1708,
+        "cached": false
+      },
+      "jev": {
+        "probabilities": {
+          "residency": 0.46,
+          "therapy_participation": 0.04,
+          "no_improvement": 0.53,
+          "custodial_substitute": 0.98,
+          "no_daily_skilled_need": 0.93,
+          "missing_documentation": 0.98
+        },
+        "detected": [
+          "no_improvement",
+          "custodial_substitute",
+          "no_daily_skilled_need",
+          "missing_documentation"
+        ],
+        "verdict": "contest_on_rules",
+        "latency_ms": 114,
+        "cached": false
+      }
+    },
+    {
+      "id": "golden-021",
+      "gold": [
+        "missing_documentation"
+      ],
+      "gold_verdict": "send_documents",
+      "unsure": false,
+      "hard": true,
+      "intent": [
+        "missing_documentation"
+      ],
+      "keyword": {
+        "probabilities": {
+          "residency": 0,
+          "therapy_participation": 1,
+          "no_improvement": 0,
+          "custodial_substitute": 0,
+          "no_daily_skilled_need": 0,
+          "missing_documentation": 1
+        },
+        "detected": [
+          "therapy_participation",
+          "missing_documentation"
+        ],
+        "verdict": "contest_on_rules",
+        "latency_ms": 0,
+        "cached": false
+      },
+      "haiku": {
+        "probabilities": {
+          "residency": 0,
+          "therapy_participation": 0,
+          "no_improvement": 0,
+          "custodial_substitute": 0,
+          "no_daily_skilled_need": 0,
+          "missing_documentation": 1
+        },
+        "detected": [
+          "missing_documentation"
+        ],
+        "verdict": "send_documents",
+        "latency_ms": 1039,
+        "cached": false
+      },
+      "jev": {
+        "probabilities": {
+          "residency": 0.05,
+          "therapy_participation": 0.03,
+          "no_improvement": 0.03,
+          "custodial_substitute": 0.04,
+          "no_daily_skilled_need": 0.04,
+          "missing_documentation": 0.98
+        },
+        "detected": [
+          "missing_documentation"
+        ],
+        "verdict": "send_documents",
+        "latency_ms": 156,
+        "cached": false
+      }
+    },
+    {
+      "id": "golden-022",
+      "gold": [
+        "custodial_substitute",
+        "no_daily_skilled_need"
+      ],
+      "gold_verdict": "contest_on_rules",
+      "unsure": false,
+      "hard": false,
+      "intent": [
+        "no_daily_skilled_need"
+      ],
+      "keyword": {
+        "probabilities": {
+          "residency": 0,
+          "therapy_participation": 0,
+          "no_improvement": 0,
+          "custodial_substitute": 0,
+          "no_daily_skilled_need": 0,
+          "missing_documentation": 0
+        },
+        "detected": [],
+        "verdict": "manual_review",
+        "latency_ms": 0,
+        "cached": false
+      },
+      "haiku": {
+        "probabilities": {
+          "residency": 0,
+          "therapy_participation": 0,
+          "no_improvement": 0,
+          "custodial_substitute": 0.85,
+          "no_daily_skilled_need": 0.95,
+          "missing_documentation": 0
+        },
+        "detected": [
+          "custodial_substitute",
+          "no_daily_skilled_need"
+        ],
+        "verdict": "contest_on_rules",
+        "latency_ms": 1011,
+        "cached": false
+      },
+      "jev": {
+        "probabilities": {
+          "residency": 0.2,
+          "therapy_participation": 0.03,
+          "no_improvement": 0.04,
+          "custodial_substitute": 0.93,
+          "no_daily_skilled_need": 0.98,
+          "missing_documentation": 0.05
+        },
+        "detected": [
+          "custodial_substitute",
+          "no_daily_skilled_need"
+        ],
+        "verdict": "contest_on_rules",
+        "latency_ms": 231,
+        "cached": false
+      }
+    },
+    {
+      "id": "golden-023",
+      "gold": [
+        "missing_documentation"
+      ],
+      "gold_verdict": "send_documents",
+      "unsure": false,
+      "hard": false,
+      "intent": [
+        "missing_documentation"
+      ],
+      "keyword": {
+        "probabilities": {
+          "residency": 0,
+          "therapy_participation": 0,
+          "no_improvement": 0,
+          "custodial_substitute": 0,
+          "no_daily_skilled_need": 0,
+          "missing_documentation": 1
+        },
+        "detected": [
+          "missing_documentation"
+        ],
+        "verdict": "send_documents",
+        "latency_ms": 0,
+        "cached": false
+      },
+      "haiku": {
+        "probabilities": {
+          "residency": 0,
+          "therapy_participation": 0,
+          "no_improvement": 0,
+          "custodial_substitute": 0.7,
+          "no_daily_skilled_need": 0.7,
+          "missing_documentation": 1
+        },
+        "detected": [
+          "custodial_substitute",
+          "no_daily_skilled_need",
+          "missing_documentation"
+        ],
+        "verdict": "contest_on_rules",
+        "latency_ms": 973,
+        "cached": false
+      },
+      "jev": {
+        "probabilities": {
+          "residency": 0.12,
+          "therapy_participation": 0.03,
+          "no_improvement": 0.05,
+          "custodial_substitute": 0.24,
+          "no_daily_skilled_need": 0.16,
+          "missing_documentation": 0.99
+        },
+        "detected": [
+          "missing_documentation"
+        ],
+        "verdict": "send_documents",
+        "latency_ms": 147,
+        "cached": false
+      }
+    },
+    {
+      "id": "golden-024",
+      "gold": [
+        "no_daily_skilled_need"
+      ],
+      "gold_verdict": "contest_on_facts",
+      "unsure": false,
+      "hard": true,
+      "intent": [
+        "no_daily_skilled_need"
+      ],
+      "keyword": {
+        "probabilities": {
+          "residency": 0,
+          "therapy_participation": 0,
+          "no_improvement": 0,
+          "custodial_substitute": 0,
+          "no_daily_skilled_need": 0,
+          "missing_documentation": 0
+        },
+        "detected": [],
+        "verdict": "manual_review",
+        "latency_ms": 0,
+        "cached": false
+      },
+      "haiku": {
+        "probabilities": {
+          "residency": 0,
+          "therapy_participation": 0,
+          "no_improvement": 0,
+          "custodial_substitute": 0,
+          "no_daily_skilled_need": 1,
+          "missing_documentation": 0
+        },
+        "detected": [
+          "no_daily_skilled_need"
+        ],
+        "verdict": "contest_on_facts",
+        "latency_ms": 1115,
+        "cached": false
+      },
+      "jev": {
+        "probabilities": {
+          "residency": 0.06,
+          "therapy_participation": 0.03,
+          "no_improvement": 0.04,
+          "custodial_substitute": 0.6,
+          "no_daily_skilled_need": 0.98,
+          "missing_documentation": 0.08
+        },
+        "detected": [
+          "custodial_substitute",
+          "no_daily_skilled_need"
+        ],
+        "verdict": "contest_on_rules",
+        "latency_ms": 154,
+        "cached": false
+      }
+    },
+    {
+      "id": "golden-025",
+      "gold": [
+        "no_daily_skilled_need",
+        "missing_documentation"
+      ],
+      "gold_verdict": "contest_on_facts",
+      "unsure": false,
+      "hard": false,
+      "intent": [
+        "no_daily_skilled_need",
+        "missing_documentation"
+      ],
+      "keyword": {
+        "probabilities": {
+          "residency": 0,
+          "therapy_participation": 0,
+          "no_improvement": 0,
+          "custodial_substitute": 0,
+          "no_daily_skilled_need": 0,
+          "missing_documentation": 1
+        },
+        "detected": [
+          "missing_documentation"
+        ],
+        "verdict": "send_documents",
+        "latency_ms": 0,
+        "cached": false
+      },
+      "haiku": {
+        "probabilities": {
+          "residency": 0,
+          "therapy_participation": 0,
+          "no_improvement": 0,
+          "custodial_substitute": 1,
+          "no_daily_skilled_need": 1,
+          "missing_documentation": 1
+        },
+        "detected": [
+          "custodial_substitute",
+          "no_daily_skilled_need",
+          "missing_documentation"
+        ],
+        "verdict": "contest_on_rules",
+        "latency_ms": 1360,
+        "cached": false
+      },
+      "jev": {
+        "probabilities": {
+          "residency": 0.17,
+          "therapy_participation": 0.04,
+          "no_improvement": 0.07,
+          "custodial_substitute": 0.84,
+          "no_daily_skilled_need": 0.98,
+          "missing_documentation": 0.99
+        },
+        "detected": [
+          "custodial_substitute",
+          "no_daily_skilled_need",
+          "missing_documentation"
+        ],
+        "verdict": "contest_on_rules",
+        "latency_ms": 124,
+        "cached": false
+      }
+    },
+    {
+      "id": "golden-026",
+      "gold": [],
+      "gold_verdict": "manual_review",
+      "unsure": false,
+      "hard": true,
+      "intent": [],
+      "keyword": {
+        "probabilities": {
+          "residency": 1,
+          "therapy_participation": 1,
+          "no_improvement": 0,
+          "custodial_substitute": 0,
+          "no_daily_skilled_need": 0,
+          "missing_documentation": 0
+        },
+        "detected": [
+          "residency",
+          "therapy_participation"
+        ],
+        "verdict": "contest_on_rules",
+        "latency_ms": 0,
+        "cached": false
+      },
+      "haiku": {
+        "probabilities": {
+          "residency": 0,
+          "therapy_participation": 0,
+          "no_improvement": 0,
+          "custodial_substitute": 0,
+          "no_daily_skilled_need": 0,
+          "missing_documentation": 0
+        },
+        "detected": [],
+        "verdict": "manual_review",
+        "latency_ms": 1051,
+        "cached": false
+      },
+      "jev": {
+        "probabilities": {
+          "residency": 0.07,
+          "therapy_participation": 0.02,
+          "no_improvement": 0.02,
+          "custodial_substitute": 0.04,
+          "no_daily_skilled_need": 0.03,
+          "missing_documentation": 0.03
+        },
+        "detected": [],
+        "verdict": "manual_review",
+        "latency_ms": 190,
+        "cached": false
+      }
+    },
+    {
+      "id": "golden-027",
+      "gold": [
+        "therapy_participation",
+        "no_improvement"
+      ],
+      "gold_verdict": "contest_on_rules",
+      "unsure": false,
+      "hard": false,
+      "intent": [
+        "therapy_participation",
+        "no_improvement"
+      ],
+      "keyword": {
+        "probabilities": {
+          "residency": 0,
+          "therapy_participation": 1,
+          "no_improvement": 1,
+          "custodial_substitute": 1,
+          "no_daily_skilled_need": 0,
+          "missing_documentation": 0
+        },
+        "detected": [
+          "therapy_participation",
+          "no_improvement",
+          "custodial_substitute"
+        ],
+        "verdict": "contest_on_rules",
+        "latency_ms": 0,
+        "cached": false
+      },
+      "haiku": {
+        "probabilities": {
+          "residency": 0,
+          "therapy_participation": 1,
+          "no_improvement": 1,
+          "custodial_substitute": 0,
+          "no_daily_skilled_need": 0,
+          "missing_documentation": 0
+        },
+        "detected": [
+          "therapy_participation",
+          "no_improvement"
+        ],
+        "verdict": "contest_on_rules",
+        "latency_ms": 830,
+        "cached": false
+      },
+      "jev": {
+        "probabilities": {
+          "residency": 0.3,
+          "therapy_participation": 0.98,
+          "no_improvement": 0.99,
+          "custodial_substitute": 0.3,
+          "no_daily_skilled_need": 0.9,
+          "missing_documentation": 0.04
+        },
+        "detected": [
+          "therapy_participation",
+          "no_improvement",
+          "no_daily_skilled_need"
+        ],
+        "verdict": "contest_on_rules",
+        "latency_ms": 138,
+        "cached": false
+      }
+    },
+    {
+      "id": "golden-028",
+      "gold": [
+        "therapy_participation",
+        "no_improvement",
+        "custodial_substitute",
+        "no_daily_skilled_need"
+      ],
+      "gold_verdict": "contest_on_rules",
+      "unsure": false,
+      "hard": false,
+      "intent": [
+        "therapy_participation",
+        "no_daily_skilled_need"
+      ],
+      "keyword": {
+        "probabilities": {
+          "residency": 0,
+          "therapy_participation": 0,
+          "no_improvement": 0,
+          "custodial_substitute": 1,
+          "no_daily_skilled_need": 0,
+          "missing_documentation": 0
+        },
+        "detected": [
+          "custodial_substitute"
+        ],
+        "verdict": "contest_on_rules",
+        "latency_ms": 0,
+        "cached": false
+      },
+      "haiku": {
+        "probabilities": {
+          "residency": 0.95,
+          "therapy_participation": 0.92,
+          "no_improvement": 0.88,
+          "custodial_substitute": 0.9,
+          "no_daily_skilled_need": 0.85,
+          "missing_documentation": 0
+        },
+        "detected": [
+          "residency",
+          "therapy_participation",
+          "no_improvement",
+          "custodial_substitute",
+          "no_daily_skilled_need"
+        ],
+        "verdict": "contest_on_rules",
+        "latency_ms": 939,
+        "cached": false
+      },
+      "jev": {
+        "probabilities": {
+          "residency": 0.3,
+          "therapy_participation": 0.98,
+          "no_improvement": 0.95,
+          "custodial_substitute": 0.95,
+          "no_daily_skilled_need": 0.98,
+          "missing_documentation": 0.03
+        },
+        "detected": [
+          "therapy_participation",
+          "no_improvement",
+          "custodial_substitute",
+          "no_daily_skilled_need"
+        ],
+        "verdict": "contest_on_rules",
+        "latency_ms": 221,
+        "cached": false
+      }
+    },
+    {
+      "id": "golden-029",
+      "gold": [
+        "residency",
+        "no_improvement"
+      ],
+      "gold_verdict": "contest_on_rules",
+      "unsure": false,
+      "hard": false,
+      "intent": [
+        "no_improvement"
+      ],
+      "keyword": {
+        "probabilities": {
+          "residency": 0,
+          "therapy_participation": 0,
+          "no_improvement": 0,
+          "custodial_substitute": 1,
+          "no_daily_skilled_need": 0,
+          "missing_documentation": 0
+        },
+        "detected": [
+          "custodial_substitute"
+        ],
+        "verdict": "contest_on_rules",
+        "latency_ms": 0,
+        "cached": false
+      },
+      "haiku": {
+        "probabilities": {
+          "residency": 0.85,
+          "therapy_participation": 0,
+          "no_improvement": 0.95,
+          "custodial_substitute": 0,
+          "no_daily_skilled_need": 0,
+          "missing_documentation": 0
+        },
+        "detected": [
+          "residency",
+          "no_improvement"
+        ],
+        "verdict": "contest_on_rules",
+        "latency_ms": 1044,
+        "cached": false
+      },
+      "jev": {
+        "probabilities": {
+          "residency": 0.41,
+          "therapy_participation": 0.07,
+          "no_improvement": 0.99,
+          "custodial_substitute": 0.26,
+          "no_daily_skilled_need": 0.65,
+          "missing_documentation": 0.03
+        },
+        "detected": [
+          "no_improvement",
+          "no_daily_skilled_need"
+        ],
+        "verdict": "contest_on_rules",
+        "latency_ms": 118,
+        "cached": false
+      }
+    },
+    {
+      "id": "golden-030",
+      "gold": [
+        "residency",
+        "therapy_participation",
+        "no_improvement"
+      ],
+      "gold_verdict": "contest_on_rules",
+      "unsure": false,
+      "hard": false,
+      "intent": [
+        "therapy_participation"
+      ],
+      "keyword": {
+        "probabilities": {
+          "residency": 1,
+          "therapy_participation": 1,
+          "no_improvement": 0,
+          "custodial_substitute": 0,
+          "no_daily_skilled_need": 0,
+          "missing_documentation": 0
+        },
+        "detected": [
+          "residency",
+          "therapy_participation"
+        ],
+        "verdict": "contest_on_rules",
+        "latency_ms": 0,
+        "cached": false
+      },
+      "haiku": {
+        "probabilities": {
+          "residency": 0.95,
+          "therapy_participation": 0.92,
+          "no_improvement": 0.75,
+          "custodial_substitute": 0.88,
+          "no_daily_skilled_need": 0.7,
+          "missing_documentation": 0
+        },
+        "detected": [
+          "residency",
+          "therapy_participation",
+          "no_improvement",
+          "custodial_substitute",
+          "no_daily_skilled_need"
+        ],
+        "verdict": "contest_on_rules",
+        "latency_ms": 1012,
+        "cached": false
+      },
+      "jev": {
+        "probabilities": {
+          "residency": 0.44,
+          "therapy_participation": 0.98,
+          "no_improvement": 0.95,
+          "custodial_substitute": 0.92,
+          "no_daily_skilled_need": 0.86,
+          "missing_documentation": 0.04
+        },
+        "detected": [
+          "therapy_participation",
+          "no_improvement",
+          "custodial_substitute",
+          "no_daily_skilled_need"
+        ],
+        "verdict": "contest_on_rules",
+        "latency_ms": 123,
+        "cached": false
+      }
+    },
+    {
+      "id": "golden-031",
+      "gold": [
+        "residency",
+        "therapy_participation",
+        "no_improvement",
+        "no_daily_skilled_need"
+      ],
+      "gold_verdict": "contest_on_rules",
+      "unsure": false,
+      "hard": false,
+      "intent": [
+        "residency",
+        "therapy_participation",
+        "custodial_substitute"
+      ],
+      "keyword": {
+        "probabilities": {
+          "residency": 1,
+          "therapy_participation": 0,
+          "no_improvement": 0,
+          "custodial_substitute": 1,
+          "no_daily_skilled_need": 0,
+          "missing_documentation": 0
+        },
+        "detected": [
+          "residency",
+          "custodial_substitute"
+        ],
+        "verdict": "contest_on_rules",
+        "latency_ms": 0,
+        "cached": false
+      },
+      "haiku": {
+        "probabilities": {
+          "residency": 0.95,
+          "therapy_participation": 0.92,
+          "no_improvement": 0.88,
+          "custodial_substitute": 0.93,
+          "no_daily_skilled_need": 0.85,
+          "missing_documentation": 0
+        },
+        "detected": [
+          "residency",
+          "therapy_participation",
+          "no_improvement",
+          "custodial_substitute",
+          "no_daily_skilled_need"
+        ],
+        "verdict": "contest_on_rules",
+        "latency_ms": 968,
+        "cached": false
+      },
+      "jev": {
+        "probabilities": {
+          "residency": 0.85,
+          "therapy_participation": 0.98,
+          "no_improvement": 0.97,
+          "custodial_substitute": 0.98,
+          "no_daily_skilled_need": 0.97,
+          "missing_documentation": 0.03
+        },
+        "detected": [
+          "residency",
+          "therapy_participation",
+          "no_improvement",
+          "custodial_substitute",
+          "no_daily_skilled_need"
+        ],
+        "verdict": "contest_on_rules",
+        "latency_ms": 128,
+        "cached": false
+      }
+    },
+    {
+      "id": "golden-032",
+      "gold": [
+        "no_improvement"
+      ],
+      "gold_verdict": "contest_on_rules",
+      "unsure": false,
+      "hard": true,
+      "intent": [
+        "no_improvement"
+      ],
+      "keyword": {
+        "probabilities": {
+          "residency": 0,
+          "therapy_participation": 0,
+          "no_improvement": 0,
+          "custodial_substitute": 0,
+          "no_daily_skilled_need": 0,
+          "missing_documentation": 0
+        },
+        "detected": [],
+        "verdict": "manual_review",
+        "latency_ms": 0,
+        "cached": false
+      },
+      "haiku": {
+        "probabilities": {
+          "residency": 0.15,
+          "therapy_participation": 0,
+          "no_improvement": 0.95,
+          "custodial_substitute": 0.85,
+          "no_daily_skilled_need": 0,
+          "missing_documentation": 0
+        },
+        "detected": [
+          "no_improvement",
+          "custodial_substitute"
+        ],
+        "verdict": "contest_on_rules",
+        "latency_ms": 1487,
+        "cached": false
+      },
+      "jev": {
+        "probabilities": {
+          "residency": 0.16,
+          "therapy_participation": 0.1,
+          "no_improvement": 0.99,
+          "custodial_substitute": 0.16,
+          "no_daily_skilled_need": 0.03,
+          "missing_documentation": 0.03
+        },
+        "detected": [
+          "no_improvement"
+        ],
+        "verdict": "contest_on_rules",
+        "latency_ms": 124,
+        "cached": false
+      }
+    },
+    {
+      "id": "golden-033",
+      "gold": [
+        "residency",
+        "no_improvement",
+        "custodial_substitute"
+      ],
+      "gold_verdict": "contest_on_rules",
+      "unsure": false,
+      "hard": false,
+      "intent": [
+        "residency",
+        "no_improvement"
+      ],
+      "keyword": {
+        "probabilities": {
+          "residency": 0,
+          "therapy_participation": 0,
+          "no_improvement": 0,
+          "custodial_substitute": 0,
+          "no_daily_skilled_need": 0,
+          "missing_documentation": 0
+        },
+        "detected": [],
+        "verdict": "manual_review",
+        "latency_ms": 0,
+        "cached": false
+      },
+      "haiku": {
+        "probabilities": {
+          "residency": 0.95,
+          "therapy_participation": 0,
+          "no_improvement": 0.9,
+          "custodial_substitute": 0.85,
+          "no_daily_skilled_need": 0.8,
+          "missing_documentation": 0
+        },
+        "detected": [
+          "residency",
+          "no_improvement",
+          "custodial_substitute",
+          "no_daily_skilled_need"
+        ],
+        "verdict": "contest_on_rules",
+        "latency_ms": 926,
+        "cached": false
+      },
+      "jev": {
+        "probabilities": {
+          "residency": 0.86,
+          "therapy_participation": 0.19,
+          "no_improvement": 0.99,
+          "custodial_substitute": 0.78,
+          "no_daily_skilled_need": 0.91,
+          "missing_documentation": 0.03
+        },
+        "detected": [
+          "residency",
+          "no_improvement",
+          "custodial_substitute",
+          "no_daily_skilled_need"
+        ],
+        "verdict": "contest_on_rules",
+        "latency_ms": 126,
+        "cached": false
+      }
+    },
+    {
+      "id": "golden-034",
+      "gold": [
+        "residency",
+        "custodial_substitute"
+      ],
+      "gold_verdict": "contest_on_rules",
+      "unsure": false,
+      "hard": false,
+      "intent": [
+        "residency"
+      ],
+      "keyword": {
+        "probabilities": {
+          "residency": 0,
+          "therapy_participation": 0,
+          "no_improvement": 0,
+          "custodial_substitute": 1,
+          "no_daily_skilled_need": 0,
+          "missing_documentation": 0
+        },
+        "detected": [
+          "custodial_substitute"
+        ],
+        "verdict": "contest_on_rules",
+        "latency_ms": 0,
+        "cached": false
+      },
+      "haiku": {
+        "probabilities": {
+          "residency": 0.95,
+          "therapy_participation": 0,
+          "no_improvement": 0,
+          "custodial_substitute": 0.85,
+          "no_daily_skilled_need": 0.75,
+          "missing_documentation": 0
+        },
+        "detected": [
+          "residency",
+          "custodial_substitute",
+          "no_daily_skilled_need"
+        ],
+        "verdict": "contest_on_rules",
+        "latency_ms": 1465,
+        "cached": false
+      },
+      "jev": {
+        "probabilities": {
+          "residency": 0.66,
+          "therapy_participation": 0.07,
+          "no_improvement": 0.48,
+          "custodial_substitute": 0.92,
+          "no_daily_skilled_need": 0.97,
+          "missing_documentation": 0.03
+        },
+        "detected": [
+          "residency",
+          "custodial_substitute",
+          "no_daily_skilled_need"
+        ],
+        "verdict": "contest_on_rules",
+        "latency_ms": 127,
+        "cached": false
+      }
+    },
+    {
+      "id": "golden-035",
+      "gold": [
+        "therapy_participation",
+        "no_improvement",
+        "custodial_substitute",
+        "no_daily_skilled_need"
+      ],
+      "gold_verdict": "contest_on_rules",
+      "unsure": false,
+      "hard": false,
+      "intent": [
+        "therapy_participation"
+      ],
+      "keyword": {
+        "probabilities": {
+          "residency": 1,
+          "therapy_participation": 1,
+          "no_improvement": 0,
+          "custodial_substitute": 0,
+          "no_daily_skilled_need": 0,
+          "missing_documentation": 0
+        },
+        "detected": [
+          "residency",
+          "therapy_participation"
+        ],
+        "verdict": "contest_on_rules",
+        "latency_ms": 0,
+        "cached": false
+      },
+      "haiku": {
+        "probabilities": {
+          "residency": 0.15,
+          "therapy_participation": 0.95,
+          "no_improvement": 0.85,
+          "custodial_substitute": 0.9,
+          "no_daily_skilled_need": 0.8,
+          "missing_documentation": 0
+        },
+        "detected": [
+          "therapy_participation",
+          "no_improvement",
+          "custodial_substitute",
+          "no_daily_skilled_need"
+        ],
+        "verdict": "contest_on_rules",
+        "latency_ms": 1580,
+        "cached": false
+      },
+      "jev": {
+        "probabilities": {
+          "residency": 0.41,
+          "therapy_participation": 0.98,
+          "no_improvement": 0.95,
+          "custodial_substitute": 0.84,
+          "no_daily_skilled_need": 0.94,
+          "missing_documentation": 0.04
+        },
+        "detected": [
+          "therapy_participation",
+          "no_improvement",
+          "custodial_substitute",
+          "no_daily_skilled_need"
+        ],
+        "verdict": "contest_on_rules",
+        "latency_ms": 131,
+        "cached": false
+      }
+    },
+    {
+      "id": "golden-036",
+      "gold": [
+        "no_improvement",
+        "custodial_substitute"
+      ],
+      "gold_verdict": "contest_on_rules",
+      "unsure": false,
+      "hard": false,
+      "intent": [
+        "no_improvement"
+      ],
+      "keyword": {
+        "probabilities": {
+          "residency": 0,
+          "therapy_participation": 0,
+          "no_improvement": 0,
+          "custodial_substitute": 1,
+          "no_daily_skilled_need": 0,
+          "missing_documentation": 0
+        },
+        "detected": [
+          "custodial_substitute"
+        ],
+        "verdict": "contest_on_rules",
+        "latency_ms": 0,
+        "cached": false
+      },
+      "haiku": {
+        "probabilities": {
+          "residency": 0.85,
+          "therapy_participation": 0,
+          "no_improvement": 0.95,
+          "custodial_substitute": 0.9,
+          "no_daily_skilled_need": 0,
+          "missing_documentation": 0
+        },
+        "detected": [
+          "residency",
+          "no_improvement",
+          "custodial_substitute"
+        ],
+        "verdict": "contest_on_rules",
+        "latency_ms": 965,
+        "cached": false
+      },
+      "jev": {
+        "probabilities": {
+          "residency": 0.47,
+          "therapy_participation": 0.14,
+          "no_improvement": 0.99,
+          "custodial_substitute": 0.84,
+          "no_daily_skilled_need": 0.84,
+          "missing_documentation": 0.06
+        },
+        "detected": [
+          "no_improvement",
+          "custodial_substitute",
+          "no_daily_skilled_need"
+        ],
+        "verdict": "contest_on_rules",
+        "latency_ms": 143,
+        "cached": false
+      }
+    },
+    {
+      "id": "golden-037",
+      "gold": [
+        "residency",
+        "therapy_participation",
+        "custodial_substitute"
+      ],
+      "gold_verdict": "contest_on_rules",
+      "unsure": false,
+      "hard": false,
+      "intent": [
+        "residency",
+        "therapy_participation"
+      ],
+      "keyword": {
+        "probabilities": {
+          "residency": 0,
+          "therapy_participation": 1,
+          "no_improvement": 1,
+          "custodial_substitute": 0,
+          "no_daily_skilled_need": 0,
+          "missing_documentation": 0
+        },
+        "detected": [
+          "therapy_participation",
+          "no_improvement"
+        ],
+        "verdict": "contest_on_rules",
+        "latency_ms": 0,
+        "cached": false
+      },
+      "haiku": {
+        "probabilities": {
+          "residency": 0.95,
+          "therapy_participation": 0.92,
+          "no_improvement": 0.88,
+          "custodial_substitute": 0.93,
+          "no_daily_skilled_need": 0.85,
+          "missing_documentation": 0
+        },
+        "detected": [
+          "residency",
+          "therapy_participation",
+          "no_improvement",
+          "custodial_substitute",
+          "no_daily_skilled_need"
+        ],
+        "verdict": "contest_on_rules",
+        "latency_ms": 1061,
+        "cached": false
+      },
+      "jev": {
+        "probabilities": {
+          "residency": 0.6,
+          "therapy_participation": 0.98,
+          "no_improvement": 0.98,
+          "custodial_substitute": 0.9,
+          "no_daily_skilled_need": 0.97,
+          "missing_documentation": 0.06
+        },
+        "detected": [
+          "residency",
+          "therapy_participation",
+          "no_improvement",
+          "custodial_substitute",
+          "no_daily_skilled_need"
+        ],
+        "verdict": "contest_on_rules",
+        "latency_ms": 124,
+        "cached": false
+      }
+    },
+    {
+      "id": "golden-038",
+      "gold": [
+        "no_improvement"
+      ],
+      "gold_verdict": "contest_on_rules",
+      "unsure": false,
+      "hard": false,
+      "intent": [
+        "no_improvement"
+      ],
+      "keyword": {
+        "probabilities": {
+          "residency": 0,
+          "therapy_participation": 0,
+          "no_improvement": 0,
+          "custodial_substitute": 0,
+          "no_daily_skilled_need": 0,
+          "missing_documentation": 0
+        },
+        "detected": [],
+        "verdict": "manual_review",
+        "latency_ms": 0,
+        "cached": false
+      },
+      "haiku": {
+        "probabilities": {
+          "residency": 0,
+          "therapy_participation": 0,
+          "no_improvement": 1,
+          "custodial_substitute": 1,
+          "no_daily_skilled_need": 0,
+          "missing_documentation": 0
+        },
+        "detected": [
+          "no_improvement",
+          "custodial_substitute"
+        ],
+        "verdict": "contest_on_rules",
+        "latency_ms": 912,
+        "cached": false
+      },
+      "jev": {
+        "probabilities": {
+          "residency": 0.14,
+          "therapy_participation": 0.35,
+          "no_improvement": 0.99,
+          "custodial_substitute": 0.29,
+          "no_daily_skilled_need": 0.83,
+          "missing_documentation": 0.08
+        },
+        "detected": [
+          "no_improvement",
+          "no_daily_skilled_need"
+        ],
+        "verdict": "contest_on_rules",
+        "latency_ms": 137,
+        "cached": false
+      }
+    },
+    {
+      "id": "golden-039",
+      "gold": [
+        "custodial_substitute",
+        "no_daily_skilled_need"
+      ],
+      "gold_verdict": "contest_on_rules",
+      "unsure": false,
+      "hard": false,
+      "intent": [
+        "no_daily_skilled_need"
+      ],
+      "keyword": {
+        "probabilities": {
+          "residency": 0,
+          "therapy_participation": 0,
+          "no_improvement": 0,
+          "custodial_substitute": 1,
+          "no_daily_skilled_need": 0,
+          "missing_documentation": 0
+        },
+        "detected": [
+          "custodial_substitute"
+        ],
+        "verdict": "contest_on_rules",
+        "latency_ms": 0,
+        "cached": false
+      },
+      "haiku": {
+        "probabilities": {
+          "residency": 0,
+          "therapy_participation": 0,
+          "no_improvement": 0,
+          "custodial_substitute": 1,
+          "no_daily_skilled_need": 1,
+          "missing_documentation": 0
+        },
+        "detected": [
+          "custodial_substitute",
+          "no_daily_skilled_need"
+        ],
+        "verdict": "contest_on_rules",
+        "latency_ms": 1427,
+        "cached": false
+      },
+      "jev": {
+        "probabilities": {
+          "residency": 0.1,
+          "therapy_participation": 0.04,
+          "no_improvement": 0.06,
+          "custodial_substitute": 0.89,
+          "no_daily_skilled_need": 0.98,
+          "missing_documentation": 0.08
+        },
+        "detected": [
+          "custodial_substitute",
+          "no_daily_skilled_need"
+        ],
+        "verdict": "contest_on_rules",
+        "latency_ms": 137,
+        "cached": false
+      }
+    },
+    {
+      "id": "golden-040",
+      "gold": [
+        "residency",
+        "custodial_substitute"
+      ],
+      "gold_verdict": "contest_on_rules",
+      "unsure": false,
+      "hard": true,
+      "intent": [
+        "residency"
+      ],
+      "keyword": {
+        "probabilities": {
+          "residency": 1,
+          "therapy_participation": 0,
+          "no_improvement": 0,
+          "custodial_substitute": 1,
+          "no_daily_skilled_need": 0,
+          "missing_documentation": 1
+        },
+        "detected": [
+          "residency",
+          "custodial_substitute",
+          "missing_documentation"
+        ],
+        "verdict": "contest_on_rules",
+        "latency_ms": 0,
+        "cached": false
+      },
+      "haiku": {
+        "probabilities": {
+          "residency": 0.95,
+          "therapy_participation": 0,
+          "no_improvement": 0,
+          "custodial_substitute": 0.95,
+          "no_daily_skilled_need": 0.85,
+          "missing_documentation": 0
+        },
+        "detected": [
+          "residency",
+          "custodial_substitute",
+          "no_daily_skilled_need"
+        ],
+        "verdict": "contest_on_rules",
+        "latency_ms": 1591,
+        "cached": false
+      },
+      "jev": {
+        "probabilities": {
+          "residency": 0.81,
+          "therapy_participation": 0.1,
+          "no_improvement": 0.13,
+          "custodial_substitute": 0.93,
+          "no_daily_skilled_need": 0.96,
+          "missing_documentation": 0.03
+        },
+        "detected": [
+          "residency",
+          "custodial_substitute",
+          "no_daily_skilled_need"
+        ],
+        "verdict": "contest_on_rules",
+        "latency_ms": 170,
+        "cached": false
+      }
+    }
+  ]
+}
