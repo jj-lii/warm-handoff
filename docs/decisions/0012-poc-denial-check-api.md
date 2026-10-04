@@ -1,0 +1,12 @@
+# 0012 POC: denial check API with evals, thin UI, Vercel Hobby
+Status: accepted
+Date: 2026-10-04
+Context: ADR 0006 deferred POC scope and stack. A POC should test the riskiest assumption, not demo the whole product. Hypothesis 1 (`reports/problem-statement.md`) is that resident denials cite reasons that conflict with Ch. 8; synthetic data can test whether that is machine-detectable, but not whether better requests cut denials (hypothesis 2). The author wants a real deployed service, evals as the core, and is on the Vercel free (Hobby) tier.
+Decision:
+- Scope: one capability, the denial check. `POST /api/v1/denials/check` classifies a denial's stated reasons, maps each to the Ch. 8 / Jimmo / CMS-4201-F text it conflicts with, and assembles a rebuttal draft with citations. Plus `GET /api/v1/cases` (synthetic cases) and `GET /api/v1/health`.
+- Models: Jev (TypeSafe, HTTP API, no SDK) answers one Noul per denial-reason pattern; rules in code map patterns to citations; code assembles text. Jev never writes text, so no citation is invented.
+- Evals are the core deliverable: a labeled synthetic set, Jev vs a keyword baseline, per-label precision/recall, results written to `poc/evals/results/`.
+- Stack: Next.js (App Router, TypeScript) in `poc/`, Astryx UI (ADR 0010), deployed on Vercel Hobby with root directory `poc`.
+- Security on Hobby: app-level access (demo passcode to a signed httpOnly cookie for the UI, bearer token for the API, both checked in middleware); rate limits per client plus a global daily cap via Upstash Redis free tier, with an in-memory fallback for local dev; zod schemas and a 20 KB body cap; a PHI tripwire that rejects SSN/MRN/phone/DOB patterns; keys server-side only; no storage, no body logging; same-origin only; security headers; upstream timeout and sanitised errors.
+Alternatives: Full product (request builder + evidence finder + denial check: too broad for the timebox, and the request builder can't be validated on synthetic data); static mock (doesn't test anything); Vercel Password Protection and WAF rate-limit rules (not on Hobby; V25); TypeSafe JS SDK (0.x; a typed fetch wrapper is small and keeps timeouts and retries under our control).
+Consequences: The request builder, "Change in condition" entry point and evidence finder appear in the deck as next steps, not built. Hobby is for non-commercial use (V27). Upstash adds an account the author must create. Eval results describe synthetic cases only, not real denials (V23). TypeSafe privacy terms and enterprise plans are deferred (V22).
