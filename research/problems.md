@@ -1,5 +1,18 @@
 # Problem shortlist
 
+## Decision (2026-10-04)
+The author narrowed the list (`docs/decisions/0008-narrow-shortlist.md`) and then chose a long-tail slice of #1 (`docs/decisions/0009-problem-long-stay-residents.md`):
+
+**Long-stay nursing home residents on Medicare Advantage who need a short-term skilled stay are denied about four times as often as other enrollees, on reasoning that conflicts with Medicare's coverage rules, in a workflow built for hospital referrals.**
+
+- **Size of the gap [T1]:** 39.5% denied (1,283 of 3,248 requests) vs 11.5% for other enrollees, June 2024, 19 MA organizations; residents are about 3% of requests (OIG OEI-09-24-00331, App. D). OIG gives no denial-reason breakdown and leaves the gap unexplained; its recommendation to CMS is open.
+- **The reasoning [T1, OIG reporting insurers' statements]:** residents "already have some intermittent skilled therapy supports available"; naviHealth's reviewer guidance said to "consider the reasons that the enrollee lives in a nursing facility", which "frequently impact a patient's ability to meaningfully participate in daily skilled therapy".
+- **The conflict [T1]:** Medicare Benefit Policy Manual Ch. 8 covers daily skilled *nursing*, not only therapy (§30, §30.6), and covers maintenance: coverage "does not turn on the presence or absence of an individual's potential for improvement" (§30, Jimmo). CMS-4201-F requires MA plans to apply Traditional Medicare's SNF criteria. Advocates and industry: residence "should not affect" eligibility.
+- **The workflow gap (help articles, V17):** ExaCare's flow runs referral, then screener, then accept, then booked/moved-in (`kb/residents-tab.md`); Managed Care Agent starts from a referral (`kb/4-submit-preauth.md`); the PointClickCare link pushes data into the EHR at admission (`kb/push-to-pcc.md`). A resident's change in condition has no starting point except a Quick Upload "referral". Concurrent Reviews reads EHR data, but only to extend an existing authorization.
+- **Why it's long-tail:** small slice, outside the hospital-referral front door, and the fix needs regulatory knowledge rather than speed.
+
+The sections below are the shortlist as it stood before the decision.
+
 ## Method
 - **Internal:** six bulk summaries of all 57 scraped pages and 10 of the 12 Summit transcripts (AI Tools for Executives and the highlight reel were skipped). Every figure and quote below was then checked by hand against the source line; two summary errors were caught and dropped. Transcripts are auto-captions (V6).
 - **Added in a second pass:** the full 2026 Time-to-Accept Benchmark Report (PDF, June 2026, obtained by the author through the public form); 21 help-centre articles on Managed Care Agent, screener and rules, insurance, PDPM and Data Center, saved by the author in a browser because robots.txt blocks bots; and 3 Summit slide screenshots. All are in `research/sources/` (private).
