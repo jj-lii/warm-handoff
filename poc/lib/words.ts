@@ -25,3 +25,11 @@ export function joinOr(parts: string[]): string {
 
 export const formatDate = (iso: string) =>
   new Date(`${iso}T12:00:00Z`).toLocaleDateString("en-CA", { month: "short", day: "numeric", timeZone: "UTC" });
+
+// "October 9th"
+export function formatDue(iso: string): string {
+  const d = new Date(`${iso}T12:00:00Z`);
+  const n = d.getUTCDate();
+  const suffix = n % 100 >= 11 && n % 100 <= 13 ? "th" : ["th", "st", "nd", "rd"][n % 10] ?? "th";
+  return `${d.toLocaleDateString("en-CA", { month: "long", timeZone: "UTC" })} ${n}${suffix}`;
+}

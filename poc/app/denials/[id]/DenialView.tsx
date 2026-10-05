@@ -7,12 +7,12 @@ import type { DenialSummary } from "@/lib/api";
 import type { Verdict } from "@/lib/check";
 import { APPEAL_WINDOW_DAYS, type Case } from "@/lib/cases";
 import type { Draft, Span } from "@/lib/draft";
+import type { Action } from "@/lib/rules";
 import type { Letter } from "@/lib/store";
 import type { Triage } from "@/lib/triage";
-import { formatDate, joinOr, NEXT_STEP, REASON } from "@/lib/words";
-import { SyntheticChip } from "../../components/Chips";
+import { formatDate, formatDue, joinOr, NEXT_STEP, REASON } from "@/lib/words";
 import { daysText } from "../../components/DeadlineRing";
-import { Icon } from "../../components/Icon";
+import { Icon, type IconName } from "../../components/Icon";
 
 type Fallback = { reason: string; message: string; repo: string };
 type Mark = Span & { key: string; kind: "answer" | "todo" };
@@ -57,7 +57,62 @@ function Running({ what }: { what: string }) {
     <div className="running">
       <span className="spinner spinner-blue" aria-hidden />
       <strong>Running {what}</strong>
-      <span>AI analysis takes a few seconds.</span>
+    </div>
+  );
+}
+
+const ACTION_TAG: Record<Action, { label: string; tone: string }> = {
+  rules_conflict: { label: "Not a Medicare criterion", tone: "green" },
+  clinical_dispute: { label: "Clinical question", tone: "orange" },
+  fixable: { label: "Fixable", tone: "blue" },
+};
+const VERDICT_ICON: Record<Verdict, IconName> = { contest_on_rules: "check", contest_on_facts: "help", send_documents: "doc", manual_review: "cancel" };
+const pct = (p: number) => `${Math.round(p * 100)}%`;
+const sentence = (s: string) => s.charAt(0).toUpperCase() + s.slice(1);
+
+function Assessment({ triage }: { triage: Triage }) {
+  const found = triage.findings.filter((f) => f.detected).sort((a, b) => b.probability - a.probability);
+  return (
+    <div className="panel-body assess">
+      <div className="assess-top">
+        <span className={`assess-icon tone-${STAGE_TONE[triage.verdict]}`}>
+          <Icon name={VERDICT_ICON[triage.verdict]} />
+        </span>
+        <div className="assess-verdict">
+          <span className="eyebrow">Recommendation</span>
+          <strong>{NEXT_STEP[triage.verdict].title}</strong>
+        </div>
+        {triage.verdict !== "manual_review" && (
+          <div className="assess-score">
+            <strong>{pct(triage.rules_conflict)}</strong>
+            <span>Rules conflict</span>
+          </div>
+        )}
+      </div>
+      {found.length > 0 && (
+        <>
+          <span className="eyebrow">Reasons the plan gave</span>
+          <ul className="reason-list">
+            {found.map((f) => (
+              <li key={f.label}>
+                <span className="reason-text">{sentence(REASON[f.label])}</span>
+                <span className={`tag tone-${ACTION_TAG[f.action].tone}`}>{ACTION_TAG[f.action].label}</span>
+                <span className="reason-pct">{pct(f.probability)}</span>
+              </li>
+            ))}
+          </ul>
+        </>
+      )}
+      {triage.handoff.needed && (
+        <div className="callout">
+          <Icon name="flag" className="flag" />
+          <span>
+            {triage.handoff.pivotal.length
+              ? `Double-check: not sure whether the plan ${joinOr(triage.handoff.pivotal.map((l) => REASON[l]))}.`
+              : "Double-check: no known reason found."}
+          </span>
+        </div>
+      )}
     </div>
   );
 }
@@ -67,15 +122,15 @@ export function DenialView(props: { summary: DenialSummary; letter: Letter; kase
   const [triage, setTriage] = useState(props.triage);
   const [draft, setDraft] = useState(props.draft);
   const [active, setActive] = useState<string | null>(null);
-  const [running, setRunning] = useState(false);
+  const [running, setRunning] = useState<{ triage: boolean; draft: boolean }>({ triage: false, draft: false });
   const [live, setLive] = useState<{ triage_ms?: number; draft_ms?: number; cached?: boolean } | null>(null);
   const [fallbacks, setFallbacks] = useState<Fallback[]>([]);
   const [failed, setFailed] = useState<string | null>(null);
   const letterPane = useRef<HTMLDivElement>(null);
 
   const marks = useMemo(() => marksFor(draft), [draft]);
-  const found = triage.findings.filter((f) => f.detected);
   const step = NEXT_STEP[triage.verdict];
+  const busy = running.triage || running.draft;
   const deniedAgo = summary.days_left !== null ? APPEAL_WINDOW_DAYS - summary.days_left : null;
 
   const pick = (key: string) => {
@@ -85,7 +140,7 @@ export function DenialView(props: { summary: DenialSummary; letter: Letter; kase
   };
 
   async function runLive() {
-    setRunning(true);
+    setRunning({ triage: true, draft: true });
     setFallbacks([]);
     setFailed(null);
     try {
@@ -93,6 +148,9 @@ export function DenialView(props: { summary: DenialSummary; letter: Letter; kase
       if (t.data.triage) setTriage(t.data.triage);
       const next: Fallback[] = t.data.fallback ? [t.data.fallback] : [];
       const status: { triage_ms?: number; draft_ms?: number; cached?: boolean } = t.data.live ? { triage_ms: t.data.triage?.latency_ms } : {};
+      setFallbacks([...next]);
+      setLive({ ...status });
+      setRunning({ triage: false, draft: true });
       if ((t.data.triage ?? triage).verdict !== "manual_review") {
         const d = await post<{ live: boolean; cached?: boolean; draft?: Draft; fallback?: Fallback }>(`/api/v1/denials/${letter.id}/appeal-drafts`);
         if (d.data.draft) setDraft(d.data.draft);
@@ -104,7 +162,7 @@ export function DenialView(props: { summary: DenialSummary; letter: Letter; kase
     } catch {
       setFailed("Couldn't reach the server. The pre-generated result is still shown.");
     } finally {
-      setRunning(false);
+      setRunning({ triage: false, draft: false });
     }
   }
 
@@ -116,7 +174,7 @@ export function DenialView(props: { summary: DenialSummary; letter: Letter; kase
         </Link>
         <div className="field">
           <strong>{summary.member}</strong>
-          <span>Synthetic resident</span>
+          <span>Resident</span>
         </div>
         {kase ? (
           <>
@@ -134,8 +192,8 @@ export function DenialView(props: { summary: DenialSummary; letter: Letter; kase
             </div>
             {summary.deadline && summary.days_left !== null && (
               <div className="field">
-                <strong>{formatDate(summary.deadline)}</strong>
-                <span>Appeal due · {daysText(summary.days_left)}</span>
+                <strong>{daysText(summary.days_left)}</strong>
+                <span>Due {formatDue(summary.deadline)}</span>
               </div>
             )}
           </>
@@ -150,10 +208,9 @@ export function DenialView(props: { summary: DenialSummary; letter: Letter; kase
           <span>AI Suggestion</span>
         </div>
         <div className="bar-end">
-          <SyntheticChip />
-          <button type="button" className="btn-primary" onClick={runLive} disabled={running} title="Triage with Jev and draft with Claude now, instead of the pre-generated result">
-            {running ? <span className="spinner" aria-hidden /> : <Icon name="play" />}
-            {running ? "Running" : "Run live"}
+          <button type="button" className="btn-primary" onClick={runLive} disabled={busy} title="Triage with Jev and draft with Claude now">
+            {busy ? <span className="spinner" aria-hidden /> : <Icon name="play" />}
+            {busy ? "Running" : "Run live"}
           </button>
         </div>
       </header>
@@ -161,19 +218,10 @@ export function DenialView(props: { summary: DenialSummary; letter: Letter; kase
       <div className="card tabs-card">
         <nav className="tabs" aria-label="Sections">
           <span className="tab tab-active">Denial Review</span>
-          <Link href="/evals" className="tab">
-            Evals
-          </Link>
         </nav>
 
-        {(live || fallbacks.length > 0 || failed) && (
+        {(fallbacks.length > 0 || failed) && (
           <div className="notices">
-            {live && (live.triage_ms !== undefined || live.draft_ms !== undefined) && (
-              <p className="live-note">
-                Live:{live.triage_ms !== undefined && ` Jev triage ${live.triage_ms} ms`}
-                {live.draft_ms !== undefined && ` · Claude draft ${(live.draft_ms / 1000).toFixed(1)} s${live.cached ? " (cached earlier today)" : ""}`}
-              </p>
-            )}
             {fallbacks.slice(0, 1).map((f) => (
               <Banner
                 key={f.reason}
@@ -195,69 +243,34 @@ export function DenialView(props: { summary: DenialSummary; letter: Letter; kase
           <div className="pane pane-letter" ref={letterPane}>
             <div className="doc-head">
               <strong>{summary.member} - denial notice.txt</strong>
-              <span>{kase ? `Received ${formatDate(kase.denial.date)}` : "Demo letter"} · synthetic</span>
-              <span className="doc-note">Dates inside the letter are as generated; the queue sets its own denial dates so deadlines stay current.</span>
+              <span>{kase ? `Received ${formatDate(kase.denial.date)}` : "Demo letter"}</span>
             </div>
             <LetterText text={letter.text} marks={marks} active={active} onPick={pick} />
           </div>
 
           <div className="pane pane-draft">
-            <h2 className="step">Review the denial and the draft appeal</h2>
-
             <section className="panel">
               <div className="panel-head">
                 <strong>Denial Assessment</strong>
-                <span>Triage by Jev · rules-conflict probability {triage.rules_conflict.toFixed(2)}</span>
+                <span>{live?.triage_ms !== undefined ? `Jev · live in ${live.triage_ms} ms` : "Jev"}</span>
               </div>
-              {running ? (
-                <Running what="Denial Assessment" />
-              ) : (
-                <div className="panel-body">
-                  <h3>{step.title}</h3>
-                  <p>{step.detail}</p>
-                  {found.length > 0 && (
-                    <ul className="reasons">
-                      {found.map((f) => (
-                        <li key={f.label}>
-                          The plan {REASON[f.label]}.{" "}
-                          <span className="muted">{f.action === "rules_conflict" ? "Not a coverage criterion." : f.action === "clinical_dispute" ? "A clinical question." : "Fixable."}</span>{" "}
-                          <span className="num">{f.probability.toFixed(2)}</span>
-                        </li>
-                      ))}
-                    </ul>
-                  )}
-                  {triage.handoff.needed && (
-                    <p className="check">
-                      <Icon name="flag" className="flag" />
-                      <span>
-                        {triage.handoff.pivotal.length
-                          ? `Not sure whether the plan ${joinOr(triage.handoff.pivotal.map((l) => REASON[l]))}; the answer changes the next step.`
-                          : "No known reason found."}{" "}
-                        <span className="muted">Untested rule (ADR 0018).</span>
-                      </span>
-                    </p>
-                  )}
-                </div>
-              )}
+              {running.triage ? <Running what="Denial Assessment" /> : <Assessment triage={triage} />}
             </section>
 
             <section className="panel">
               <div className="panel-head">
                 <strong>Reconsideration Draft</strong>
                 <span>
-                  {!draft
-                    ? "Not prepared"
-                    : draft.source === "claude"
-                      ? "Wording by Claude Haiku 4.5. Every citation, chart fact and quote was checked against its source by the server."
-                      : "Template draft: every sentence comes from the rules file or the chart."}
-                  {draft?.fallback_reason === "check_failed" && " (A Claude draft failed the citation check, so the template is shown.)"}
+                  {!draft ? "Not prepared" : draft.source === "claude" ? "Claude Haiku 4.5 · citations checked" : "Template"}
+                  {live?.draft_ms !== undefined && ` · live in ${(live.draft_ms / 1000).toFixed(1)} s${live.cached ? " (cached)" : ""}`}
+                  {draft?.fallback_reason === "check_failed" && " · Claude draft failed the citation check"}
                 </span>
               </div>
-              {running ? (
+              {running.draft ? (
                 <Running what="Reconsideration Draft" />
               ) : !draft ? (
                 <div className="panel-body">
-                  <p className="muted">A person should read this letter first; no draft is prepared when no known reason is found.</p>
+                  <p className="muted">A person reads this one first.</p>
                 </div>
               ) : (
                 <div className="panel-body draft">
@@ -279,7 +292,6 @@ export function DenialView(props: { summary: DenialSummary; letter: Letter; kase
                             </a>
                           ))}
                         </p>
-                        {b.answers && <p className="answers">Answers: “{b.answers.text.replace(/\s+/g, " ")}”</p>}
                         {b.facts.length > 0 && (
                           <ul className="facts">
                             {b.facts.map((f) => (
@@ -294,7 +306,9 @@ export function DenialView(props: { summary: DenialSummary; letter: Letter; kase
                   })}
                   {draft.coordinator_todos.map((t, i) => (
                     <div key={`t${i}`} id={`block-t${i}`} className={`block block-todo${active === `t${i}` ? " block-active" : ""}`} onClick={() => pick(`t${i}`)}>
-                      <p>Coordinator: address “{t.text.replace(/\s+/g, " ")}”. None of the six known reasons covers it.</p>
+                      <p>
+                        <span className="todo-tag">Not covered</span> “{t.text.replace(/\s+/g, " ")}”
+                      </p>
                     </div>
                   ))}
                   <div className="citations">

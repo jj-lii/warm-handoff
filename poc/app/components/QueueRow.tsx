@@ -5,7 +5,7 @@ import { useRouter } from "next/navigation";
 import { HoverCard } from "@astryxdesign/core/HoverCard";
 import type { DenialSummary } from "@/lib/api";
 import type { Triage } from "@/lib/triage";
-import { formatDate, joinOr, NEXT_STEP, REASON } from "@/lib/words";
+import { formatDue, joinOr, NEXT_STEP, REASON } from "@/lib/words";
 import { StrengthChip, SuggestionChip } from "./Chips";
 import { DeadlineRing, daysText } from "./DeadlineRing";
 import { Icon } from "./Icon";
@@ -16,16 +16,9 @@ export function QueueRow({ d, triage, facility, deniedAgo }: { d: DenialSummary;
   const unsure = triage.handoff.pivotal.map((l) => REASON[l]);
   const card = (
     <div className="card-body">
-      <p>
-        <strong>{NEXT_STEP[d.verdict].title}.</strong> {NEXT_STEP[d.verdict].detail}
-      </p>
+      <strong>{NEXT_STEP[d.verdict].title}</strong>
       {found.length > 0 && <p>The plan {joinOr(found.map((f) => REASON[f.label]))}.</p>}
-      {d.double_check && (
-        <p className="card-check">
-          {unsure.length ? `Not sure whether the plan ${joinOr(unsure)}.` : "No known reason found."} Flagged by an untested rule (ADR 0018); a person approves every draft anyway.
-        </p>
-      )}
-      <p className="card-numbers">Rules-conflict probability {d.rules_conflict.toFixed(2)} · Jev</p>
+      {d.double_check && <p className="card-check">{unsure.length ? `Not sure whether the plan ${joinOr(unsure)}.` : "No known reason found."}</p>}
     </div>
   );
   return (
@@ -35,7 +28,7 @@ export function QueueRow({ d, triage, facility, deniedAgo }: { d: DenialSummary;
           {d.member}
         </Link>
         {d.double_check && (
-          <span className="flag" title="Double-check: an uncertain reason could change the next step">
+          <span className="flag" title="Double-check">
             <Icon name="flag" />
           </span>
         )}
@@ -59,8 +52,8 @@ export function QueueRow({ d, triage, facility, deniedAgo }: { d: DenialSummary;
           <span className="due">
             <DeadlineRing daysLeft={d.days_left} />
             <span>
-              {formatDate(d.deadline)}
-              <span className="sub">{daysText(d.days_left)}</span>
+              {daysText(d.days_left)}
+              <span className="sub">Due {formatDue(d.deadline)}</span>
             </span>
           </span>
         )}

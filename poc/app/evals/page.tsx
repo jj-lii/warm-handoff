@@ -1,6 +1,5 @@
 import { STRENGTH, URGENT_DAYS } from "@/lib/queue";
 import { HANDOFF_BAND } from "@/lib/handoff";
-import { SyntheticChip } from "../components/Chips";
 import { Shell } from "../components/Shell";
 
 // Static summary of poc/evals/REPORT.md (holdout run once, 2026-10-04). Every number
@@ -25,7 +24,6 @@ export default function EvalsPage() {
             <code>poc/evals/REPORT.md</code>.
           </p>
         </div>
-        <SyntheticChip label="Synthetic letters" />
       </header>
 
       <section className="section">

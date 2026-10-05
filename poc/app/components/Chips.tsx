@@ -26,7 +26,3 @@ const STRENGTH_TONE: Record<Strength, string> = { "Strong case": "green", "Worth
 export function StrengthChip({ strength }: { strength: Strength }) {
   return <span className={`chip chip-solid tone-${STRENGTH_TONE[strength]}`}>{strength}</span>;
 }
-
-export function SyntheticChip({ label = "Synthetic data" }: { label?: string }) {
-  return <span className="chip chip-outline tone-orange chip-static">{label}</span>;
-}
