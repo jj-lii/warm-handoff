@@ -4,7 +4,7 @@
 
 Built in a weekend (October 3-4, 2026) as a product-thinking exercise: find one real problem in post-acute care from public sources, then build the smallest thing that tests it. Every patient, letter and chart fact is synthetic.
 
-**Live demo:** _link coming once deployed_ · Start with the **About** tab. It tells the story in eight short chapters.
+**Live demo: [warm-handoff-nine.vercel.app](https://warm-handoff-nine.vercel.app/)** · Start with the **About** tab. It tells the story in eight short chapters.
 
 ---
 
