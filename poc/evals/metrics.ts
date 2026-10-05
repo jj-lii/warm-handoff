@@ -115,3 +115,17 @@ export function sweep(items: Scored[], thresholds = [0.3, 0.4, 0.5, 0.6, 0.7]) {
     return { threshold: t, right_next_step: h.right_next_step.value, contestable_caught: h.contestable_caught.value, wrongly_contested: h.wrongly_contested.value, sent_to_person: h.sent_to_person.value };
   });
 }
+
+// Exact two-sided McNemar test on paired right/wrong outcomes (same letters, two engines).
+// only_a / only_b: letters only engine a (or b) got right. p is the binomial tail on those discordant pairs.
+export function mcnemar(a: boolean[], b: boolean[]) {
+  let onlyA = 0, onlyB = 0;
+  a.forEach((x, i) => {
+    if (x && !b[i]) onlyA++;
+    if (!x && b[i]) onlyB++;
+  });
+  const n = onlyA + onlyB;
+  let tail = 0;
+  for (let k = 0, c = 1; k <= Math.min(onlyA, onlyB); c = (c * (n - k)) / (k + 1), k++) tail += c;
+  return { only_a: onlyA, only_b: onlyB, p: n === 0 ? 1 : Math.min(1, (2 * tail) / 2 ** n) };
+}

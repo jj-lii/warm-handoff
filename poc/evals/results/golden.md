@@ -1,6 +1,6 @@
 # Eval: golden
 
-Synthetic letters. Gold = author's blind labels. Threshold 0.5. rules.ts d4898e11f76c. 2026-10-04T23:59:25.231Z
+Synthetic letters. Gold = author's blind labels. Threshold 0.5. rules.ts d4898e11f76c. 2026-10-05T00:23:05.986Z
 Items: 40 labelled of 40 (0 marked unsure).
 Generator intent matches blind labels exactly: 45% (18/40, 31%-60%).
 Gold is adjudicated (3 letters corrected). Blind labels match it: reasons 93% (37/40, 80%-97%); next step 100% (40/40, 91%-100%).
@@ -22,6 +22,8 @@ Gold is adjudicated (3 letters corrected). Blind labels match it: reasons 93% (3
 | Tokens in / out per letter | n/a | 1396 / 64 | 1015 / 67 | 1366 / 120 |
 | USD per letter | n/a | $0.00172 | $0.00035 | n/a |
 | Errors | 0 | 0 | 0 | 0 |
+
+Right next step, paired with Jev (exact McNemar, two-sided): keyword: only Jev right 9, only keyword right 1, p = 0.021; haiku: only Jev right 1, only haiku right 1, p = 1.000; gemini: only Jev right 0, only gemini right 0, p = 1.000.
 
 ## Per reason (precision / recall, 95% Wilson)
 

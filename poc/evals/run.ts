@@ -14,7 +14,7 @@ import { classify, CONTEXT, THRESHOLD } from "../lib/classify";
 import { LABELS, RULES, type Label } from "../lib/rules";
 import { classifyGemini, GEMINI_PRICE } from "./gemini";
 import { classifyHaiku, HAIKU_PRICE, SYSTEM as HAIKU_SYSTEM } from "./haiku";
-import { brier, costLatency, goldVerdict, headline, perLabel, predicted, predictedVerdict, sweep, wilson, type Interval, type Scored } from "./metrics";
+import { brier, costLatency, goldVerdict, headline, mcnemar, perLabel, predicted, predictedVerdict, sweep, wilson, type Interval, type Scored } from "./metrics";
 
 const SPLITS = ["dev", "golden", "holdout", "real"] as const;
 type Split = (typeof SPLITS)[number];
@@ -41,7 +41,9 @@ const outDir = priv ? join(ROOT, "private/results") : join(POC, "evals/results")
 const cacheDir = join(POC, ".eval-cache");
 
 const sha256 = (s: string | Buffer) => createHash("sha256").update(s).digest("hex");
-const readJsonl = <T,>(p: string): T[] => (existsSync(p) ? readFileSync(p, "utf8").split("\n").filter((l) => l.trim()).map((l) => JSON.parse(l) as T) : []);
+// Line endings normalised so a CRLF checkout hashes the same as the committed LF file.
+const hashFile = (f: string) => sha256(readFileSync(f, "utf8").replace(/\r\n/g, "\n"));
+const readJsonl =<T,>(p: string): T[] => (existsSync(p) ? readFileSync(p, "utf8").split("\n").filter((l) => l.trim()).map((l) => JSON.parse(l) as T) : []);
 
 type Item = { id: string; text: string; intent?: Label[]; distractor?: string | null; out_of_scope?: string | null };
 type LabelRow = { id: string; labels: Label[]; unsure: boolean; labeler?: string };
@@ -60,15 +62,17 @@ function guardHoldout() {
     throw new Error("PREREGISTRATION.md must be committed with no local changes");
   }
   const text = readFileSync(prereg, "utf8");
+  // Data, labels, and every file that turns them into the reported numbers.
   const hashed = [
-    join(POC, "lib/rules.ts"),
+    ...["lib/rules.ts", "lib/classify.ts", "lib/check.ts", "lib/jev.ts", "evals/run.ts", "evals/metrics.ts", "evals/haiku.ts", "evals/gemini.ts"].map((f) => join(POC, f)),
     ...(["dev", "golden"] as const).flatMap((s) => [join(POC, `evals/data/${s}.jsonl`), join(POC, `evals/data/labels/${s}.jsonl`)]),
     join(ROOT, "private/holdout.jsonl"),
     join(ROOT, "private/labels/holdout.jsonl"),
   ];
   for (const f of hashed) {
     if (!existsSync(f)) throw new Error(`pre-registered file missing: ${f}`);
-    if (!text.includes(sha256(readFileSync(f)))) throw new Error(`hash of ${f} is not in PREREGISTRATION.md (changed since, or never registered)`);
+    // Line endings normalised: git on Windows may rewrite them on checkout.
+    if (!text.includes(hashFile(f))) throw new Error(`hash of ${f} is not in PREREGISTRATION.md (changed since, or never registered)`);
   }
   const marker = join(ROOT, "private/holdout-final-run.json");
   if (existsSync(marker)) throw new Error(`the holdout has already run (${marker}). Delete it only if that run failed before producing results.`);
@@ -205,6 +209,19 @@ function summarize({ items, labelled, labels, blind, dupes, results, errors, mod
       reasons: agreement(labelled.map((x) => sameSet(blind.get(x.id)?.labels ?? [], labels.get(x.id)!.labels))),
       next_step: agreement(labelled.map((x) => verdictOf(blind.get(x.id)?.labels ?? []) === verdictOf(labels.get(x.id)!.labels))),
     },
+    // Paired exact McNemar on right next step, Jev against each other engine (letters both scored).
+    vs_jev: engines.includes("jev")
+      ? Object.fromEntries(
+          engines
+            .filter((e) => e !== "jev")
+            .map((e) => {
+              const other = new Map(results[e].map((x) => [x.id, x]));
+              const both = results.jev.filter((x) => other.has(x.id));
+              const ok = (x: Scored) => predictedVerdict(x) === goldVerdict(x);
+              return [e, { n: both.length, ...mcnemar(both.map(ok), both.map((x) => ok(other.get(x.id)!))) }];
+            }),
+        )
+      : {},
     engines: Object.fromEntries(
       engines.map((e) => {
         const s = results[e];
@@ -267,6 +284,16 @@ function report(s: Summary): string {
     row("Tokens in / out per letter", (e) => (e.cost.tokens_per_letter ? `${e.cost.tokens_per_letter.input} / ${e.cost.tokens_per_letter.output}` : "n/a")),
     row("USD per letter", (e) => (e.cost.usd_per_letter == null ? "n/a" : `$${e.cost.usd_per_letter.toFixed(5)}`)),
     row("Errors", (e) => String(e.errors)),
+    ...(Object.keys(s.vs_jev).length
+      ? [
+          "",
+          "Right next step, paired with Jev (exact McNemar, two-sided): " +
+            Object.entries(s.vs_jev)
+              .map(([e, m]) => `${e}: only Jev right ${m.only_a}, only ${e} right ${m.only_b}, p = ${m.p.toFixed(3)}`)
+              .join("; ") +
+            ".",
+        ]
+      : []),
     "",
     "## Per reason (precision / recall, 95% Wilson)",
     "",
