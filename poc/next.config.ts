@@ -12,9 +12,10 @@ const csp = [
   "default-src 'self'",
   // Next.js inlines its bootstrap script; dev mode also needs eval for fast refresh.
   `script-src 'self' 'unsafe-inline'${dev ? " 'unsafe-eval'" : ""}`,
-  "style-src 'self' 'unsafe-inline'",
+  // Roboto from Google Fonts (ADR 0023): stylesheet from googleapis, font files from gstatic.
+  "style-src 'self' 'unsafe-inline' https://fonts.googleapis.com",
   "img-src 'self' data:",
-  "font-src 'self'",
+  "font-src 'self' https://fonts.gstatic.com",
   "connect-src 'self'",
   "object-src 'none'",
   "base-uri 'self'",
