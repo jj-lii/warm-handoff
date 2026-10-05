@@ -2,6 +2,18 @@
 
 Older entries moved from `docs/work-log.md`. Not read by default. Newest first.
 
+## 2026-10-04 - Holdout run once; report written
+Output: `poc/evals/PREREGISTRATION.md` (`876be56`); `poc/evals/REPORT.md`; `private/results/holdout-final.{json,md}` (aggregate only read); `private/holdout-final-run.json` (run marker); exact McNemar test in `evals/metrics.ts`; analysis code hash-locked
+Notes:
+- All four predictions held. Right next step: keyword 60%, Haiku 83%, Gemini 85%, Jev 83%; Jev vs keyword p = 0.004; Jev vs Haiku and Gemini p = 1.0. Jev 124 ms p50 and 53% sent to a person; Gemini $0.00035 per letter.
+- Most model misses (5-6 of 6-7 each) are gold "facts" flagged as "rules": the custodial ambiguity named in advance. The combined "facts, then rules" next step is saved as proposed ADR 0017; decision-relevant hand-offs as proposed ADR 0018. Both untested.
+- Before the run: Gemini 3.1 Flash-Lite added (ADR 0016; 2.5 Flash-Lite is closed to new keys); custodial tightening set aside as post hoc (wording kept in ADR 0017); questions frozen at `f9cfc85`.
+- Report header shows rules.ts raw CRLF hash d4898e11; normalised it matches the pre-registration (noted in REPORT.md).
+Next, in order:
+1. Done: real slice labelled and run (REPORT.md, exploratory): Haiku 76%, Gemini 67%, Jev 62%, keyword 29%; 15 of 21 passages are "no daily skilled need", so it barely tests the rules-conflict reasons. Post-hoc: only 7 of Jev's 21 holdout hand-offs could change the next step.
+2. Claude: API routes, auth, rate limits, PHI tripwire, security headers; Astryx smoke build (V24); the triage queue UI; the thin Claude drafting layer (read the claude-api skill first). Cut line if behind: eval page, then Upstash, then UI polish.
+3. Deck (next session), then the Vercel deploy.
+
 ## 2026-10-04 - Golden labelled, adjudicated (proposed) and run
 Output: `poc/evals/data/labels/golden.jsonl` (author); `poc/evals/data/golden-adjudication.md` (v1, 19 kept, 3 changes proposed); `poc/evals/results/golden.{json,md}`; `BRIEF.md` limitation (residency labels)
 Notes:
