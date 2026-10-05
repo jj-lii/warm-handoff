@@ -16,7 +16,8 @@
     "generate": "tsx --env-file-if-exists=../.env evals/generate.ts",
     "label": "tsx evals/label.ts",
     "eval": "tsx --env-file-if-exists=../.env evals/run.ts",
-    "eval:baseline": "tsx evals/run.ts --baseline-only"
+    "eval:baseline": "tsx evals/run.ts --baseline-only",
+    "pregen": "tsx --env-file-if-exists=../.env scripts/pregen.ts"
   },
   "dependencies": {
     "@anthropic-ai/sdk": "0.131.0",

@@ -1,0 +1,2840 @@
+{
+ "dev-001": {
+  "letter_id": "dev-001",
+  "rules_version": "74d77b7b4e6d",
+  "header": "DRAFT for clinician and compliance review. Not a legal determination. Synthetic data only.",
+  "blocks": [
+   {
+    "text": "We respectfully request reconsideration of the denial of skilled nursing facility coverage for Mr. Leonard at Lakeshore Care Centre. The plan determined that SNF skilled level of care is not approved because \"the member's current baseline demonstrates significant limitations in physical stamina and sustained attention\" and \"the enrollee is unable to consistently participate in or reasonably benefit from an intensive, daily multidisciplinary rehabilitation regimen at this time.\" However, SNF coverage does not turn on a member's ability to participate in therapy or on improvement potential. The plan's decision appears to rest on diagnosis and prognosis rather than on whether skilled services are medically necessary.",
+    "answers": {
+     "text": "the enrollee is unable to consistently participate in or reasonably benefit from an intensive, daily multidisciplinary rehabilitation regimen at this time",
+     "start": 853,
+     "end": 1007
+    },
+    "cites": [
+     1,
+     2
+    ],
+    "facts": []
+   },
+   {
+    "text": "Mr. Leonard requires skilled nursing and skilled rehabilitation services on a daily basis. He underwent open reduction and internal fixation of his left hip and is on partial weight-bearing precautions. His surgical incision requires assessment and daily nursing dressing changes by a licensed nurse. He is receiving physical therapy for gait training and transfers six days a week. These services meet the regulatory standard for daily skilled nursing and rehabilitation services.",
+    "answers": null,
+    "cites": [
+     3,
+     4
+    ],
+    "facts": [
+     {
+      "id": "dev-001-f1",
+      "text": "Open reduction and internal fixation, left hip, after a fall; partial weight-bearing ordered",
+      "source": "Hospital discharge summary"
+     },
+     {
+      "id": "dev-001-f3",
+      "text": "Surgical incision assessed and dressed daily by a licensed nurse",
+      "source": "Treatment record"
+     },
+     {
+      "id": "dev-001-f2",
+      "text": "Physical therapy 60 min daily, 6 days a week: gait training and transfers, therapist-led",
+      "source": "PT evaluation"
+     }
+    ]
+   },
+   {
+    "text": "The plan stated that \"services may be safely and adequately managed at the member's current custodial baseline.\" Custodial care and the supportive services Mr. Leonard currently receives do not substitute for the daily skilled nursing care his post-surgical condition requires. Under the Medicare rules, if a patient needs daily skilled services, payment cannot be made based on intermittent care. The question is whether Mr. Leonard's medical condition requires daily skilled services—not whether alternative support is available.",
+    "answers": {
+     "text": "Services may be safely and adequately managed at the member's current custodial baseline.",
+     "start": 1256,
+     "end": 1345
+    },
+    "cites": [
+     5,
+     6
+    ],
+    "facts": []
+   },
+   {
+    "text": "Mr. Leonard's post-operative care includes daily nursing assessment and management of his surgical wound and weight-bearing restrictions. These constitute skilled observation, assessment, and management of his care plan, which are recognized skilled services under Medicare rules. The daily nature of these services, combined with the requirement for a licensed nurse to assess and dress his incision, establishes the medical necessity for SNF-level care.",
+    "answers": null,
+    "cites": [
+     7,
+     8
+    ],
+    "facts": [
+     {
+      "id": "dev-001-f3",
+      "text": "Surgical incision assessed and dressed daily by a licensed nurse",
+      "source": "Treatment record"
+     }
+    ]
+   },
+   {
+    "text": "We ask that the plan reverse this denial and approve skilled nursing facility coverage. Mr. Leonard meets the regulatory criteria for SNF admission: he requires skilled nursing services on a daily basis for post-operative wound management and monitoring, and he requires skilled rehabilitation services for physical therapy. His need for skilled care does not depend on his stamina, his participation in therapy, or his improvement potential.",
+    "answers": null,
+    "cites": [
+     3,
+     4,
+     2
+    ],
+    "facts": []
+   }
+  ],
+  "sources": [
+   {
+    "n": 1,
+    "source": "Medicare Benefit Policy Manual, Ch. 8, §30.2.2",
+    "quote": "a patient's diagnosis or prognosis should never be the sole factor in deciding that a service is not skilled."
+   },
+   {
+    "n": 2,
+    "source": "Medicare Benefit Policy Manual, Ch. 8, §30",
+    "quote": "Coverage of nursing care and/or therapy to perform a maintenance program does not turn on the presence or absence of an individual's potential for improvement from the nursing care and/or therapy, but rather on the beneficiary's need for skilled care."
+   },
+   {
+    "n": 3,
+    "source": "Medicare Benefit Policy Manual, Ch. 8, §30",
+    "quote": "The patient requires skilled nursing services or skilled rehabilitation services"
+   },
+   {
+    "n": 4,
+    "source": "Medicare Benefit Policy Manual, Ch. 8, §30.6",
+    "quote": "Skilled nursing services or skilled rehabilitation services (or a combination of these services) must be needed and provided on a \"daily basis,\" i.e., on essentially a 7-days-a-week basis."
+   },
+   {
+    "n": 5,
+    "source": "Medicare Benefit Policy Manual, Ch. 8, §30",
+    "quote": "payment for a SNF level of care could not be made if a patient needs an intermittent rather than daily skilled service."
+   },
+   {
+    "n": 6,
+    "source": "Medicare Benefit Policy Manual, Ch. 8, §30.7",
+    "quote": "If the use of those alternatives would adversely affect the patient's medical condition, the A/B MAC (A) concludes that as a practical matter the daily skilled services can only be provided by a SNF on an inpatient basis."
+   },
+   {
+    "n": 7,
+    "source": "Medicare Benefit Policy Manual, Ch. 8, §30.2.3.1 (Management and Evaluation of a Patient Care Plan)"
+   },
+   {
+    "n": 8,
+    "source": "Medicare Benefit Policy Manual, Ch. 8, §30.2.3.2 (Observation and Assessment of Patient's Condition)"
+   }
+  ],
+  "coordinator_todos": [],
+  "source": "claude",
+  "model": "claude-haiku-4-5-20251001",
+  "usage": {
+   "input_tokens": 1983,
+   "output_tokens": 736
+  },
+  "latency_ms": 10376
+ },
+ "dev-002": {
+  "letter_id": "dev-002",
+  "rules_version": "74d77b7b4e6d",
+  "header": "DRAFT for clinician and compliance review. Not a legal determination. Synthetic data only.",
+  "blocks": [
+   {
+    "text": "We respectfully disagree with the denial of skilled nursing facility coverage for Chris Bosh's stay at Riverside Manor. The plan states that \"the medical record indicates that following the acute change, you are already functioning at or near your established baseline level\" and that \"the requested services would serve only to maintain your current functional status without anticipated measurable improvement.\" However, Medicare policy makes clear that coverage does not depend on whether a patient will improve.",
+    "answers": {
+     "text": "the requested services would serve only to maintain your current functional status without anticipated measurable improvement",
+     "start": 1013,
+     "end": 1138
+    },
+    "cites": [
+     1,
+     2
+    ],
+    "facts": []
+   },
+   {
+    "text": "Skilled nursing facility care is covered when the patient needs skilled care to maintain the current condition or to prevent or slow deterioration. Mr. Bosh requires daily occupational therapy for upper-limb retraining with the goal of independent feeding, and he has experienced a recent acute change in functional status with increased assistance needs for transfers. These clinical needs for skilled rehabilitation services meet the coverage criteria regardless of improvement potential.",
+    "answers": null,
+    "cites": [
+     1,
+     2
+    ],
+    "facts": [
+     {
+      "id": "dev-002-f1",
+      "text": "Left-sided weakness after an ischemic stroke; transfers went from supervision to two-person assist",
+      "source": "Hospital discharge summary"
+     },
+     {
+      "id": "dev-002-f2",
+      "text": "Occupational therapy daily for upper-limb retraining; goal is independent feeding",
+      "source": "OT plan of care"
+     }
+    ]
+   },
+   {
+    "text": "We request that Summit Ridge Advantage reconsider this denial and approve the requested skilled nursing facility stay based on Mr. Bosh's documented need for daily skilled services to maintain his condition and support his rehabilitation goals.",
+    "answers": null,
+    "cites": [],
+    "facts": []
+   }
+  ],
+  "sources": [
+   {
+    "n": 1,
+    "source": "Medicare Benefit Policy Manual, Ch. 8, §30",
+    "quote": "Coverage of nursing care and/or therapy to perform a maintenance program does not turn on the presence or absence of an individual's potential for improvement from the nursing care and/or therapy, but rather on the beneficiary's need for skilled care."
+   },
+   {
+    "n": 2,
+    "source": "Medicare Benefit Policy Manual, Ch. 8, §30.2.1",
+    "quote": "Skilled care may be necessary to improve a patient's current condition, to maintain the patient's current condition, or to prevent or slow further deterioration of the patient's condition."
+   }
+  ],
+  "coordinator_todos": [],
+  "source": "claude",
+  "model": "claude-haiku-4-5-20251001",
+  "usage": {
+   "input_tokens": 1321,
+   "output_tokens": 348
+  },
+  "latency_ms": 3924
+ },
+ "dev-003": {
+  "letter_id": "dev-003",
+  "rules_version": "74d77b7b4e6d",
+  "header": "DRAFT for clinician and compliance review. Not a legal determination. Synthetic data only.",
+  "blocks": [
+   {
+    "text": "We respectfully request reconsideration of the denial of skilled nursing facility coverage for Mr. VanVleet. The clinical record documents that Mr. VanVleet requires daily skilled nursing services that meet Medicare's definition of medically necessary SNF-level care.",
+    "answers": null,
+    "cites": [],
+    "facts": []
+   },
+   {
+    "text": "The plan's rationale states that \"the interventions outlined in the treatment plan do not require the specialized training and continuous judgment of a licensed professional nurse or therapist.\" However, Mr. VanVleet's current treatment includes intravenous antibiotic therapy for pneumonia administered through a PICC line. PICC line care and IV medication administration must be performed by a licensed nurse and are required on a daily basis.",
+    "answers": {
+     "text": "the interventions outlined in the treatment plan do not require the specialized training and continuous judgment of a licensed professional nurse or therapist",
+     "start": 648,
+     "end": 806
+    },
+    "cites": [
+     1,
+     2
+    ],
+    "facts": [
+     {
+      "id": "dev-003-f1",
+      "text": "IV ceftriaxone daily for 14 days for pneumonia, through a PICC line",
+      "source": "Physician order"
+     },
+     {
+      "id": "dev-003-f2",
+      "text": "PICC line care and IV administration by a licensed nurse each day",
+      "source": "MAR"
+     }
+    ]
+   },
+   {
+    "text": "The plan determined that \"care requirements—including routine medication delivery, vital sign monitoring, and ongoing personal assistance—can be safely delivered by trained non-licensed personnel.\" This reasoning conflates custodial care with the specialized skilled nursing services Mr. VanVleet requires. The skilled intravenous therapy cannot be delegated to non-licensed staff, and these daily skilled services cannot safely be provided outside an inpatient SNF setting.",
+    "answers": {
+     "text": "can be safely delivered by trained non-licensed personnel within the member's current residential setting",
+     "start": 1032,
+     "end": 1137
+    },
+    "cites": [
+     3,
+     4
+    ],
+    "facts": [
+     {
+      "id": "dev-003-f1",
+      "text": "IV ceftriaxone daily for 14 days for pneumonia, through a PICC line",
+      "source": "Physician order"
+     },
+     {
+      "id": "dev-003-f2",
+      "text": "PICC line care and IV administration by a licensed nurse each day",
+      "source": "MAR"
+     }
+    ]
+   },
+   {
+    "text": "Mr. VanVleet's need for daily skilled nursing care meets the regulatory standard for SNF coverage. We request that the plan authorize the requested skilled nursing facility admission.",
+    "answers": null,
+    "cites": [
+     1
+    ],
+    "facts": []
+   }
+  ],
+  "sources": [
+   {
+    "n": 1,
+    "source": "Medicare Benefit Policy Manual, Ch. 8, §30.6",
+    "quote": "Skilled nursing services or skilled rehabilitation services (or a combination of these services) must be needed and provided on a \"daily basis,\" i.e., on essentially a 7-days-a-week basis."
+   },
+   {
+    "n": 2,
+    "source": "Medicare Benefit Policy Manual, Ch. 8, §30.2.3.1 (Management and Evaluation of a Patient Care Plan)"
+   },
+   {
+    "n": 3,
+    "source": "Medicare Benefit Policy Manual, Ch. 8, §30",
+    "quote": "payment for a SNF level of care could not be made if a patient needs an intermittent rather than daily skilled service."
+   },
+   {
+    "n": 4,
+    "source": "Medicare Benefit Policy Manual, Ch. 8, §30.7",
+    "quote": "If the use of those alternatives would adversely affect the patient's medical condition, the A/B MAC (A) concludes that as a practical matter the daily skilled services can only be provided by a SNF on an inpatient basis."
+   }
+  ],
+  "coordinator_todos": [],
+  "source": "claude",
+  "model": "claude-haiku-4-5-20251001",
+  "usage": {
+   "input_tokens": 1545,
+   "output_tokens": 480
+  },
+  "latency_ms": 4801
+ },
+ "dev-004": {
+  "letter_id": "dev-004",
+  "rules_version": "74d77b7b4e6d",
+  "header": "DRAFT for clinician and compliance review. Not a legal determination. Synthetic data only.",
+  "blocks": [
+   {
+    "text": "We respectfully contest the denial of skilled nursing facility coverage for Mr. DeRozan's stay at Riverside Manor. The plan determined that Mr. DeRozan's \"baseline physical stamina, functional impairment, and cognitive status significantly limit the ability to actively participate in and derive meaningful functional benefit from a comprehensive, daily skilled rehabilitation program.\" However, coverage of skilled nursing services does not depend on a member's ability to participate in rehabilitation therapy. Medicare policy is clear that skilled nursing services are a separate category from skilled rehabilitation services, and daily skilled nursing can meet the coverage requirement regardless of therapy participation.",
+    "answers": {
+     "text": "Current clinical records demonstrate that the member's baseline physical stamina, functional impairment, and cognitive status significantly limit the ability to actively participate in and derive meaningful functional benefit from a comprehensive, daily skilled rehabilitation program.",
+     "start": 736,
+     "end": 1021
+    },
+    "cites": [
+     1,
+     2
+    ],
+    "facts": []
+   },
+   {
+    "text": "Mr. DeRozan requires skilled nursing services on a daily basis. The chart documents a Stage 3 sacral pressure injury that requires negative-pressure wound therapy with dressing changes every other day. More importantly, the care plan calls for daily skilled assessment of the wound and nutrition by a licensed nurse. This daily observation and assessment of the patient's condition constitutes a skilled nursing service that must be provided on an essentially 7-days-a-week basis to meet Medicare requirements.",
+    "answers": null,
+    "cites": [
+     3,
+     4,
+     5
+    ],
+    "facts": [
+     {
+      "id": "dev-004-f1",
+      "text": "Stage 3 sacral pressure injury; negative-pressure wound therapy with dressing changes every other day",
+      "source": "Wound care note"
+     },
+     {
+      "id": "dev-004-f2",
+      "text": "Daily skilled assessment of the wound and nutrition by a licensed nurse",
+      "source": "Nursing care plan"
+     }
+    ]
+   },
+   {
+    "text": "The plan asserted that the documented supportive requirements \"can be appropriately and safely provided by non-licensed personnel within the member's customary custodial environment.\" The availability of custodial care does not eliminate the need for daily skilled services. Medicare policy explicitly contrasts intermittent or custodial support with the daily skilled care that qualifies for SNF coverage. Whether care can be safely provided elsewhere must be evaluated based on whether using those alternatives would adversely affect the patient's medical condition.",
+    "answers": {
+     "text": "The documented supportive requirements, including routine assistance with transfers, assistance with daily living activities, and maintenance positioning, can be appropriately and safely provided by non-licensed personnel within the member's customary custodial environment.",
+     "start": 1250,
+     "end": 1524
+    },
+    "cites": [
+     6,
+     7
+    ],
+    "facts": []
+   },
+   {
+    "text": "We note that the plan's rationale focused heavily on Mr. DeRozan's limitations and prognosis. Medicare policy explicitly prohibits using diagnosis or prognosis as the sole factor in determining whether a service is not skilled. Coverage of skilled nursing care to maintain a patient's current condition or to prevent or slow deterioration does not turn on improvement potential, but rather on the beneficiary's demonstrated need for skilled care.",
+    "answers": null,
+    "cites": [
+     2,
+     8,
+     9
+    ],
+    "facts": []
+   }
+  ],
+  "sources": [
+   {
+    "n": 1,
+    "source": "Medicare Benefit Policy Manual, Ch. 8, §30",
+    "quote": "The patient requires skilled nursing services or skilled rehabilitation services"
+   },
+   {
+    "n": 2,
+    "source": "Medicare Benefit Policy Manual, Ch. 8, §30.2.2",
+    "quote": "a patient's diagnosis or prognosis should never be the sole factor in deciding that a service is not skilled."
+   },
+   {
+    "n": 3,
+    "source": "Medicare Benefit Policy Manual, Ch. 8, §30.6",
+    "quote": "Skilled nursing services or skilled rehabilitation services (or a combination of these services) must be needed and provided on a \"daily basis,\" i.e., on essentially a 7-days-a-week basis."
+   },
+   {
+    "n": 4,
+    "source": "Medicare Benefit Policy Manual, Ch. 8, §30.2.3.1 (Management and Evaluation of a Patient Care Plan)"
+   },
+   {
+    "n": 5,
+    "source": "Medicare Benefit Policy Manual, Ch. 8, §30.2.3.2 (Observation and Assessment of Patient's Condition)"
+   },
+   {
+    "n": 6,
+    "source": "Medicare Benefit Policy Manual, Ch. 8, §30",
+    "quote": "payment for a SNF level of care could not be made if a patient needs an intermittent rather than daily skilled service."
+   },
+   {
+    "n": 7,
+    "source": "Medicare Benefit Policy Manual, Ch. 8, §30.7",
+    "quote": "If the use of those alternatives would adversely affect the patient's medical condition, the A/B MAC (A) concludes that as a practical matter the daily skilled services can only be provided by a SNF on an inpatient basis."
+   },
+   {
+    "n": 8,
+    "source": "Medicare Benefit Policy Manual, Ch. 8, §30",
+    "quote": "Coverage of nursing care and/or therapy to perform a maintenance program does not turn on the presence or absence of an individual's potential for improvement from the nursing care and/or therapy, but rather on the beneficiary's need for skilled care."
+   },
+   {
+    "n": 9,
+    "source": "Medicare Benefit Policy Manual, Ch. 8, §30.2.1",
+    "quote": "Skilled care may be necessary to improve a patient's current condition, to maintain the patient's current condition, or to prevent or slow further deterioration of the patient's condition."
+   }
+  ],
+  "coordinator_todos": [],
+  "source": "claude",
+  "model": "claude-haiku-4-5-20251001",
+  "usage": {
+   "input_tokens": 1931,
+   "output_tokens": 668
+  },
+  "latency_ms": 7784
+ },
+ "dev-005": {
+  "letter_id": "dev-005",
+  "rules_version": "74d77b7b4e6d",
+  "header": "DRAFT for clinician and compliance review. Not a legal determination. Synthetic data only.",
+  "blocks": [
+   {
+    "text": "We respectfully request reconsideration of the denial of skilled nursing facility coverage for Mr. Thompson. The denial states that \"the requested interventions, while beneficial to the member's general well-being, align with ongoing maintenance care rather than an intensive, short-term skilled rehabilitative program requiring daily skilled management.\" However, Mr. Thompson requires daily skilled physical therapy and occupational therapy services that meet Medicare's coverage standard.",
+    "answers": {
+     "text": "The requested interventions, while beneficial to the member's general well-being, align with ongoing maintenance care rather than an intensive, short-term skilled rehabilitative program requiring daily skilled management.",
+     "start": 1320,
+     "end": 1541
+    },
+    "cites": [
+     1
+    ],
+    "facts": [
+     {
+      "id": "dev-005-f2",
+      "text": "PT and OT daily for transfers and residual-limb care",
+      "source": "Therapy plan of care"
+     }
+    ]
+   },
+   {
+    "text": "Skilled therapy is medically necessary for Mr. Thompson's recent change in functional status. He has a below-knee amputation and requires daily physical and occupational therapy for prosthetic training, transfers, and residual-limb care. These are skilled services that require trained therapists and cannot be performed by custodial staff. Daily skilled services of this nature are the appropriate standard for SNF coverage.",
+    "answers": null,
+    "cites": [
+     1
+    ],
+    "facts": [
+     {
+      "id": "dev-005-f1",
+      "text": "Below-knee amputation, right,; prosthetic training planned",
+      "source": "Hospital discharge summary"
+     },
+     {
+      "id": "dev-005-f2",
+      "text": "PT and OT daily for transfers and residual-limb care",
+      "source": "Therapy plan of care"
+     }
+    ]
+   },
+   {
+    "text": "The plan's denial rests on the premise that because Mr. Thompson has been a long-stay resident, his care is necessarily custodial. However, residence in a nursing home is not a coverage criterion under Medicare policy. The four factors for SNF coverage are the need for skilled services, the requirement that they be delivered daily, that they can only be provided in a SNF setting as a practical matter, and that they be reasonable and necessary. Mr. Thompson's recent change in functional status and his need for daily skilled rehabilitation services satisfy these requirements.",
+    "answers": null,
+    "cites": [
+     2,
+     3
+    ],
+    "facts": []
+   },
+   {
+    "text": "The denial also suggests that ongoing care in the current custodial setting is sufficient. That reasoning conflicts with Medicare policy. If a patient requires daily skilled services, intermittent or custodial support does not meet that requirement. Evaluation of whether alternative care settings are appropriate must be based on whether use of those alternatives would adversely affect the patient's medical condition, not on what support is already available.",
+    "answers": null,
+    "cites": [
+     4,
+     5
+    ],
+    "facts": []
+   }
+  ],
+  "sources": [
+   {
+    "n": 1,
+    "source": "Medicare Benefit Policy Manual, Ch. 8, §30.6",
+    "quote": "Skilled nursing services or skilled rehabilitation services (or a combination of these services) must be needed and provided on a \"daily basis,\" i.e., on essentially a 7-days-a-week basis."
+   },
+   {
+    "n": 2,
+    "source": "Medicare Benefit Policy Manual, Ch. 8, §30",
+    "quote": "Care in a SNF is covered if all of the following four factors are met"
+   },
+   {
+    "n": 3,
+    "source": "CMS-4201-F (Contract Year 2024 MA and Part D Final Rule)"
+   },
+   {
+    "n": 4,
+    "source": "Medicare Benefit Policy Manual, Ch. 8, §30",
+    "quote": "payment for a SNF level of care could not be made if a patient needs an intermittent rather than daily skilled service."
+   },
+   {
+    "n": 5,
+    "source": "Medicare Benefit Policy Manual, Ch. 8, §30.7",
+    "quote": "If the use of those alternatives would adversely affect the patient's medical condition, the A/B MAC (A) concludes that as a practical matter the daily skilled services can only be provided by a SNF on an inpatient basis."
+   }
+  ],
+  "coordinator_todos": [],
+  "source": "claude",
+  "model": "claude-haiku-4-5-20251001",
+  "usage": {
+   "input_tokens": 1960,
+   "output_tokens": 560
+  },
+  "latency_ms": 5473
+ },
+ "dev-006": {
+  "letter_id": "dev-006",
+  "source": "template",
+  "model": null,
+  "rules_version": "74d77b7b4e6d",
+  "header": "DRAFT for clinician and compliance review. Not a legal determination. Synthetic data only.",
+  "blocks": [
+   {
+    "text": "We ask the plan to reconsider. Its letter gives the reasons below; we address each in turn.",
+    "answers": null,
+    "cites": [],
+    "facts": []
+   },
+   {
+    "text": "Denied because current or custodial care is said to be enough. If the member needs skilled services daily, intermittent or custodial support does not meet that need: Chapter 8 contrasts intermittent with daily skilled care. Whether care can be given elsewhere is judged on the member's condition and on whether the alternative would adversely affect it, not on what support already happens to be available.",
+    "answers": null,
+    "cites": [
+     1,
+     2
+    ],
+    "facts": []
+   },
+   {
+    "text": "Denied because no daily skilled need was found. This is a clinical claim, and it is a legitimate criterion. Contest it only with chart evidence: list each skilled service, who must perform it, and how often. Observation and assessment, and management of a care plan, can themselves be skilled services.",
+    "answers": null,
+    "cites": [
+     3,
+     4,
+     5
+    ],
+    "facts": []
+   }
+  ],
+  "sources": [
+   {
+    "n": 1,
+    "source": "Medicare Benefit Policy Manual, Ch. 8, §30",
+    "quote": "payment for a SNF level of care could not be made if a patient needs an intermittent rather than daily skilled service."
+   },
+   {
+    "n": 2,
+    "source": "Medicare Benefit Policy Manual, Ch. 8, §30.7",
+    "quote": "If the use of those alternatives would adversely affect the patient's medical condition, the A/B MAC (A) concludes that as a practical matter the daily skilled services can only be provided by a SNF on an inpatient basis."
+   },
+   {
+    "n": 3,
+    "source": "Medicare Benefit Policy Manual, Ch. 8, §30.6",
+    "quote": "Skilled nursing services or skilled rehabilitation services (or a combination of these services) must be needed and provided on a \"daily basis,\" i.e., on essentially a 7-days-a-week basis."
+   },
+   {
+    "n": 4,
+    "source": "Medicare Benefit Policy Manual, Ch. 8, §30.2.3.1 (Management and Evaluation of a Patient Care Plan)"
+   },
+   {
+    "n": 5,
+    "source": "Medicare Benefit Policy Manual, Ch. 8, §30.2.3.2 (Observation and Assessment of Patient's Condition)"
+   }
+  ],
+  "coordinator_todos": []
+ },
+ "dev-007": {
+  "letter_id": "dev-007",
+  "source": "template",
+  "model": null,
+  "rules_version": "74d77b7b4e6d",
+  "header": "DRAFT for clinician and compliance review. Not a legal determination. Synthetic data only.",
+  "blocks": [
+   {
+    "text": "We ask the plan to reconsider. Its letter gives the reasons below; we address each in turn.",
+    "answers": null,
+    "cites": [],
+    "facts": []
+   },
+   {
+    "text": "Denied because current or custodial care is said to be enough. If the member needs skilled services daily, intermittent or custodial support does not meet that need: Chapter 8 contrasts intermittent with daily skilled care. Whether care can be given elsewhere is judged on the member's condition and on whether the alternative would adversely affect it, not on what support already happens to be available.",
+    "answers": null,
+    "cites": [
+     1,
+     2
+    ],
+    "facts": []
+   },
+   {
+    "text": "Denied because no daily skilled need was found. This is a clinical claim, and it is a legitimate criterion. Contest it only with chart evidence: list each skilled service, who must perform it, and how often. Observation and assessment, and management of a care plan, can themselves be skilled services.",
+    "answers": null,
+    "cites": [
+     3,
+     4,
+     5
+    ],
+    "facts": []
+   },
+   {
+    "text": "Denied for missing or insufficient documentation. Nothing here to argue. Send what the plan says is missing (physician orders, nursing and therapy notes documenting each skilled service and its frequency) and resubmit before considering an appeal.",
+    "answers": null,
+    "cites": [
+     6
+    ],
+    "facts": []
+   }
+  ],
+  "sources": [
+   {
+    "n": 1,
+    "source": "Medicare Benefit Policy Manual, Ch. 8, §30",
+    "quote": "payment for a SNF level of care could not be made if a patient needs an intermittent rather than daily skilled service."
+   },
+   {
+    "n": 2,
+    "source": "Medicare Benefit Policy Manual, Ch. 8, §30.7",
+    "quote": "If the use of those alternatives would adversely affect the patient's medical condition, the A/B MAC (A) concludes that as a practical matter the daily skilled services can only be provided by a SNF on an inpatient basis."
+   },
+   {
+    "n": 3,
+    "source": "Medicare Benefit Policy Manual, Ch. 8, §30.6",
+    "quote": "Skilled nursing services or skilled rehabilitation services (or a combination of these services) must be needed and provided on a \"daily basis,\" i.e., on essentially a 7-days-a-week basis."
+   },
+   {
+    "n": 4,
+    "source": "Medicare Benefit Policy Manual, Ch. 8, §30.2.3.1 (Management and Evaluation of a Patient Care Plan)"
+   },
+   {
+    "n": 5,
+    "source": "Medicare Benefit Policy Manual, Ch. 8, §30.2.3.2 (Observation and Assessment of Patient's Condition)"
+   },
+   {
+    "n": 6,
+    "source": "Medicare Benefit Policy Manual, Ch. 8, §30.2.2.1 (Documentation to Support Skilled Care Determinations)"
+   }
+  ],
+  "coordinator_todos": []
+ },
+ "dev-008": {
+  "letter_id": "dev-008",
+  "source": "template",
+  "model": null,
+  "rules_version": "74d77b7b4e6d",
+  "header": "DRAFT for clinician and compliance review. Not a legal determination. Synthetic data only.",
+  "blocks": [
+   {
+    "text": "We ask the plan to reconsider. Its letter gives the reasons below; we address each in turn.",
+    "answers": null,
+    "cites": [],
+    "facts": []
+   },
+   {
+    "text": "Denied because current or custodial care is said to be enough. If the member needs skilled services daily, intermittent or custodial support does not meet that need: Chapter 8 contrasts intermittent with daily skilled care. Whether care can be given elsewhere is judged on the member's condition and on whether the alternative would adversely affect it, not on what support already happens to be available.",
+    "answers": null,
+    "cites": [
+     1,
+     2
+    ],
+    "facts": []
+   },
+   {
+    "text": "Denied because no daily skilled need was found. This is a clinical claim, and it is a legitimate criterion. Contest it only with chart evidence: list each skilled service, who must perform it, and how often. Observation and assessment, and management of a care plan, can themselves be skilled services.",
+    "answers": null,
+    "cites": [
+     3,
+     4,
+     5
+    ],
+    "facts": [
+     {
+      "id": "dev-008-f1",
+      "text": "New insulin regimen after hyperosmolar episode; sliding-scale doses adjusted daily by the physician",
+      "source": "Physician order"
+     },
+     {
+      "id": "dev-008-f2",
+      "text": "Blood glucose checks four times a day with licensed-nurse assessment and teaching",
+      "source": "MAR"
+     }
+    ]
+   }
+  ],
+  "sources": [
+   {
+    "n": 1,
+    "source": "Medicare Benefit Policy Manual, Ch. 8, §30",
+    "quote": "payment for a SNF level of care could not be made if a patient needs an intermittent rather than daily skilled service."
+   },
+   {
+    "n": 2,
+    "source": "Medicare Benefit Policy Manual, Ch. 8, §30.7",
+    "quote": "If the use of those alternatives would adversely affect the patient's medical condition, the A/B MAC (A) concludes that as a practical matter the daily skilled services can only be provided by a SNF on an inpatient basis."
+   },
+   {
+    "n": 3,
+    "source": "Medicare Benefit Policy Manual, Ch. 8, §30.6",
+    "quote": "Skilled nursing services or skilled rehabilitation services (or a combination of these services) must be needed and provided on a \"daily basis,\" i.e., on essentially a 7-days-a-week basis."
+   },
+   {
+    "n": 4,
+    "source": "Medicare Benefit Policy Manual, Ch. 8, §30.2.3.1 (Management and Evaluation of a Patient Care Plan)"
+   },
+   {
+    "n": 5,
+    "source": "Medicare Benefit Policy Manual, Ch. 8, §30.2.3.2 (Observation and Assessment of Patient's Condition)"
+   }
+  ],
+  "coordinator_todos": []
+ },
+ "dev-009": {
+  "letter_id": "dev-009",
+  "source": "template",
+  "model": null,
+  "rules_version": "74d77b7b4e6d",
+  "header": "DRAFT for clinician and compliance review. Not a legal determination. Synthetic data only.",
+  "blocks": [
+   {
+    "text": "We ask the plan to reconsider. Its letter gives the reasons below; we address each in turn.",
+    "answers": null,
+    "cites": [],
+    "facts": []
+   },
+   {
+    "text": "Denied because current or custodial care is said to be enough. If the member needs skilled services daily, intermittent or custodial support does not meet that need: Chapter 8 contrasts intermittent with daily skilled care. Whether care can be given elsewhere is judged on the member's condition and on whether the alternative would adversely affect it, not on what support already happens to be available.",
+    "answers": null,
+    "cites": [
+     1,
+     2
+    ],
+    "facts": []
+   },
+   {
+    "text": "Denied because no daily skilled need was found. This is a clinical claim, and it is a legitimate criterion. Contest it only with chart evidence: list each skilled service, who must perform it, and how often. Observation and assessment, and management of a care plan, can themselves be skilled services.",
+    "answers": null,
+    "cites": [
+     3,
+     4,
+     5
+    ],
+    "facts": [
+     {
+      "id": "dev-009-f1",
+      "text": "New PEG tube after dysphagia from pneumonia; tube feeding started",
+      "source": "Hospital discharge summary"
+     },
+     {
+      "id": "dev-009-f2",
+      "text": "Speech-language pathology daily for swallow retraining",
+      "source": "SLP evaluation"
+     },
+     {
+      "id": "dev-009-f3",
+      "text": "Tube-site care and feeding tolerance assessed by a licensed nurse daily",
+      "source": "Nursing care plan"
+     }
+    ]
+   }
+  ],
+  "sources": [
+   {
+    "n": 1,
+    "source": "Medicare Benefit Policy Manual, Ch. 8, §30",
+    "quote": "payment for a SNF level of care could not be made if a patient needs an intermittent rather than daily skilled service."
+   },
+   {
+    "n": 2,
+    "source": "Medicare Benefit Policy Manual, Ch. 8, §30.7",
+    "quote": "If the use of those alternatives would adversely affect the patient's medical condition, the A/B MAC (A) concludes that as a practical matter the daily skilled services can only be provided by a SNF on an inpatient basis."
+   },
+   {
+    "n": 3,
+    "source": "Medicare Benefit Policy Manual, Ch. 8, §30.6",
+    "quote": "Skilled nursing services or skilled rehabilitation services (or a combination of these services) must be needed and provided on a \"daily basis,\" i.e., on essentially a 7-days-a-week basis."
+   },
+   {
+    "n": 4,
+    "source": "Medicare Benefit Policy Manual, Ch. 8, §30.2.3.1 (Management and Evaluation of a Patient Care Plan)"
+   },
+   {
+    "n": 5,
+    "source": "Medicare Benefit Policy Manual, Ch. 8, §30.2.3.2 (Observation and Assessment of Patient's Condition)"
+   }
+  ],
+  "coordinator_todos": []
+ },
+ "dev-011": {
+  "letter_id": "dev-011",
+  "source": "template",
+  "model": null,
+  "rules_version": "74d77b7b4e6d",
+  "header": "DRAFT for clinician and compliance review. Not a legal determination. Synthetic data only.",
+  "blocks": [
+   {
+    "text": "We ask the plan to reconsider. Its letter gives the reasons below; we address each in turn.",
+    "answers": null,
+    "cites": [],
+    "facts": []
+   },
+   {
+    "text": "Denied because current or custodial care is said to be enough. If the member needs skilled services daily, intermittent or custodial support does not meet that need: Chapter 8 contrasts intermittent with daily skilled care. Whether care can be given elsewhere is judged on the member's condition and on whether the alternative would adversely affect it, not on what support already happens to be available.",
+    "answers": null,
+    "cites": [
+     1,
+     2
+    ],
+    "facts": []
+   },
+   {
+    "text": "Denied because no daily skilled need was found. This is a clinical claim, and it is a legitimate criterion. Contest it only with chart evidence: list each skilled service, who must perform it, and how often. Observation and assessment, and management of a care plan, can themselves be skilled services.",
+    "answers": null,
+    "cites": [
+     3,
+     4,
+     5
+    ],
+    "facts": []
+   }
+  ],
+  "sources": [
+   {
+    "n": 1,
+    "source": "Medicare Benefit Policy Manual, Ch. 8, §30",
+    "quote": "payment for a SNF level of care could not be made if a patient needs an intermittent rather than daily skilled service."
+   },
+   {
+    "n": 2,
+    "source": "Medicare Benefit Policy Manual, Ch. 8, §30.7",
+    "quote": "If the use of those alternatives would adversely affect the patient's medical condition, the A/B MAC (A) concludes that as a practical matter the daily skilled services can only be provided by a SNF on an inpatient basis."
+   },
+   {
+    "n": 3,
+    "source": "Medicare Benefit Policy Manual, Ch. 8, §30.6",
+    "quote": "Skilled nursing services or skilled rehabilitation services (or a combination of these services) must be needed and provided on a \"daily basis,\" i.e., on essentially a 7-days-a-week basis."
+   },
+   {
+    "n": 4,
+    "source": "Medicare Benefit Policy Manual, Ch. 8, §30.2.3.1 (Management and Evaluation of a Patient Care Plan)"
+   },
+   {
+    "n": 5,
+    "source": "Medicare Benefit Policy Manual, Ch. 8, §30.2.3.2 (Observation and Assessment of Patient's Condition)"
+   }
+  ],
+  "coordinator_todos": []
+ },
+ "dev-013": {
+  "letter_id": "dev-013",
+  "source": "template",
+  "model": null,
+  "rules_version": "74d77b7b4e6d",
+  "header": "DRAFT for clinician and compliance review. Not a legal determination. Synthetic data only.",
+  "blocks": [
+   {
+    "text": "We ask the plan to reconsider. Its letter gives the reasons below; we address each in turn.",
+    "answers": null,
+    "cites": [],
+    "facts": []
+   },
+   {
+    "text": "Denied because the member can't take part in daily therapy. The SNF benefit covers daily skilled nursing, not only therapy. Chapter 8's first factor is a need for \"skilled nursing services or skilled rehabilitation services\", and the daily requirement is met by skilled nursing on essentially a 7-days-a-week basis. Whether the member can take part in therapy does not decide coverage when daily skilled nursing is needed, and a diagnosis or prognosis should never be the sole factor in deciding a service is not skilled.",
+    "answers": null,
+    "cites": [
+     1,
+     2,
+     3
+    ],
+    "facts": []
+   },
+   {
+    "text": "Denied because current or custodial care is said to be enough. If the member needs skilled services daily, intermittent or custodial support does not meet that need: Chapter 8 contrasts intermittent with daily skilled care. Whether care can be given elsewhere is judged on the member's condition and on whether the alternative would adversely affect it, not on what support already happens to be available.",
+    "answers": null,
+    "cites": [
+     4,
+     5
+    ],
+    "facts": []
+   },
+   {
+    "text": "Denied for lack of improvement potential. Coverage does not depend on whether the member will improve. Chapter 8, as revised after the Jimmo v. Sebelius settlement, says skilled care is covered to maintain the current condition or to prevent or slow deterioration, and that coverage turns on the need for skilled care, not on improvement potential.",
+    "answers": null,
+    "cites": [
+     6,
+     7
+    ],
+    "facts": []
+   },
+   {
+    "text": "Denied because the person lives in a nursing home. Where the member lives is not a coverage criterion. Chapter 8 sets out four factors (a need for skilled services, on a daily basis, that as a practical matter can only be provided in a SNF, and that are reasonable and necessary); residence is not among them. Since 2024, Medicare Advantage plans must apply Traditional Medicare's coverage criteria, including these SNF criteria.",
+    "answers": null,
+    "cites": [
+     8,
+     9
+    ],
+    "facts": []
+   },
+   {
+    "text": "Denied because no daily skilled need was found. This is a clinical claim, and it is a legitimate criterion. Contest it only with chart evidence: list each skilled service, who must perform it, and how often. Observation and assessment, and management of a care plan, can themselves be skilled services.",
+    "answers": null,
+    "cites": [
+     2,
+     10,
+     11
+    ],
+    "facts": []
+   }
+  ],
+  "sources": [
+   {
+    "n": 1,
+    "source": "Medicare Benefit Policy Manual, Ch. 8, §30",
+    "quote": "The patient requires skilled nursing services or skilled rehabilitation services"
+   },
+   {
+    "n": 2,
+    "source": "Medicare Benefit Policy Manual, Ch. 8, §30.6",
+    "quote": "Skilled nursing services or skilled rehabilitation services (or a combination of these services) must be needed and provided on a \"daily basis,\" i.e., on essentially a 7-days-a-week basis."
+   },
+   {
+    "n": 3,
+    "source": "Medicare Benefit Policy Manual, Ch. 8, §30.2.2",
+    "quote": "a patient's diagnosis or prognosis should never be the sole factor in deciding that a service is not skilled."
+   },
+   {
+    "n": 4,
+    "source": "Medicare Benefit Policy Manual, Ch. 8, §30",
+    "quote": "payment for a SNF level of care could not be made if a patient needs an intermittent rather than daily skilled service."
+   },
+   {
+    "n": 5,
+    "source": "Medicare Benefit Policy Manual, Ch. 8, §30.7",
+    "quote": "If the use of those alternatives would adversely affect the patient's medical condition, the A/B MAC (A) concludes that as a practical matter the daily skilled services can only be provided by a SNF on an inpatient basis."
+   },
+   {
+    "n": 6,
+    "source": "Medicare Benefit Policy Manual, Ch. 8, §30",
+    "quote": "Coverage of nursing care and/or therapy to perform a maintenance program does not turn on the presence or absence of an individual's potential for improvement from the nursing care and/or therapy, but rather on the beneficiary's need for skilled care."
+   },
+   {
+    "n": 7,
+    "source": "Medicare Benefit Policy Manual, Ch. 8, §30.2.1",
+    "quote": "Skilled care may be necessary to improve a patient's current condition, to maintain the patient's current condition, or to prevent or slow further deterioration of the patient's condition."
+   },
+   {
+    "n": 8,
+    "source": "Medicare Benefit Policy Manual, Ch. 8, §30",
+    "quote": "Care in a SNF is covered if all of the following four factors are met"
+   },
+   {
+    "n": 9,
+    "source": "CMS-4201-F (Contract Year 2024 MA and Part D Final Rule)"
+   },
+   {
+    "n": 10,
+    "source": "Medicare Benefit Policy Manual, Ch. 8, §30.2.3.1 (Management and Evaluation of a Patient Care Plan)"
+   },
+   {
+    "n": 11,
+    "source": "Medicare Benefit Policy Manual, Ch. 8, §30.2.3.2 (Observation and Assessment of Patient's Condition)"
+   }
+  ],
+  "coordinator_todos": []
+ },
+ "dev-014": {
+  "letter_id": "dev-014",
+  "source": "template",
+  "model": null,
+  "rules_version": "74d77b7b4e6d",
+  "header": "DRAFT for clinician and compliance review. Not a legal determination. Synthetic data only.",
+  "blocks": [
+   {
+    "text": "We ask the plan to reconsider. Its letter gives the reasons below; we address each in turn.",
+    "answers": null,
+    "cites": [],
+    "facts": []
+   },
+   {
+    "text": "Denied for lack of improvement potential. Coverage does not depend on whether the member will improve. Chapter 8, as revised after the Jimmo v. Sebelius settlement, says skilled care is covered to maintain the current condition or to prevent or slow deterioration, and that coverage turns on the need for skilled care, not on improvement potential.",
+    "answers": null,
+    "cites": [
+     1,
+     2
+    ],
+    "facts": []
+   },
+   {
+    "text": "Denied because the person lives in a nursing home. Where the member lives is not a coverage criterion. Chapter 8 sets out four factors (a need for skilled services, on a daily basis, that as a practical matter can only be provided in a SNF, and that are reasonable and necessary); residence is not among them. Since 2024, Medicare Advantage plans must apply Traditional Medicare's coverage criteria, including these SNF criteria.",
+    "answers": null,
+    "cites": [
+     3,
+     4
+    ],
+    "facts": []
+   },
+   {
+    "text": "Denied because no daily skilled need was found. This is a clinical claim, and it is a legitimate criterion. Contest it only with chart evidence: list each skilled service, who must perform it, and how often. Observation and assessment, and management of a care plan, can themselves be skilled services.",
+    "answers": null,
+    "cites": [
+     5,
+     6,
+     7
+    ],
+    "facts": []
+   },
+   {
+    "text": "Denied for missing or insufficient documentation. Nothing here to argue. Send what the plan says is missing (physician orders, nursing and therapy notes documenting each skilled service and its frequency) and resubmit before considering an appeal.",
+    "answers": null,
+    "cites": [
+     8
+    ],
+    "facts": []
+   }
+  ],
+  "sources": [
+   {
+    "n": 1,
+    "source": "Medicare Benefit Policy Manual, Ch. 8, §30",
+    "quote": "Coverage of nursing care and/or therapy to perform a maintenance program does not turn on the presence or absence of an individual's potential for improvement from the nursing care and/or therapy, but rather on the beneficiary's need for skilled care."
+   },
+   {
+    "n": 2,
+    "source": "Medicare Benefit Policy Manual, Ch. 8, §30.2.1",
+    "quote": "Skilled care may be necessary to improve a patient's current condition, to maintain the patient's current condition, or to prevent or slow further deterioration of the patient's condition."
+   },
+   {
+    "n": 3,
+    "source": "Medicare Benefit Policy Manual, Ch. 8, §30",
+    "quote": "Care in a SNF is covered if all of the following four factors are met"
+   },
+   {
+    "n": 4,
+    "source": "CMS-4201-F (Contract Year 2024 MA and Part D Final Rule)"
+   },
+   {
+    "n": 5,
+    "source": "Medicare Benefit Policy Manual, Ch. 8, §30.6",
+    "quote": "Skilled nursing services or skilled rehabilitation services (or a combination of these services) must be needed and provided on a \"daily basis,\" i.e., on essentially a 7-days-a-week basis."
+   },
+   {
+    "n": 6,
+    "source": "Medicare Benefit Policy Manual, Ch. 8, §30.2.3.1 (Management and Evaluation of a Patient Care Plan)"
+   },
+   {
+    "n": 7,
+    "source": "Medicare Benefit Policy Manual, Ch. 8, §30.2.3.2 (Observation and Assessment of Patient's Condition)"
+   },
+   {
+    "n": 8,
+    "source": "Medicare Benefit Policy Manual, Ch. 8, §30.2.2.1 (Documentation to Support Skilled Care Determinations)"
+   }
+  ],
+  "coordinator_todos": []
+ },
+ "dev-015": {
+  "letter_id": "dev-015",
+  "source": "template",
+  "model": null,
+  "rules_version": "74d77b7b4e6d",
+  "header": "DRAFT for clinician and compliance review. Not a legal determination. Synthetic data only.",
+  "blocks": [
+   {
+    "text": "We ask the plan to reconsider. Its letter gives the reasons below; we address each in turn.",
+    "answers": null,
+    "cites": [],
+    "facts": []
+   },
+   {
+    "text": "Denied for lack of improvement potential. Coverage does not depend on whether the member will improve. Chapter 8, as revised after the Jimmo v. Sebelius settlement, says skilled care is covered to maintain the current condition or to prevent or slow deterioration, and that coverage turns on the need for skilled care, not on improvement potential.",
+    "answers": null,
+    "cites": [
+     1,
+     2
+    ],
+    "facts": []
+   },
+   {
+    "text": "Denied because current or custodial care is said to be enough. If the member needs skilled services daily, intermittent or custodial support does not meet that need: Chapter 8 contrasts intermittent with daily skilled care. Whether care can be given elsewhere is judged on the member's condition and on whether the alternative would adversely affect it, not on what support already happens to be available.",
+    "answers": null,
+    "cites": [
+     3,
+     4
+    ],
+    "facts": []
+   },
+   {
+    "text": "Denied because the person lives in a nursing home. Where the member lives is not a coverage criterion. Chapter 8 sets out four factors (a need for skilled services, on a daily basis, that as a practical matter can only be provided in a SNF, and that are reasonable and necessary); residence is not among them. Since 2024, Medicare Advantage plans must apply Traditional Medicare's coverage criteria, including these SNF criteria.",
+    "answers": null,
+    "cites": [
+     5,
+     6
+    ],
+    "facts": []
+   },
+   {
+    "text": "Denied because no daily skilled need was found. This is a clinical claim, and it is a legitimate criterion. Contest it only with chart evidence: list each skilled service, who must perform it, and how often. Observation and assessment, and management of a care plan, can themselves be skilled services.",
+    "answers": null,
+    "cites": [
+     7,
+     8,
+     9
+    ],
+    "facts": []
+   }
+  ],
+  "sources": [
+   {
+    "n": 1,
+    "source": "Medicare Benefit Policy Manual, Ch. 8, §30",
+    "quote": "Coverage of nursing care and/or therapy to perform a maintenance program does not turn on the presence or absence of an individual's potential for improvement from the nursing care and/or therapy, but rather on the beneficiary's need for skilled care."
+   },
+   {
+    "n": 2,
+    "source": "Medicare Benefit Policy Manual, Ch. 8, §30.2.1",
+    "quote": "Skilled care may be necessary to improve a patient's current condition, to maintain the patient's current condition, or to prevent or slow further deterioration of the patient's condition."
+   },
+   {
+    "n": 3,
+    "source": "Medicare Benefit Policy Manual, Ch. 8, §30",
+    "quote": "payment for a SNF level of care could not be made if a patient needs an intermittent rather than daily skilled service."
+   },
+   {
+    "n": 4,
+    "source": "Medicare Benefit Policy Manual, Ch. 8, §30.7",
+    "quote": "If the use of those alternatives would adversely affect the patient's medical condition, the A/B MAC (A) concludes that as a practical matter the daily skilled services can only be provided by a SNF on an inpatient basis."
+   },
+   {
+    "n": 5,
+    "source": "Medicare Benefit Policy Manual, Ch. 8, §30",
+    "quote": "Care in a SNF is covered if all of the following four factors are met"
+   },
+   {
+    "n": 6,
+    "source": "CMS-4201-F (Contract Year 2024 MA and Part D Final Rule)"
+   },
+   {
+    "n": 7,
+    "source": "Medicare Benefit Policy Manual, Ch. 8, §30.6",
+    "quote": "Skilled nursing services or skilled rehabilitation services (or a combination of these services) must be needed and provided on a \"daily basis,\" i.e., on essentially a 7-days-a-week basis."
+   },
+   {
+    "n": 8,
+    "source": "Medicare Benefit Policy Manual, Ch. 8, §30.2.3.1 (Management and Evaluation of a Patient Care Plan)"
+   },
+   {
+    "n": 9,
+    "source": "Medicare Benefit Policy Manual, Ch. 8, §30.2.3.2 (Observation and Assessment of Patient's Condition)"
+   }
+  ],
+  "coordinator_todos": []
+ },
+ "dev-018": {
+  "letter_id": "dev-018",
+  "rules_version": "74d77b7b4e6d",
+  "header": "DRAFT for clinician and compliance review. Not a legal determination. Synthetic data only.",
+  "blocks": [
+   {
+    "text": "We respectfully request reconsideration of the denial of skilled nursing facility care for Mr. Stephen Curry. The plan's determination rests on improvement potential, but Medicare policy does not condition coverage on whether a member will improve. Skilled care is covered to maintain the current condition or to prevent or slow deterioration, and the standard turns on the beneficiary's need for skilled care, not on improvement potential.",
+    "answers": {
+     "text": "Because the member is not anticipated to achieve progressive functional gains beyond his established baseline, skilled level care cannot be authorized under Maple Crest Advantage (HMO) criteria.",
+     "start": 1447,
+     "end": 1641
+    },
+    "cites": [
+     1,
+     2
+    ],
+    "facts": []
+   },
+   {
+    "text": "The plan states that necessary assistance can be safely rendered within Mr. Curry's ongoing custodial care setting. However, the distinction between intermittent and daily skilled services is material to coverage. Mr. Curry requires daily skilled physical therapy for mobility and fall prevention following his compression fracture. If daily skilled services are needed, they cannot be provided on an intermittent basis, and whether custodial or other alternative care would adversely affect his medical condition must be evaluated in light of his clinical needs, not merely on the basis of services already available.",
+    "answers": {
+     "text": "The necessary assistance and supportive mobility routines can be safely rendered within his ongoing custodial care setting.",
+     "start": 1642,
+     "end": 1765
+    },
+    "cites": [
+     3,
+     4
+    ],
+    "facts": [
+     {
+      "id": "dev-018-f1",
+      "text": "Compression fracture, T12, after a fall; pain limits mobility",
+      "source": "Hospital discharge summary"
+     },
+     {
+      "id": "dev-018-f2",
+      "text": "Daily PT for mobility and fall prevention, therapist-led",
+      "source": "PT evaluation"
+     }
+    ]
+   },
+   {
+    "text": "Mr. Curry has a documented compression fracture of the T12 vertebra that limits his mobility, and he requires daily therapist-led physical therapy for mobility and fall prevention. These are skilled services that must be provided on a daily, seven-days-a-week basis. The clinical record supports the need for skilled nursing facility level care.",
+    "answers": null,
+    "cites": [
+     5,
+     6,
+     7
+    ],
+    "facts": [
+     {
+      "id": "dev-018-f1",
+      "text": "Compression fracture, T12, after a fall; pain limits mobility",
+      "source": "Hospital discharge summary"
+     },
+     {
+      "id": "dev-018-f2",
+      "text": "Daily PT for mobility and fall prevention, therapist-led",
+      "source": "PT evaluation"
+     }
+    ]
+   }
+  ],
+  "sources": [
+   {
+    "n": 1,
+    "source": "Medicare Benefit Policy Manual, Ch. 8, §30",
+    "quote": "Coverage of nursing care and/or therapy to perform a maintenance program does not turn on the presence or absence of an individual's potential for improvement from the nursing care and/or therapy, but rather on the beneficiary's need for skilled care."
+   },
+   {
+    "n": 2,
+    "source": "Medicare Benefit Policy Manual, Ch. 8, §30.2.1",
+    "quote": "Skilled care may be necessary to improve a patient's current condition, to maintain the patient's current condition, or to prevent or slow further deterioration of the patient's condition."
+   },
+   {
+    "n": 3,
+    "source": "Medicare Benefit Policy Manual, Ch. 8, §30",
+    "quote": "payment for a SNF level of care could not be made if a patient needs an intermittent rather than daily skilled service."
+   },
+   {
+    "n": 4,
+    "source": "Medicare Benefit Policy Manual, Ch. 8, §30.7",
+    "quote": "If the use of those alternatives would adversely affect the patient's medical condition, the A/B MAC (A) concludes that as a practical matter the daily skilled services can only be provided by a SNF on an inpatient basis."
+   },
+   {
+    "n": 5,
+    "source": "Medicare Benefit Policy Manual, Ch. 8, §30.6",
+    "quote": "Skilled nursing services or skilled rehabilitation services (or a combination of these services) must be needed and provided on a \"daily basis,\" i.e., on essentially a 7-days-a-week basis."
+   },
+   {
+    "n": 6,
+    "source": "Medicare Benefit Policy Manual, Ch. 8, §30.2.3.1 (Management and Evaluation of a Patient Care Plan)"
+   },
+   {
+    "n": 7,
+    "source": "Medicare Benefit Policy Manual, Ch. 8, §30.2.3.2 (Observation and Assessment of Patient's Condition)"
+   }
+  ],
+  "coordinator_todos": [],
+  "source": "claude",
+  "model": "claude-haiku-4-5-20251001",
+  "usage": {
+   "input_tokens": 1769,
+   "output_tokens": 473
+  },
+  "latency_ms": 5118
+ },
+ "dev-019": {
+  "letter_id": "dev-019",
+  "source": "template",
+  "model": null,
+  "rules_version": "74d77b7b4e6d",
+  "header": "DRAFT for clinician and compliance review. Not a legal determination. Synthetic data only.",
+  "blocks": [
+   {
+    "text": "We ask the plan to reconsider. Its letter gives the reasons below; we address each in turn.",
+    "answers": null,
+    "cites": [],
+    "facts": []
+   },
+   {
+    "text": "Denied because the member can't take part in daily therapy. The SNF benefit covers daily skilled nursing, not only therapy. Chapter 8's first factor is a need for \"skilled nursing services or skilled rehabilitation services\", and the daily requirement is met by skilled nursing on essentially a 7-days-a-week basis. Whether the member can take part in therapy does not decide coverage when daily skilled nursing is needed, and a diagnosis or prognosis should never be the sole factor in deciding a service is not skilled.",
+    "answers": null,
+    "cites": [
+     1,
+     2,
+     3
+    ],
+    "facts": []
+   },
+   {
+    "text": "Denied because current or custodial care is said to be enough. If the member needs skilled services daily, intermittent or custodial support does not meet that need: Chapter 8 contrasts intermittent with daily skilled care. Whether care can be given elsewhere is judged on the member's condition and on whether the alternative would adversely affect it, not on what support already happens to be available.",
+    "answers": null,
+    "cites": [
+     4,
+     5
+    ],
+    "facts": []
+   },
+   {
+    "text": "Denied for lack of improvement potential. Coverage does not depend on whether the member will improve. Chapter 8, as revised after the Jimmo v. Sebelius settlement, says skilled care is covered to maintain the current condition or to prevent or slow deterioration, and that coverage turns on the need for skilled care, not on improvement potential.",
+    "answers": null,
+    "cites": [
+     6,
+     7
+    ],
+    "facts": []
+   },
+   {
+    "text": "Denied because the person lives in a nursing home. Where the member lives is not a coverage criterion. Chapter 8 sets out four factors (a need for skilled services, on a daily basis, that as a practical matter can only be provided in a SNF, and that are reasonable and necessary); residence is not among them. Since 2024, Medicare Advantage plans must apply Traditional Medicare's coverage criteria, including these SNF criteria.",
+    "answers": null,
+    "cites": [
+     8,
+     9
+    ],
+    "facts": []
+   },
+   {
+    "text": "Denied because no daily skilled need was found. This is a clinical claim, and it is a legitimate criterion. Contest it only with chart evidence: list each skilled service, who must perform it, and how often. Observation and assessment, and management of a care plan, can themselves be skilled services.",
+    "answers": null,
+    "cites": [
+     2,
+     10,
+     11
+    ],
+    "facts": []
+   }
+  ],
+  "sources": [
+   {
+    "n": 1,
+    "source": "Medicare Benefit Policy Manual, Ch. 8, §30",
+    "quote": "The patient requires skilled nursing services or skilled rehabilitation services"
+   },
+   {
+    "n": 2,
+    "source": "Medicare Benefit Policy Manual, Ch. 8, §30.6",
+    "quote": "Skilled nursing services or skilled rehabilitation services (or a combination of these services) must be needed and provided on a \"daily basis,\" i.e., on essentially a 7-days-a-week basis."
+   },
+   {
+    "n": 3,
+    "source": "Medicare Benefit Policy Manual, Ch. 8, §30.2.2",
+    "quote": "a patient's diagnosis or prognosis should never be the sole factor in deciding that a service is not skilled."
+   },
+   {
+    "n": 4,
+    "source": "Medicare Benefit Policy Manual, Ch. 8, §30",
+    "quote": "payment for a SNF level of care could not be made if a patient needs an intermittent rather than daily skilled service."
+   },
+   {
+    "n": 5,
+    "source": "Medicare Benefit Policy Manual, Ch. 8, §30.7",
+    "quote": "If the use of those alternatives would adversely affect the patient's medical condition, the A/B MAC (A) concludes that as a practical matter the daily skilled services can only be provided by a SNF on an inpatient basis."
+   },
+   {
+    "n": 6,
+    "source": "Medicare Benefit Policy Manual, Ch. 8, §30",
+    "quote": "Coverage of nursing care and/or therapy to perform a maintenance program does not turn on the presence or absence of an individual's potential for improvement from the nursing care and/or therapy, but rather on the beneficiary's need for skilled care."
+   },
+   {
+    "n": 7,
+    "source": "Medicare Benefit Policy Manual, Ch. 8, §30.2.1",
+    "quote": "Skilled care may be necessary to improve a patient's current condition, to maintain the patient's current condition, or to prevent or slow further deterioration of the patient's condition."
+   },
+   {
+    "n": 8,
+    "source": "Medicare Benefit Policy Manual, Ch. 8, §30",
+    "quote": "Care in a SNF is covered if all of the following four factors are met"
+   },
+   {
+    "n": 9,
+    "source": "CMS-4201-F (Contract Year 2024 MA and Part D Final Rule)"
+   },
+   {
+    "n": 10,
+    "source": "Medicare Benefit Policy Manual, Ch. 8, §30.2.3.1 (Management and Evaluation of a Patient Care Plan)"
+   },
+   {
+    "n": 11,
+    "source": "Medicare Benefit Policy Manual, Ch. 8, §30.2.3.2 (Observation and Assessment of Patient's Condition)"
+   }
+  ],
+  "coordinator_todos": []
+ },
+ "dev-020": {
+  "letter_id": "dev-020",
+  "source": "template",
+  "model": null,
+  "rules_version": "74d77b7b4e6d",
+  "header": "DRAFT for clinician and compliance review. Not a legal determination. Synthetic data only.",
+  "blocks": [
+   {
+    "text": "We ask the plan to reconsider. Its letter gives the reasons below; we address each in turn.",
+    "answers": null,
+    "cites": [],
+    "facts": []
+   },
+   {
+    "text": "Denied because current or custodial care is said to be enough. If the member needs skilled services daily, intermittent or custodial support does not meet that need: Chapter 8 contrasts intermittent with daily skilled care. Whether care can be given elsewhere is judged on the member's condition and on whether the alternative would adversely affect it, not on what support already happens to be available.",
+    "answers": null,
+    "cites": [
+     1,
+     2
+    ],
+    "facts": []
+   },
+   {
+    "text": "Denied because no daily skilled need was found. This is a clinical claim, and it is a legitimate criterion. Contest it only with chart evidence: list each skilled service, who must perform it, and how often. Observation and assessment, and management of a care plan, can themselves be skilled services.",
+    "answers": null,
+    "cites": [
+     3,
+     4,
+     5
+    ],
+    "facts": []
+   },
+   {
+    "text": "Denied for missing or insufficient documentation. Nothing here to argue. Send what the plan says is missing (physician orders, nursing and therapy notes documenting each skilled service and its frequency) and resubmit before considering an appeal.",
+    "answers": null,
+    "cites": [
+     6
+    ],
+    "facts": []
+   }
+  ],
+  "sources": [
+   {
+    "n": 1,
+    "source": "Medicare Benefit Policy Manual, Ch. 8, §30",
+    "quote": "payment for a SNF level of care could not be made if a patient needs an intermittent rather than daily skilled service."
+   },
+   {
+    "n": 2,
+    "source": "Medicare Benefit Policy Manual, Ch. 8, §30.7",
+    "quote": "If the use of those alternatives would adversely affect the patient's medical condition, the A/B MAC (A) concludes that as a practical matter the daily skilled services can only be provided by a SNF on an inpatient basis."
+   },
+   {
+    "n": 3,
+    "source": "Medicare Benefit Policy Manual, Ch. 8, §30.6",
+    "quote": "Skilled nursing services or skilled rehabilitation services (or a combination of these services) must be needed and provided on a \"daily basis,\" i.e., on essentially a 7-days-a-week basis."
+   },
+   {
+    "n": 4,
+    "source": "Medicare Benefit Policy Manual, Ch. 8, §30.2.3.1 (Management and Evaluation of a Patient Care Plan)"
+   },
+   {
+    "n": 5,
+    "source": "Medicare Benefit Policy Manual, Ch. 8, §30.2.3.2 (Observation and Assessment of Patient's Condition)"
+   },
+   {
+    "n": 6,
+    "source": "Medicare Benefit Policy Manual, Ch. 8, §30.2.2.1 (Documentation to Support Skilled Care Determinations)"
+   }
+  ],
+  "coordinator_todos": []
+ },
+ "dev-021": {
+  "letter_id": "dev-021",
+  "source": "template",
+  "model": null,
+  "rules_version": "74d77b7b4e6d",
+  "header": "DRAFT for clinician and compliance review. Not a legal determination. Synthetic data only.",
+  "blocks": [
+   {
+    "text": "We ask the plan to reconsider. Its letter gives the reasons below; we address each in turn.",
+    "answers": null,
+    "cites": [],
+    "facts": []
+   },
+   {
+    "text": "Denied for lack of improvement potential. Coverage does not depend on whether the member will improve. Chapter 8, as revised after the Jimmo v. Sebelius settlement, says skilled care is covered to maintain the current condition or to prevent or slow deterioration, and that coverage turns on the need for skilled care, not on improvement potential.",
+    "answers": null,
+    "cites": [
+     1,
+     2
+    ],
+    "facts": []
+   },
+   {
+    "text": "Denied because the member can't take part in daily therapy. The SNF benefit covers daily skilled nursing, not only therapy. Chapter 8's first factor is a need for \"skilled nursing services or skilled rehabilitation services\", and the daily requirement is met by skilled nursing on essentially a 7-days-a-week basis. Whether the member can take part in therapy does not decide coverage when daily skilled nursing is needed, and a diagnosis or prognosis should never be the sole factor in deciding a service is not skilled.",
+    "answers": null,
+    "cites": [
+     3,
+     4,
+     5
+    ],
+    "facts": []
+   },
+   {
+    "text": "Denied because no daily skilled need was found. This is a clinical claim, and it is a legitimate criterion. Contest it only with chart evidence: list each skilled service, who must perform it, and how often. Observation and assessment, and management of a care plan, can themselves be skilled services.",
+    "answers": null,
+    "cites": [
+     4,
+     6,
+     7
+    ],
+    "facts": []
+   }
+  ],
+  "sources": [
+   {
+    "n": 1,
+    "source": "Medicare Benefit Policy Manual, Ch. 8, §30",
+    "quote": "Coverage of nursing care and/or therapy to perform a maintenance program does not turn on the presence or absence of an individual's potential for improvement from the nursing care and/or therapy, but rather on the beneficiary's need for skilled care."
+   },
+   {
+    "n": 2,
+    "source": "Medicare Benefit Policy Manual, Ch. 8, §30.2.1",
+    "quote": "Skilled care may be necessary to improve a patient's current condition, to maintain the patient's current condition, or to prevent or slow further deterioration of the patient's condition."
+   },
+   {
+    "n": 3,
+    "source": "Medicare Benefit Policy Manual, Ch. 8, §30",
+    "quote": "The patient requires skilled nursing services or skilled rehabilitation services"
+   },
+   {
+    "n": 4,
+    "source": "Medicare Benefit Policy Manual, Ch. 8, §30.6",
+    "quote": "Skilled nursing services or skilled rehabilitation services (or a combination of these services) must be needed and provided on a \"daily basis,\" i.e., on essentially a 7-days-a-week basis."
+   },
+   {
+    "n": 5,
+    "source": "Medicare Benefit Policy Manual, Ch. 8, §30.2.2",
+    "quote": "a patient's diagnosis or prognosis should never be the sole factor in deciding that a service is not skilled."
+   },
+   {
+    "n": 6,
+    "source": "Medicare Benefit Policy Manual, Ch. 8, §30.2.3.1 (Management and Evaluation of a Patient Care Plan)"
+   },
+   {
+    "n": 7,
+    "source": "Medicare Benefit Policy Manual, Ch. 8, §30.2.3.2 (Observation and Assessment of Patient's Condition)"
+   }
+  ],
+  "coordinator_todos": []
+ },
+ "dev-022": {
+  "letter_id": "dev-022",
+  "source": "template",
+  "model": null,
+  "rules_version": "74d77b7b4e6d",
+  "header": "DRAFT for clinician and compliance review. Not a legal determination. Synthetic data only.",
+  "blocks": [
+   {
+    "text": "We ask the plan to reconsider. Its letter gives the reasons below; we address each in turn.",
+    "answers": null,
+    "cites": [],
+    "facts": []
+   },
+   {
+    "text": "Denied because current or custodial care is said to be enough. If the member needs skilled services daily, intermittent or custodial support does not meet that need: Chapter 8 contrasts intermittent with daily skilled care. Whether care can be given elsewhere is judged on the member's condition and on whether the alternative would adversely affect it, not on what support already happens to be available.",
+    "answers": null,
+    "cites": [
+     1,
+     2
+    ],
+    "facts": []
+   },
+   {
+    "text": "Denied because no daily skilled need was found. This is a clinical claim, and it is a legitimate criterion. Contest it only with chart evidence: list each skilled service, who must perform it, and how often. Observation and assessment, and management of a care plan, can themselves be skilled services.",
+    "answers": null,
+    "cites": [
+     3,
+     4,
+     5
+    ],
+    "facts": []
+   }
+  ],
+  "sources": [
+   {
+    "n": 1,
+    "source": "Medicare Benefit Policy Manual, Ch. 8, §30",
+    "quote": "payment for a SNF level of care could not be made if a patient needs an intermittent rather than daily skilled service."
+   },
+   {
+    "n": 2,
+    "source": "Medicare Benefit Policy Manual, Ch. 8, §30.7",
+    "quote": "If the use of those alternatives would adversely affect the patient's medical condition, the A/B MAC (A) concludes that as a practical matter the daily skilled services can only be provided by a SNF on an inpatient basis."
+   },
+   {
+    "n": 3,
+    "source": "Medicare Benefit Policy Manual, Ch. 8, §30.6",
+    "quote": "Skilled nursing services or skilled rehabilitation services (or a combination of these services) must be needed and provided on a \"daily basis,\" i.e., on essentially a 7-days-a-week basis."
+   },
+   {
+    "n": 4,
+    "source": "Medicare Benefit Policy Manual, Ch. 8, §30.2.3.1 (Management and Evaluation of a Patient Care Plan)"
+   },
+   {
+    "n": 5,
+    "source": "Medicare Benefit Policy Manual, Ch. 8, §30.2.3.2 (Observation and Assessment of Patient's Condition)"
+   }
+  ],
+  "coordinator_todos": []
+ },
+ "dev-023": {
+  "letter_id": "dev-023",
+  "source": "template",
+  "model": null,
+  "rules_version": "74d77b7b4e6d",
+  "header": "DRAFT for clinician and compliance review. Not a legal determination. Synthetic data only.",
+  "blocks": [
+   {
+    "text": "We ask the plan to reconsider. Its letter gives the reasons below; we address each in turn.",
+    "answers": null,
+    "cites": [],
+    "facts": []
+   },
+   {
+    "text": "Denied for missing or insufficient documentation. Nothing here to argue. Send what the plan says is missing (physician orders, nursing and therapy notes documenting each skilled service and its frequency) and resubmit before considering an appeal.",
+    "answers": null,
+    "cites": [
+     1
+    ],
+    "facts": []
+   },
+   {
+    "text": "The member's current skilled needs, from the chart:",
+    "answers": null,
+    "cites": [],
+    "facts": [
+     {
+      "id": "dev-023-f1",
+      "text": "COPD exacerbation; new oxygen titration and nebulizer treatments assessed daily",
+      "source": "Respiratory therapy note"
+     }
+    ]
+   }
+  ],
+  "sources": [
+   {
+    "n": 1,
+    "source": "Medicare Benefit Policy Manual, Ch. 8, §30.2.2.1 (Documentation to Support Skilled Care Determinations)"
+   }
+  ],
+  "coordinator_todos": []
+ },
+ "dev-024": {
+  "letter_id": "dev-024",
+  "source": "template",
+  "model": null,
+  "rules_version": "74d77b7b4e6d",
+  "header": "DRAFT for clinician and compliance review. Not a legal determination. Synthetic data only.",
+  "blocks": [
+   {
+    "text": "We ask the plan to reconsider. Its letter gives the reasons below; we address each in turn.",
+    "answers": null,
+    "cites": [],
+    "facts": []
+   },
+   {
+    "text": "Denied because current or custodial care is said to be enough. If the member needs skilled services daily, intermittent or custodial support does not meet that need: Chapter 8 contrasts intermittent with daily skilled care. Whether care can be given elsewhere is judged on the member's condition and on whether the alternative would adversely affect it, not on what support already happens to be available.",
+    "answers": null,
+    "cites": [
+     1,
+     2
+    ],
+    "facts": []
+   },
+   {
+    "text": "Denied because no daily skilled need was found. This is a clinical claim, and it is a legitimate criterion. Contest it only with chart evidence: list each skilled service, who must perform it, and how often. Observation and assessment, and management of a care plan, can themselves be skilled services.",
+    "answers": null,
+    "cites": [
+     3,
+     4,
+     5
+    ],
+    "facts": []
+   },
+   {
+    "text": "Denied for missing or insufficient documentation. Nothing here to argue. Send what the plan says is missing (physician orders, nursing and therapy notes documenting each skilled service and its frequency) and resubmit before considering an appeal.",
+    "answers": null,
+    "cites": [
+     6
+    ],
+    "facts": []
+   }
+  ],
+  "sources": [
+   {
+    "n": 1,
+    "source": "Medicare Benefit Policy Manual, Ch. 8, §30",
+    "quote": "payment for a SNF level of care could not be made if a patient needs an intermittent rather than daily skilled service."
+   },
+   {
+    "n": 2,
+    "source": "Medicare Benefit Policy Manual, Ch. 8, §30.7",
+    "quote": "If the use of those alternatives would adversely affect the patient's medical condition, the A/B MAC (A) concludes that as a practical matter the daily skilled services can only be provided by a SNF on an inpatient basis."
+   },
+   {
+    "n": 3,
+    "source": "Medicare Benefit Policy Manual, Ch. 8, §30.6",
+    "quote": "Skilled nursing services or skilled rehabilitation services (or a combination of these services) must be needed and provided on a \"daily basis,\" i.e., on essentially a 7-days-a-week basis."
+   },
+   {
+    "n": 4,
+    "source": "Medicare Benefit Policy Manual, Ch. 8, §30.2.3.1 (Management and Evaluation of a Patient Care Plan)"
+   },
+   {
+    "n": 5,
+    "source": "Medicare Benefit Policy Manual, Ch. 8, §30.2.3.2 (Observation and Assessment of Patient's Condition)"
+   },
+   {
+    "n": 6,
+    "source": "Medicare Benefit Policy Manual, Ch. 8, §30.2.2.1 (Documentation to Support Skilled Care Determinations)"
+   }
+  ],
+  "coordinator_todos": []
+ },
+ "dev-025": {
+  "letter_id": "dev-025",
+  "source": "template",
+  "model": null,
+  "rules_version": "74d77b7b4e6d",
+  "header": "DRAFT for clinician and compliance review. Not a legal determination. Synthetic data only.",
+  "blocks": [
+   {
+    "text": "We ask the plan to reconsider. Its letter gives the reasons below; we address each in turn.",
+    "answers": null,
+    "cites": [],
+    "facts": []
+   },
+   {
+    "text": "Denied because current or custodial care is said to be enough. If the member needs skilled services daily, intermittent or custodial support does not meet that need: Chapter 8 contrasts intermittent with daily skilled care. Whether care can be given elsewhere is judged on the member's condition and on whether the alternative would adversely affect it, not on what support already happens to be available.",
+    "answers": null,
+    "cites": [
+     1,
+     2
+    ],
+    "facts": []
+   },
+   {
+    "text": "Denied because no daily skilled need was found. This is a clinical claim, and it is a legitimate criterion. Contest it only with chart evidence: list each skilled service, who must perform it, and how often. Observation and assessment, and management of a care plan, can themselves be skilled services.",
+    "answers": null,
+    "cites": [
+     3,
+     4,
+     5
+    ],
+    "facts": []
+   }
+  ],
+  "sources": [
+   {
+    "n": 1,
+    "source": "Medicare Benefit Policy Manual, Ch. 8, §30",
+    "quote": "payment for a SNF level of care could not be made if a patient needs an intermittent rather than daily skilled service."
+   },
+   {
+    "n": 2,
+    "source": "Medicare Benefit Policy Manual, Ch. 8, §30.7",
+    "quote": "If the use of those alternatives would adversely affect the patient's medical condition, the A/B MAC (A) concludes that as a practical matter the daily skilled services can only be provided by a SNF on an inpatient basis."
+   },
+   {
+    "n": 3,
+    "source": "Medicare Benefit Policy Manual, Ch. 8, §30.6",
+    "quote": "Skilled nursing services or skilled rehabilitation services (or a combination of these services) must be needed and provided on a \"daily basis,\" i.e., on essentially a 7-days-a-week basis."
+   },
+   {
+    "n": 4,
+    "source": "Medicare Benefit Policy Manual, Ch. 8, §30.2.3.1 (Management and Evaluation of a Patient Care Plan)"
+   },
+   {
+    "n": 5,
+    "source": "Medicare Benefit Policy Manual, Ch. 8, §30.2.3.2 (Observation and Assessment of Patient's Condition)"
+   }
+  ],
+  "coordinator_todos": []
+ },
+ "dev-026": {
+  "letter_id": "dev-026",
+  "source": "template",
+  "model": null,
+  "rules_version": "74d77b7b4e6d",
+  "header": "DRAFT for clinician and compliance review. Not a legal determination. Synthetic data only.",
+  "blocks": [
+   {
+    "text": "We ask the plan to reconsider. Its letter gives the reasons below; we address each in turn.",
+    "answers": null,
+    "cites": [],
+    "facts": []
+   },
+   {
+    "text": "Denied for lack of improvement potential. Coverage does not depend on whether the member will improve. Chapter 8, as revised after the Jimmo v. Sebelius settlement, says skilled care is covered to maintain the current condition or to prevent or slow deterioration, and that coverage turns on the need for skilled care, not on improvement potential.",
+    "answers": null,
+    "cites": [
+     1,
+     2
+    ],
+    "facts": []
+   },
+   {
+    "text": "Denied because no daily skilled need was found. This is a clinical claim, and it is a legitimate criterion. Contest it only with chart evidence: list each skilled service, who must perform it, and how often. Observation and assessment, and management of a care plan, can themselves be skilled services.",
+    "answers": null,
+    "cites": [
+     3,
+     4,
+     5
+    ],
+    "facts": []
+   }
+  ],
+  "sources": [
+   {
+    "n": 1,
+    "source": "Medicare Benefit Policy Manual, Ch. 8, §30",
+    "quote": "Coverage of nursing care and/or therapy to perform a maintenance program does not turn on the presence or absence of an individual's potential for improvement from the nursing care and/or therapy, but rather on the beneficiary's need for skilled care."
+   },
+   {
+    "n": 2,
+    "source": "Medicare Benefit Policy Manual, Ch. 8, §30.2.1",
+    "quote": "Skilled care may be necessary to improve a patient's current condition, to maintain the patient's current condition, or to prevent or slow further deterioration of the patient's condition."
+   },
+   {
+    "n": 3,
+    "source": "Medicare Benefit Policy Manual, Ch. 8, §30.6",
+    "quote": "Skilled nursing services or skilled rehabilitation services (or a combination of these services) must be needed and provided on a \"daily basis,\" i.e., on essentially a 7-days-a-week basis."
+   },
+   {
+    "n": 4,
+    "source": "Medicare Benefit Policy Manual, Ch. 8, §30.2.3.1 (Management and Evaluation of a Patient Care Plan)"
+   },
+   {
+    "n": 5,
+    "source": "Medicare Benefit Policy Manual, Ch. 8, §30.2.3.2 (Observation and Assessment of Patient's Condition)"
+   }
+  ],
+  "coordinator_todos": []
+ },
+ "dev-027": {
+  "letter_id": "dev-027",
+  "source": "template",
+  "model": null,
+  "rules_version": "74d77b7b4e6d",
+  "header": "DRAFT for clinician and compliance review. Not a legal determination. Synthetic data only.",
+  "blocks": [
+   {
+    "text": "We ask the plan to reconsider. Its letter gives the reasons below; we address each in turn.",
+    "answers": null,
+    "cites": [],
+    "facts": []
+   },
+   {
+    "text": "Denied for missing or insufficient documentation. Nothing here to argue. Send what the plan says is missing (physician orders, nursing and therapy notes documenting each skilled service and its frequency) and resubmit before considering an appeal.",
+    "answers": null,
+    "cites": [
+     1
+    ],
+    "facts": []
+   }
+  ],
+  "sources": [
+   {
+    "n": 1,
+    "source": "Medicare Benefit Policy Manual, Ch. 8, §30.2.2.1 (Documentation to Support Skilled Care Determinations)"
+   }
+  ],
+  "coordinator_todos": []
+ },
+ "dev-028": {
+  "letter_id": "dev-028",
+  "source": "template",
+  "model": null,
+  "rules_version": "74d77b7b4e6d",
+  "header": "DRAFT for clinician and compliance review. Not a legal determination. Synthetic data only.",
+  "blocks": [
+   {
+    "text": "We ask the plan to reconsider. Its letter gives the reasons below; we address each in turn.",
+    "answers": null,
+    "cites": [],
+    "facts": []
+   },
+   {
+    "text": "Denied for lack of improvement potential. Coverage does not depend on whether the member will improve. Chapter 8, as revised after the Jimmo v. Sebelius settlement, says skilled care is covered to maintain the current condition or to prevent or slow deterioration, and that coverage turns on the need for skilled care, not on improvement potential.",
+    "answers": null,
+    "cites": [
+     1,
+     2
+    ],
+    "facts": []
+   },
+   {
+    "text": "Denied because the member can't take part in daily therapy. The SNF benefit covers daily skilled nursing, not only therapy. Chapter 8's first factor is a need for \"skilled nursing services or skilled rehabilitation services\", and the daily requirement is met by skilled nursing on essentially a 7-days-a-week basis. Whether the member can take part in therapy does not decide coverage when daily skilled nursing is needed, and a diagnosis or prognosis should never be the sole factor in deciding a service is not skilled.",
+    "answers": null,
+    "cites": [
+     3,
+     4,
+     5
+    ],
+    "facts": []
+   },
+   {
+    "text": "Denied because current or custodial care is said to be enough. If the member needs skilled services daily, intermittent or custodial support does not meet that need: Chapter 8 contrasts intermittent with daily skilled care. Whether care can be given elsewhere is judged on the member's condition and on whether the alternative would adversely affect it, not on what support already happens to be available.",
+    "answers": null,
+    "cites": [
+     6,
+     7
+    ],
+    "facts": []
+   },
+   {
+    "text": "Denied because no daily skilled need was found. This is a clinical claim, and it is a legitimate criterion. Contest it only with chart evidence: list each skilled service, who must perform it, and how often. Observation and assessment, and management of a care plan, can themselves be skilled services.",
+    "answers": null,
+    "cites": [
+     4,
+     8,
+     9
+    ],
+    "facts": []
+   }
+  ],
+  "sources": [
+   {
+    "n": 1,
+    "source": "Medicare Benefit Policy Manual, Ch. 8, §30",
+    "quote": "Coverage of nursing care and/or therapy to perform a maintenance program does not turn on the presence or absence of an individual's potential for improvement from the nursing care and/or therapy, but rather on the beneficiary's need for skilled care."
+   },
+   {
+    "n": 2,
+    "source": "Medicare Benefit Policy Manual, Ch. 8, §30.2.1",
+    "quote": "Skilled care may be necessary to improve a patient's current condition, to maintain the patient's current condition, or to prevent or slow further deterioration of the patient's condition."
+   },
+   {
+    "n": 3,
+    "source": "Medicare Benefit Policy Manual, Ch. 8, §30",
+    "quote": "The patient requires skilled nursing services or skilled rehabilitation services"
+   },
+   {
+    "n": 4,
+    "source": "Medicare Benefit Policy Manual, Ch. 8, §30.6",
+    "quote": "Skilled nursing services or skilled rehabilitation services (or a combination of these services) must be needed and provided on a \"daily basis,\" i.e., on essentially a 7-days-a-week basis."
+   },
+   {
+    "n": 5,
+    "source": "Medicare Benefit Policy Manual, Ch. 8, §30.2.2",
+    "quote": "a patient's diagnosis or prognosis should never be the sole factor in deciding that a service is not skilled."
+   },
+   {
+    "n": 6,
+    "source": "Medicare Benefit Policy Manual, Ch. 8, §30",
+    "quote": "payment for a SNF level of care could not be made if a patient needs an intermittent rather than daily skilled service."
+   },
+   {
+    "n": 7,
+    "source": "Medicare Benefit Policy Manual, Ch. 8, §30.7",
+    "quote": "If the use of those alternatives would adversely affect the patient's medical condition, the A/B MAC (A) concludes that as a practical matter the daily skilled services can only be provided by a SNF on an inpatient basis."
+   },
+   {
+    "n": 8,
+    "source": "Medicare Benefit Policy Manual, Ch. 8, §30.2.3.1 (Management and Evaluation of a Patient Care Plan)"
+   },
+   {
+    "n": 9,
+    "source": "Medicare Benefit Policy Manual, Ch. 8, §30.2.3.2 (Observation and Assessment of Patient's Condition)"
+   }
+  ],
+  "coordinator_todos": []
+ },
+ "dev-029": {
+  "letter_id": "dev-029",
+  "source": "template",
+  "model": null,
+  "rules_version": "74d77b7b4e6d",
+  "header": "DRAFT for clinician and compliance review. Not a legal determination. Synthetic data only.",
+  "blocks": [
+   {
+    "text": "We ask the plan to reconsider. Its letter gives the reasons below; we address each in turn.",
+    "answers": null,
+    "cites": [],
+    "facts": []
+   },
+   {
+    "text": "Denied for lack of improvement potential. Coverage does not depend on whether the member will improve. Chapter 8, as revised after the Jimmo v. Sebelius settlement, says skilled care is covered to maintain the current condition or to prevent or slow deterioration, and that coverage turns on the need for skilled care, not on improvement potential.",
+    "answers": null,
+    "cites": [
+     1,
+     2
+    ],
+    "facts": []
+   },
+   {
+    "text": "Denied because current or custodial care is said to be enough. If the member needs skilled services daily, intermittent or custodial support does not meet that need: Chapter 8 contrasts intermittent with daily skilled care. Whether care can be given elsewhere is judged on the member's condition and on whether the alternative would adversely affect it, not on what support already happens to be available.",
+    "answers": null,
+    "cites": [
+     3,
+     4
+    ],
+    "facts": []
+   },
+   {
+    "text": "Denied because no daily skilled need was found. This is a clinical claim, and it is a legitimate criterion. Contest it only with chart evidence: list each skilled service, who must perform it, and how often. Observation and assessment, and management of a care plan, can themselves be skilled services.",
+    "answers": null,
+    "cites": [
+     5,
+     6,
+     7
+    ],
+    "facts": []
+   }
+  ],
+  "sources": [
+   {
+    "n": 1,
+    "source": "Medicare Benefit Policy Manual, Ch. 8, §30",
+    "quote": "Coverage of nursing care and/or therapy to perform a maintenance program does not turn on the presence or absence of an individual's potential for improvement from the nursing care and/or therapy, but rather on the beneficiary's need for skilled care."
+   },
+   {
+    "n": 2,
+    "source": "Medicare Benefit Policy Manual, Ch. 8, §30.2.1",
+    "quote": "Skilled care may be necessary to improve a patient's current condition, to maintain the patient's current condition, or to prevent or slow further deterioration of the patient's condition."
+   },
+   {
+    "n": 3,
+    "source": "Medicare Benefit Policy Manual, Ch. 8, §30",
+    "quote": "payment for a SNF level of care could not be made if a patient needs an intermittent rather than daily skilled service."
+   },
+   {
+    "n": 4,
+    "source": "Medicare Benefit Policy Manual, Ch. 8, §30.7",
+    "quote": "If the use of those alternatives would adversely affect the patient's medical condition, the A/B MAC (A) concludes that as a practical matter the daily skilled services can only be provided by a SNF on an inpatient basis."
+   },
+   {
+    "n": 5,
+    "source": "Medicare Benefit Policy Manual, Ch. 8, §30.6",
+    "quote": "Skilled nursing services or skilled rehabilitation services (or a combination of these services) must be needed and provided on a \"daily basis,\" i.e., on essentially a 7-days-a-week basis."
+   },
+   {
+    "n": 6,
+    "source": "Medicare Benefit Policy Manual, Ch. 8, §30.2.3.1 (Management and Evaluation of a Patient Care Plan)"
+   },
+   {
+    "n": 7,
+    "source": "Medicare Benefit Policy Manual, Ch. 8, §30.2.3.2 (Observation and Assessment of Patient's Condition)"
+   }
+  ],
+  "coordinator_todos": []
+ },
+ "dev-030": {
+  "letter_id": "dev-030",
+  "source": "template",
+  "model": null,
+  "rules_version": "74d77b7b4e6d",
+  "header": "DRAFT for clinician and compliance review. Not a legal determination. Synthetic data only.",
+  "blocks": [
+   {
+    "text": "We ask the plan to reconsider. Its letter gives the reasons below; we address each in turn.",
+    "answers": null,
+    "cites": [],
+    "facts": []
+   },
+   {
+    "text": "Denied for missing or insufficient documentation. Nothing here to argue. Send what the plan says is missing (physician orders, nursing and therapy notes documenting each skilled service and its frequency) and resubmit before considering an appeal.",
+    "answers": null,
+    "cites": [
+     1
+    ],
+    "facts": []
+   }
+  ],
+  "sources": [
+   {
+    "n": 1,
+    "source": "Medicare Benefit Policy Manual, Ch. 8, §30.2.2.1 (Documentation to Support Skilled Care Determinations)"
+   }
+  ],
+  "coordinator_todos": []
+ },
+ "dev-031": {
+  "letter_id": "dev-031",
+  "source": "template",
+  "model": null,
+  "rules_version": "74d77b7b4e6d",
+  "header": "DRAFT for clinician and compliance review. Not a legal determination. Synthetic data only.",
+  "blocks": [
+   {
+    "text": "We ask the plan to reconsider. Its letter gives the reasons below; we address each in turn.",
+    "answers": null,
+    "cites": [],
+    "facts": []
+   },
+   {
+    "text": "Denied for lack of improvement potential. Coverage does not depend on whether the member will improve. Chapter 8, as revised after the Jimmo v. Sebelius settlement, says skilled care is covered to maintain the current condition or to prevent or slow deterioration, and that coverage turns on the need for skilled care, not on improvement potential.",
+    "answers": null,
+    "cites": [
+     1,
+     2
+    ],
+    "facts": []
+   },
+   {
+    "text": "Denied because current or custodial care is said to be enough. If the member needs skilled services daily, intermittent or custodial support does not meet that need: Chapter 8 contrasts intermittent with daily skilled care. Whether care can be given elsewhere is judged on the member's condition and on whether the alternative would adversely affect it, not on what support already happens to be available.",
+    "answers": null,
+    "cites": [
+     3,
+     4
+    ],
+    "facts": []
+   },
+   {
+    "text": "Denied because no daily skilled need was found. This is a clinical claim, and it is a legitimate criterion. Contest it only with chart evidence: list each skilled service, who must perform it, and how often. Observation and assessment, and management of a care plan, can themselves be skilled services.",
+    "answers": null,
+    "cites": [
+     5,
+     6,
+     7
+    ],
+    "facts": []
+   }
+  ],
+  "sources": [
+   {
+    "n": 1,
+    "source": "Medicare Benefit Policy Manual, Ch. 8, §30",
+    "quote": "Coverage of nursing care and/or therapy to perform a maintenance program does not turn on the presence or absence of an individual's potential for improvement from the nursing care and/or therapy, but rather on the beneficiary's need for skilled care."
+   },
+   {
+    "n": 2,
+    "source": "Medicare Benefit Policy Manual, Ch. 8, §30.2.1",
+    "quote": "Skilled care may be necessary to improve a patient's current condition, to maintain the patient's current condition, or to prevent or slow further deterioration of the patient's condition."
+   },
+   {
+    "n": 3,
+    "source": "Medicare Benefit Policy Manual, Ch. 8, §30",
+    "quote": "payment for a SNF level of care could not be made if a patient needs an intermittent rather than daily skilled service."
+   },
+   {
+    "n": 4,
+    "source": "Medicare Benefit Policy Manual, Ch. 8, §30.7",
+    "quote": "If the use of those alternatives would adversely affect the patient's medical condition, the A/B MAC (A) concludes that as a practical matter the daily skilled services can only be provided by a SNF on an inpatient basis."
+   },
+   {
+    "n": 5,
+    "source": "Medicare Benefit Policy Manual, Ch. 8, §30.6",
+    "quote": "Skilled nursing services or skilled rehabilitation services (or a combination of these services) must be needed and provided on a \"daily basis,\" i.e., on essentially a 7-days-a-week basis."
+   },
+   {
+    "n": 6,
+    "source": "Medicare Benefit Policy Manual, Ch. 8, §30.2.3.1 (Management and Evaluation of a Patient Care Plan)"
+   },
+   {
+    "n": 7,
+    "source": "Medicare Benefit Policy Manual, Ch. 8, §30.2.3.2 (Observation and Assessment of Patient's Condition)"
+   }
+  ],
+  "coordinator_todos": []
+ },
+ "dev-032": {
+  "letter_id": "dev-032",
+  "source": "template",
+  "model": null,
+  "rules_version": "74d77b7b4e6d",
+  "header": "DRAFT for clinician and compliance review. Not a legal determination. Synthetic data only.",
+  "blocks": [
+   {
+    "text": "We ask the plan to reconsider. Its letter gives the reasons below; we address each in turn.",
+    "answers": null,
+    "cites": [],
+    "facts": []
+   },
+   {
+    "text": "Denied because current or custodial care is said to be enough. If the member needs skilled services daily, intermittent or custodial support does not meet that need: Chapter 8 contrasts intermittent with daily skilled care. Whether care can be given elsewhere is judged on the member's condition and on whether the alternative would adversely affect it, not on what support already happens to be available.",
+    "answers": null,
+    "cites": [
+     1,
+     2
+    ],
+    "facts": []
+   },
+   {
+    "text": "Denied because the person lives in a nursing home. Where the member lives is not a coverage criterion. Chapter 8 sets out four factors (a need for skilled services, on a daily basis, that as a practical matter can only be provided in a SNF, and that are reasonable and necessary); residence is not among them. Since 2024, Medicare Advantage plans must apply Traditional Medicare's coverage criteria, including these SNF criteria.",
+    "answers": null,
+    "cites": [
+     3,
+     4
+    ],
+    "facts": []
+   },
+   {
+    "text": "Denied because no daily skilled need was found. This is a clinical claim, and it is a legitimate criterion. Contest it only with chart evidence: list each skilled service, who must perform it, and how often. Observation and assessment, and management of a care plan, can themselves be skilled services.",
+    "answers": null,
+    "cites": [
+     5,
+     6,
+     7
+    ],
+    "facts": []
+   }
+  ],
+  "sources": [
+   {
+    "n": 1,
+    "source": "Medicare Benefit Policy Manual, Ch. 8, §30",
+    "quote": "payment for a SNF level of care could not be made if a patient needs an intermittent rather than daily skilled service."
+   },
+   {
+    "n": 2,
+    "source": "Medicare Benefit Policy Manual, Ch. 8, §30.7",
+    "quote": "If the use of those alternatives would adversely affect the patient's medical condition, the A/B MAC (A) concludes that as a practical matter the daily skilled services can only be provided by a SNF on an inpatient basis."
+   },
+   {
+    "n": 3,
+    "source": "Medicare Benefit Policy Manual, Ch. 8, §30",
+    "quote": "Care in a SNF is covered if all of the following four factors are met"
+   },
+   {
+    "n": 4,
+    "source": "CMS-4201-F (Contract Year 2024 MA and Part D Final Rule)"
+   },
+   {
+    "n": 5,
+    "source": "Medicare Benefit Policy Manual, Ch. 8, §30.6",
+    "quote": "Skilled nursing services or skilled rehabilitation services (or a combination of these services) must be needed and provided on a \"daily basis,\" i.e., on essentially a 7-days-a-week basis."
+   },
+   {
+    "n": 6,
+    "source": "Medicare Benefit Policy Manual, Ch. 8, §30.2.3.1 (Management and Evaluation of a Patient Care Plan)"
+   },
+   {
+    "n": 7,
+    "source": "Medicare Benefit Policy Manual, Ch. 8, §30.2.3.2 (Observation and Assessment of Patient's Condition)"
+   }
+  ],
+  "coordinator_todos": []
+ },
+ "dev-033": {
+  "letter_id": "dev-033",
+  "source": "template",
+  "model": null,
+  "rules_version": "74d77b7b4e6d",
+  "header": "DRAFT for clinician and compliance review. Not a legal determination. Synthetic data only.",
+  "blocks": [
+   {
+    "text": "We ask the plan to reconsider. Its letter gives the reasons below; we address each in turn.",
+    "answers": null,
+    "cites": [],
+    "facts": []
+   },
+   {
+    "text": "Denied because current or custodial care is said to be enough. If the member needs skilled services daily, intermittent or custodial support does not meet that need: Chapter 8 contrasts intermittent with daily skilled care. Whether care can be given elsewhere is judged on the member's condition and on whether the alternative would adversely affect it, not on what support already happens to be available.",
+    "answers": null,
+    "cites": [
+     1,
+     2
+    ],
+    "facts": []
+   },
+   {
+    "text": "Denied because no daily skilled need was found. This is a clinical claim, and it is a legitimate criterion. Contest it only with chart evidence: list each skilled service, who must perform it, and how often. Observation and assessment, and management of a care plan, can themselves be skilled services.",
+    "answers": null,
+    "cites": [
+     3,
+     4,
+     5
+    ],
+    "facts": []
+   }
+  ],
+  "sources": [
+   {
+    "n": 1,
+    "source": "Medicare Benefit Policy Manual, Ch. 8, §30",
+    "quote": "payment for a SNF level of care could not be made if a patient needs an intermittent rather than daily skilled service."
+   },
+   {
+    "n": 2,
+    "source": "Medicare Benefit Policy Manual, Ch. 8, §30.7",
+    "quote": "If the use of those alternatives would adversely affect the patient's medical condition, the A/B MAC (A) concludes that as a practical matter the daily skilled services can only be provided by a SNF on an inpatient basis."
+   },
+   {
+    "n": 3,
+    "source": "Medicare Benefit Policy Manual, Ch. 8, §30.6",
+    "quote": "Skilled nursing services or skilled rehabilitation services (or a combination of these services) must be needed and provided on a \"daily basis,\" i.e., on essentially a 7-days-a-week basis."
+   },
+   {
+    "n": 4,
+    "source": "Medicare Benefit Policy Manual, Ch. 8, §30.2.3.1 (Management and Evaluation of a Patient Care Plan)"
+   },
+   {
+    "n": 5,
+    "source": "Medicare Benefit Policy Manual, Ch. 8, §30.2.3.2 (Observation and Assessment of Patient's Condition)"
+   }
+  ],
+  "coordinator_todos": []
+ },
+ "dev-034": {
+  "letter_id": "dev-034",
+  "source": "template",
+  "model": null,
+  "rules_version": "74d77b7b4e6d",
+  "header": "DRAFT for clinician and compliance review. Not a legal determination. Synthetic data only.",
+  "blocks": [
+   {
+    "text": "We ask the plan to reconsider. Its letter gives the reasons below; we address each in turn.",
+    "answers": null,
+    "cites": [],
+    "facts": []
+   },
+   {
+    "text": "Denied because the member can't take part in daily therapy. The SNF benefit covers daily skilled nursing, not only therapy. Chapter 8's first factor is a need for \"skilled nursing services or skilled rehabilitation services\", and the daily requirement is met by skilled nursing on essentially a 7-days-a-week basis. Whether the member can take part in therapy does not decide coverage when daily skilled nursing is needed, and a diagnosis or prognosis should never be the sole factor in deciding a service is not skilled.",
+    "answers": null,
+    "cites": [
+     1,
+     2,
+     3
+    ],
+    "facts": []
+   },
+   {
+    "text": "Denied for lack of improvement potential. Coverage does not depend on whether the member will improve. Chapter 8, as revised after the Jimmo v. Sebelius settlement, says skilled care is covered to maintain the current condition or to prevent or slow deterioration, and that coverage turns on the need for skilled care, not on improvement potential.",
+    "answers": null,
+    "cites": [
+     4,
+     5
+    ],
+    "facts": []
+   },
+   {
+    "text": "Denied because current or custodial care is said to be enough. If the member needs skilled services daily, intermittent or custodial support does not meet that need: Chapter 8 contrasts intermittent with daily skilled care. Whether care can be given elsewhere is judged on the member's condition and on whether the alternative would adversely affect it, not on what support already happens to be available.",
+    "answers": null,
+    "cites": [
+     6,
+     7
+    ],
+    "facts": []
+   },
+   {
+    "text": "Denied because the person lives in a nursing home. Where the member lives is not a coverage criterion. Chapter 8 sets out four factors (a need for skilled services, on a daily basis, that as a practical matter can only be provided in a SNF, and that are reasonable and necessary); residence is not among them. Since 2024, Medicare Advantage plans must apply Traditional Medicare's coverage criteria, including these SNF criteria.",
+    "answers": null,
+    "cites": [
+     8,
+     9
+    ],
+    "facts": []
+   },
+   {
+    "text": "Denied because no daily skilled need was found. This is a clinical claim, and it is a legitimate criterion. Contest it only with chart evidence: list each skilled service, who must perform it, and how often. Observation and assessment, and management of a care plan, can themselves be skilled services.",
+    "answers": null,
+    "cites": [
+     2,
+     10,
+     11
+    ],
+    "facts": []
+   }
+  ],
+  "sources": [
+   {
+    "n": 1,
+    "source": "Medicare Benefit Policy Manual, Ch. 8, §30",
+    "quote": "The patient requires skilled nursing services or skilled rehabilitation services"
+   },
+   {
+    "n": 2,
+    "source": "Medicare Benefit Policy Manual, Ch. 8, §30.6",
+    "quote": "Skilled nursing services or skilled rehabilitation services (or a combination of these services) must be needed and provided on a \"daily basis,\" i.e., on essentially a 7-days-a-week basis."
+   },
+   {
+    "n": 3,
+    "source": "Medicare Benefit Policy Manual, Ch. 8, §30.2.2",
+    "quote": "a patient's diagnosis or prognosis should never be the sole factor in deciding that a service is not skilled."
+   },
+   {
+    "n": 4,
+    "source": "Medicare Benefit Policy Manual, Ch. 8, §30",
+    "quote": "Coverage of nursing care and/or therapy to perform a maintenance program does not turn on the presence or absence of an individual's potential for improvement from the nursing care and/or therapy, but rather on the beneficiary's need for skilled care."
+   },
+   {
+    "n": 5,
+    "source": "Medicare Benefit Policy Manual, Ch. 8, §30.2.1",
+    "quote": "Skilled care may be necessary to improve a patient's current condition, to maintain the patient's current condition, or to prevent or slow further deterioration of the patient's condition."
+   },
+   {
+    "n": 6,
+    "source": "Medicare Benefit Policy Manual, Ch. 8, §30",
+    "quote": "payment for a SNF level of care could not be made if a patient needs an intermittent rather than daily skilled service."
+   },
+   {
+    "n": 7,
+    "source": "Medicare Benefit Policy Manual, Ch. 8, §30.7",
+    "quote": "If the use of those alternatives would adversely affect the patient's medical condition, the A/B MAC (A) concludes that as a practical matter the daily skilled services can only be provided by a SNF on an inpatient basis."
+   },
+   {
+    "n": 8,
+    "source": "Medicare Benefit Policy Manual, Ch. 8, §30",
+    "quote": "Care in a SNF is covered if all of the following four factors are met"
+   },
+   {
+    "n": 9,
+    "source": "CMS-4201-F (Contract Year 2024 MA and Part D Final Rule)"
+   },
+   {
+    "n": 10,
+    "source": "Medicare Benefit Policy Manual, Ch. 8, §30.2.3.1 (Management and Evaluation of a Patient Care Plan)"
+   },
+   {
+    "n": 11,
+    "source": "Medicare Benefit Policy Manual, Ch. 8, §30.2.3.2 (Observation and Assessment of Patient's Condition)"
+   }
+  ],
+  "coordinator_todos": []
+ },
+ "dev-035": {
+  "letter_id": "dev-035",
+  "source": "template",
+  "model": null,
+  "rules_version": "74d77b7b4e6d",
+  "header": "DRAFT for clinician and compliance review. Not a legal determination. Synthetic data only.",
+  "blocks": [
+   {
+    "text": "We ask the plan to reconsider. Its letter gives the reasons below; we address each in turn.",
+    "answers": null,
+    "cites": [],
+    "facts": []
+   },
+   {
+    "text": "Denied for missing or insufficient documentation. Nothing here to argue. Send what the plan says is missing (physician orders, nursing and therapy notes documenting each skilled service and its frequency) and resubmit before considering an appeal.",
+    "answers": null,
+    "cites": [
+     1
+    ],
+    "facts": []
+   },
+   {
+    "text": "The member's current skilled needs, from the chart:",
+    "answers": null,
+    "cites": [],
+    "facts": [
+     {
+      "id": "dev-035-f1",
+      "text": "Urosepsis treated in hospital; IV antibiotics to complete at the facility",
+      "source": "Hospital discharge summary"
+     }
+    ]
+   }
+  ],
+  "sources": [
+   {
+    "n": 1,
+    "source": "Medicare Benefit Policy Manual, Ch. 8, §30.2.2.1 (Documentation to Support Skilled Care Determinations)"
+   }
+  ],
+  "coordinator_todos": []
+ },
+ "dev-036": {
+  "letter_id": "dev-036",
+  "source": "template",
+  "model": null,
+  "rules_version": "74d77b7b4e6d",
+  "header": "DRAFT for clinician and compliance review. Not a legal determination. Synthetic data only.",
+  "blocks": [
+   {
+    "text": "We ask the plan to reconsider. Its letter gives the reasons below; we address each in turn.",
+    "answers": null,
+    "cites": [],
+    "facts": []
+   },
+   {
+    "text": "Denied because current or custodial care is said to be enough. If the member needs skilled services daily, intermittent or custodial support does not meet that need: Chapter 8 contrasts intermittent with daily skilled care. Whether care can be given elsewhere is judged on the member's condition and on whether the alternative would adversely affect it, not on what support already happens to be available.",
+    "answers": null,
+    "cites": [
+     1,
+     2
+    ],
+    "facts": []
+   },
+   {
+    "text": "Denied because the person lives in a nursing home. Where the member lives is not a coverage criterion. Chapter 8 sets out four factors (a need for skilled services, on a daily basis, that as a practical matter can only be provided in a SNF, and that are reasonable and necessary); residence is not among them. Since 2024, Medicare Advantage plans must apply Traditional Medicare's coverage criteria, including these SNF criteria.",
+    "answers": null,
+    "cites": [
+     3,
+     4
+    ],
+    "facts": []
+   },
+   {
+    "text": "Denied because no daily skilled need was found. This is a clinical claim, and it is a legitimate criterion. Contest it only with chart evidence: list each skilled service, who must perform it, and how often. Observation and assessment, and management of a care plan, can themselves be skilled services.",
+    "answers": null,
+    "cites": [
+     5,
+     6,
+     7
+    ],
+    "facts": []
+   }
+  ],
+  "sources": [
+   {
+    "n": 1,
+    "source": "Medicare Benefit Policy Manual, Ch. 8, §30",
+    "quote": "payment for a SNF level of care could not be made if a patient needs an intermittent rather than daily skilled service."
+   },
+   {
+    "n": 2,
+    "source": "Medicare Benefit Policy Manual, Ch. 8, §30.7",
+    "quote": "If the use of those alternatives would adversely affect the patient's medical condition, the A/B MAC (A) concludes that as a practical matter the daily skilled services can only be provided by a SNF on an inpatient basis."
+   },
+   {
+    "n": 3,
+    "source": "Medicare Benefit Policy Manual, Ch. 8, §30",
+    "quote": "Care in a SNF is covered if all of the following four factors are met"
+   },
+   {
+    "n": 4,
+    "source": "CMS-4201-F (Contract Year 2024 MA and Part D Final Rule)"
+   },
+   {
+    "n": 5,
+    "source": "Medicare Benefit Policy Manual, Ch. 8, §30.6",
+    "quote": "Skilled nursing services or skilled rehabilitation services (or a combination of these services) must be needed and provided on a \"daily basis,\" i.e., on essentially a 7-days-a-week basis."
+   },
+   {
+    "n": 6,
+    "source": "Medicare Benefit Policy Manual, Ch. 8, §30.2.3.1 (Management and Evaluation of a Patient Care Plan)"
+   },
+   {
+    "n": 7,
+    "source": "Medicare Benefit Policy Manual, Ch. 8, §30.2.3.2 (Observation and Assessment of Patient's Condition)"
+   }
+  ],
+  "coordinator_todos": []
+ },
+ "dev-037": {
+  "letter_id": "dev-037",
+  "source": "template",
+  "model": null,
+  "rules_version": "74d77b7b4e6d",
+  "header": "DRAFT for clinician and compliance review. Not a legal determination. Synthetic data only.",
+  "blocks": [
+   {
+    "text": "We ask the plan to reconsider. Its letter gives the reasons below; we address each in turn.",
+    "answers": null,
+    "cites": [],
+    "facts": []
+   },
+   {
+    "text": "Denied because the member can't take part in daily therapy. The SNF benefit covers daily skilled nursing, not only therapy. Chapter 8's first factor is a need for \"skilled nursing services or skilled rehabilitation services\", and the daily requirement is met by skilled nursing on essentially a 7-days-a-week basis. Whether the member can take part in therapy does not decide coverage when daily skilled nursing is needed, and a diagnosis or prognosis should never be the sole factor in deciding a service is not skilled.",
+    "answers": null,
+    "cites": [
+     1,
+     2,
+     3
+    ],
+    "facts": []
+   },
+   {
+    "text": "Denied because current or custodial care is said to be enough. If the member needs skilled services daily, intermittent or custodial support does not meet that need: Chapter 8 contrasts intermittent with daily skilled care. Whether care can be given elsewhere is judged on the member's condition and on whether the alternative would adversely affect it, not on what support already happens to be available.",
+    "answers": null,
+    "cites": [
+     4,
+     5
+    ],
+    "facts": []
+   },
+   {
+    "text": "Denied for lack of improvement potential. Coverage does not depend on whether the member will improve. Chapter 8, as revised after the Jimmo v. Sebelius settlement, says skilled care is covered to maintain the current condition or to prevent or slow deterioration, and that coverage turns on the need for skilled care, not on improvement potential.",
+    "answers": null,
+    "cites": [
+     6,
+     7
+    ],
+    "facts": []
+   },
+   {
+    "text": "Denied because the person lives in a nursing home. Where the member lives is not a coverage criterion. Chapter 8 sets out four factors (a need for skilled services, on a daily basis, that as a practical matter can only be provided in a SNF, and that are reasonable and necessary); residence is not among them. Since 2024, Medicare Advantage plans must apply Traditional Medicare's coverage criteria, including these SNF criteria.",
+    "answers": null,
+    "cites": [
+     8,
+     9
+    ],
+    "facts": []
+   },
+   {
+    "text": "Denied because no daily skilled need was found. This is a clinical claim, and it is a legitimate criterion. Contest it only with chart evidence: list each skilled service, who must perform it, and how often. Observation and assessment, and management of a care plan, can themselves be skilled services.",
+    "answers": null,
+    "cites": [
+     2,
+     10,
+     11
+    ],
+    "facts": []
+   }
+  ],
+  "sources": [
+   {
+    "n": 1,
+    "source": "Medicare Benefit Policy Manual, Ch. 8, §30",
+    "quote": "The patient requires skilled nursing services or skilled rehabilitation services"
+   },
+   {
+    "n": 2,
+    "source": "Medicare Benefit Policy Manual, Ch. 8, §30.6",
+    "quote": "Skilled nursing services or skilled rehabilitation services (or a combination of these services) must be needed and provided on a \"daily basis,\" i.e., on essentially a 7-days-a-week basis."
+   },
+   {
+    "n": 3,
+    "source": "Medicare Benefit Policy Manual, Ch. 8, §30.2.2",
+    "quote": "a patient's diagnosis or prognosis should never be the sole factor in deciding that a service is not skilled."
+   },
+   {
+    "n": 4,
+    "source": "Medicare Benefit Policy Manual, Ch. 8, §30",
+    "quote": "payment for a SNF level of care could not be made if a patient needs an intermittent rather than daily skilled service."
+   },
+   {
+    "n": 5,
+    "source": "Medicare Benefit Policy Manual, Ch. 8, §30.7",
+    "quote": "If the use of those alternatives would adversely affect the patient's medical condition, the A/B MAC (A) concludes that as a practical matter the daily skilled services can only be provided by a SNF on an inpatient basis."
+   },
+   {
+    "n": 6,
+    "source": "Medicare Benefit Policy Manual, Ch. 8, §30",
+    "quote": "Coverage of nursing care and/or therapy to perform a maintenance program does not turn on the presence or absence of an individual's potential for improvement from the nursing care and/or therapy, but rather on the beneficiary's need for skilled care."
+   },
+   {
+    "n": 7,
+    "source": "Medicare Benefit Policy Manual, Ch. 8, §30.2.1",
+    "quote": "Skilled care may be necessary to improve a patient's current condition, to maintain the patient's current condition, or to prevent or slow further deterioration of the patient's condition."
+   },
+   {
+    "n": 8,
+    "source": "Medicare Benefit Policy Manual, Ch. 8, §30",
+    "quote": "Care in a SNF is covered if all of the following four factors are met"
+   },
+   {
+    "n": 9,
+    "source": "CMS-4201-F (Contract Year 2024 MA and Part D Final Rule)"
+   },
+   {
+    "n": 10,
+    "source": "Medicare Benefit Policy Manual, Ch. 8, §30.2.3.1 (Management and Evaluation of a Patient Care Plan)"
+   },
+   {
+    "n": 11,
+    "source": "Medicare Benefit Policy Manual, Ch. 8, §30.2.3.2 (Observation and Assessment of Patient's Condition)"
+   }
+  ],
+  "coordinator_todos": []
+ },
+ "dev-039": {
+  "letter_id": "dev-039",
+  "rules_version": "74d77b7b4e6d",
+  "header": "DRAFT for clinician and compliance review. Not a legal determination. Synthetic data only.",
+  "blocks": [
+   {
+    "text": "We respectfully request reconsideration of the denial of skilled nursing facility benefits for Pascal Siakam. The plan states that \"the documentation does not establish that the member maintains the baseline cognitive ability, physical stamina, or behavioral consistency necessary to meaningfully participate in, sustain, or benefit from an intensive daily regimen of restorative therapy services.\" However, coverage of skilled care does not depend on the member's ability to participate in therapy or on improvement potential. Skilled care is covered to maintain the current condition or to prevent or slow deterioration, and coverage turns on the need for skilled care itself, not on improvement potential.",
+    "answers": {
+     "text": "the documentation does n0t establish that the member maintains the baseline cognitive ability, physical stamina, or behavioral consistency necessary to meaningfully participate in, sustain, or benefit fr0m an intensive daily regimen of restorative therapy services",
+     "start": 775,
+     "end": 1039
+    },
+    "cites": [
+     1,
+     2
+    ],
+    "facts": []
+   },
+   {
+    "text": "The member's clinical needs demonstrate a requirement for daily skilled nursing and rehabilitation services. The member has undergone a total knee replacement revision and requires physical therapy twice daily for range of motion and gait training, with a continuous passive motion machine that must be set up and managed by a therapist. These services meet the requirement that skilled services be provided on a daily, essentially 7-days-a-week basis.",
+    "answers": null,
+    "cites": [
+     3,
+     4
+    ],
+    "facts": [
+     {
+      "id": "dev-039-f1",
+      "text": "Total knee replacement revision after prosthetic loosening",
+      "source": "Operative report"
+     },
+     {
+      "id": "dev-039-f2",
+      "text": "PT twice daily for range of motion and gait; CPM machine set up by a therapist",
+      "source": "PT plan of care"
+     }
+    ]
+   },
+   {
+    "text": "The plan's reliance on the member's current functional status is inconsistent with applicable coverage rules. A patient's diagnosis or prognosis should never be the sole factor in deciding that a service is not skilled. The relevant question is whether the member needs skilled services daily, not whether custodial care happens to be available or whether the member is expected to improve.",
+    "answers": null,
+    "cites": [
+     5,
+     6,
+     7
+    ],
+    "facts": []
+   },
+   {
+    "text": "The member requires daily skilled observation and assessment of the postoperative knee replacement, management of the pain and rehabilitation care plan, and skilled instruction in the use of the continuous passive motion machine and weight-bearing progression. These are skilled services that can only be safely provided in a skilled nursing facility setting on a daily basis.",
+    "answers": null,
+    "cites": [
+     8,
+     9
+    ],
+    "facts": [
+     {
+      "id": "dev-039-f1",
+      "text": "Total knee replacement revision after prosthetic loosening",
+      "source": "Operative report"
+     },
+     {
+      "id": "dev-039-f2",
+      "text": "PT twice daily for range of motion and gait; CPM machine set up by a therapist",
+      "source": "PT plan of care"
+     }
+    ]
+   }
+  ],
+  "sources": [
+   {
+    "n": 1,
+    "source": "Medicare Benefit Policy Manual, Ch. 8, §30",
+    "quote": "Coverage of nursing care and/or therapy to perform a maintenance program does not turn on the presence or absence of an individual's potential for improvement from the nursing care and/or therapy, but rather on the beneficiary's need for skilled care."
+   },
+   {
+    "n": 2,
+    "source": "Medicare Benefit Policy Manual, Ch. 8, §30.2.1",
+    "quote": "Skilled care may be necessary to improve a patient's current condition, to maintain the patient's current condition, or to prevent or slow further deterioration of the patient's condition."
+   },
+   {
+    "n": 3,
+    "source": "Medicare Benefit Policy Manual, Ch. 8, §30",
+    "quote": "The patient requires skilled nursing services or skilled rehabilitation services"
+   },
+   {
+    "n": 4,
+    "source": "Medicare Benefit Policy Manual, Ch. 8, §30.6",
+    "quote": "Skilled nursing services or skilled rehabilitation services (or a combination of these services) must be needed and provided on a \"daily basis,\" i.e., on essentially a 7-days-a-week basis."
+   },
+   {
+    "n": 5,
+    "source": "Medicare Benefit Policy Manual, Ch. 8, §30.2.2",
+    "quote": "a patient's diagnosis or prognosis should never be the sole factor in deciding that a service is not skilled."
+   },
+   {
+    "n": 6,
+    "source": "Medicare Benefit Policy Manual, Ch. 8, §30",
+    "quote": "payment for a SNF level of care could not be made if a patient needs an intermittent rather than daily skilled service."
+   },
+   {
+    "n": 7,
+    "source": "Medicare Benefit Policy Manual, Ch. 8, §30.7",
+    "quote": "If the use of those alternatives would adversely affect the patient's medical condition, the A/B MAC (A) concludes that as a practical matter the daily skilled services can only be provided by a SNF on an inpatient basis."
+   },
+   {
+    "n": 8,
+    "source": "Medicare Benefit Policy Manual, Ch. 8, §30.2.3.1 (Management and Evaluation of a Patient Care Plan)"
+   },
+   {
+    "n": 9,
+    "source": "Medicare Benefit Policy Manual, Ch. 8, §30.2.3.2 (Observation and Assessment of Patient's Condition)"
+   }
+  ],
+  "coordinator_todos": [
+   {
+    "text": "F0llowing review of the submitted nursing and physician notes, the documentation does n0t establish that the member maintains the baseline cognitive ability, physical stamina, or behavioral consistency necessary to meaningfully participate in, sustain, or benefit fr0m an intensive daily regimen of restorative therapy services.",
+    "start": 712,
+    "end": 1040
+   }
+  ],
+  "source": "claude",
+  "model": "claude-haiku-4-5-20251001",
+  "usage": {
+   "input_tokens": 1997,
+   "output_tokens": 632
+  },
+  "latency_ms": 7401
+ },
+ "dev-040": {
+  "letter_id": "dev-040",
+  "source": "template",
+  "model": null,
+  "rules_version": "74d77b7b4e6d",
+  "header": "DRAFT for clinician and compliance review. Not a legal determination. Synthetic data only.",
+  "blocks": [
+   {
+    "text": "We ask the plan to reconsider. Its letter gives the reasons below; we address each in turn.",
+    "answers": null,
+    "cites": [],
+    "facts": []
+   },
+   {
+    "text": "Denied because current or custodial care is said to be enough. If the member needs skilled services daily, intermittent or custodial support does not meet that need: Chapter 8 contrasts intermittent with daily skilled care. Whether care can be given elsewhere is judged on the member's condition and on whether the alternative would adversely affect it, not on what support already happens to be available.",
+    "answers": null,
+    "cites": [
+     1,
+     2
+    ],
+    "facts": []
+   },
+   {
+    "text": "Denied because the person lives in a nursing home. Where the member lives is not a coverage criterion. Chapter 8 sets out four factors (a need for skilled services, on a daily basis, that as a practical matter can only be provided in a SNF, and that are reasonable and necessary); residence is not among them. Since 2024, Medicare Advantage plans must apply Traditional Medicare's coverage criteria, including these SNF criteria.",
+    "answers": null,
+    "cites": [
+     3,
+     4
+    ],
+    "facts": []
+   },
+   {
+    "text": "Denied because no daily skilled need was found. This is a clinical claim, and it is a legitimate criterion. Contest it only with chart evidence: list each skilled service, who must perform it, and how often. Observation and assessment, and management of a care plan, can themselves be skilled services.",
+    "answers": null,
+    "cites": [
+     5,
+     6,
+     7
+    ],
+    "facts": []
+   }
+  ],
+  "sources": [
+   {
+    "n": 1,
+    "source": "Medicare Benefit Policy Manual, Ch. 8, §30",
+    "quote": "payment for a SNF level of care could not be made if a patient needs an intermittent rather than daily skilled service."
+   },
+   {
+    "n": 2,
+    "source": "Medicare Benefit Policy Manual, Ch. 8, §30.7",
+    "quote": "If the use of those alternatives would adversely affect the patient's medical condition, the A/B MAC (A) concludes that as a practical matter the daily skilled services can only be provided by a SNF on an inpatient basis."
+   },
+   {
+    "n": 3,
+    "source": "Medicare Benefit Policy Manual, Ch. 8, §30",
+    "quote": "Care in a SNF is covered if all of the following four factors are met"
+   },
+   {
+    "n": 4,
+    "source": "CMS-4201-F (Contract Year 2024 MA and Part D Final Rule)"
+   },
+   {
+    "n": 5,
+    "source": "Medicare Benefit Policy Manual, Ch. 8, §30.6",
+    "quote": "Skilled nursing services or skilled rehabilitation services (or a combination of these services) must be needed and provided on a \"daily basis,\" i.e., on essentially a 7-days-a-week basis."
+   },
+   {
+    "n": 6,
+    "source": "Medicare Benefit Policy Manual, Ch. 8, §30.2.3.1 (Management and Evaluation of a Patient Care Plan)"
+   },
+   {
+    "n": 7,
+    "source": "Medicare Benefit Policy Manual, Ch. 8, §30.2.3.2 (Observation and Assessment of Patient's Condition)"
+   }
+  ],
+  "coordinator_todos": []
+ }
+}
