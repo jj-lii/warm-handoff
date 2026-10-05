@@ -5,6 +5,9 @@ import { Shell } from "../components/Shell";
 // The story behind the prototype, for a reader who has five minutes. Every number is from
 // reports/problem-statement.md (OIG figures) or poc/evals/REPORT.md; update them together.
 const OIG = "https://oig.hhs.gov/documents/audit/11694/OEI-09-24-00331.pdf";
+const CH8 = "https://www.cms.gov/regulations-and-guidance/guidance/manuals/downloads/bp102c08pdf.pdf";
+const CMS_4201F = "https://www.cms.gov/newsroom/fact-sheets/2024-medicare-advantage-and-part-d-final-rule-cms-4201-f";
+const EVAL_REPORT = `${REPO_URL}/blob/main/poc/evals/REPORT.md`;
 
 const SHORTLIST: [string, "Picked" | "Runner-up" | "Dropped", string][] = [
   ["Medicare Advantage denials of nursing home stays that are wrong but rarely appealed", "Picked", "Strongest government evidence, and a denial ends today without an action."],
@@ -24,13 +27,11 @@ const NO_LIST: [string, string][] = [
   ["A login", "There's no private data. Spend caps and a pre-generated fallback protect the demo instead."],
 ];
 
-function Src({ href, children }: { href?: string; children: React.ReactNode }) {
-  return href ? (
+function Src({ href, children }: { href: string; children: React.ReactNode }) {
+  return (
     <a className="src" href={href} target="_blank" rel="noreferrer">
       {children}
     </a>
-  ) : (
-    <span className="src">{children}</span>
   );
 }
 
@@ -136,7 +137,7 @@ export default function AboutPage() {
             <li>
               <strong>The stated reasoning conflicts with Medicare&apos;s rules.</strong> Insurers told OIG residents &ldquo;already have some intermittent skilled therapy
               supports&rdquo;. But Medicare covers daily skilled <em>nursing</em>, not just therapy, and covers care that maintains rather than improves{" "}
-              <Src>Medicare Benefit Policy Manual Ch. 8</Src>. Since 2024, these plans must apply the same criteria <Src>CMS-4201-F</Src>.
+              <Src href={CH8}>Medicare Benefit Policy Manual Ch. 8</Src>. Since 2024, these plans must apply the same criteria <Src href={CMS_4201F}>CMS-4201-F</Src>.
             </li>
             <li>
               <strong>The workflow doesn&apos;t fit.</strong> As we read the public help articles, the flow starts from a hospital referral. A resident who gets sicker in
@@ -186,8 +187,8 @@ export default function AboutPage() {
               <span>tokens</span>
             </div>
             <p>
-              Not even a cent for every run this weekend. That&apos;s about $0.00006 a letter: roughly 6x cheaper than Gemini Flash-Lite and 30x cheaper than Claude Haiku{" "}
-              <Src>TypeSafe billing</Src> <Src>eval report</Src>. At that price, reading every denial costs nothing, and Claude is saved for the few drafts worth writing.
+              Not even a cent for every run this weekend. That&apos;s about $0.00006 a letter: roughly 6x cheaper than Gemini Flash-Lite and 30x cheaper than Claude Haiku (Jev figures from our TypeSafe billing){" "}
+              <Src href={EVAL_REPORT}>eval report</Src>. At that price, reading every denial costs nothing, and Claude is saved for the few drafts worth writing.
             </p>
           </div>
         </Chapter>

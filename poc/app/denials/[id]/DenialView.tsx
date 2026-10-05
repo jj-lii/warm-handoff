@@ -117,6 +117,14 @@ function Assessment({ triage }: { triage: Triage }) {
   );
 }
 
+// Public documents behind the citation names in lib/rules.ts (hash-locked, so the
+// links live here).
+const SOURCE_URLS: [string, string][] = [
+  ["Medicare Benefit Policy Manual", "https://www.cms.gov/regulations-and-guidance/guidance/manuals/downloads/bp102c08pdf.pdf"],
+  ["CMS-4201-F", "https://www.cms.gov/newsroom/fact-sheets/2024-medicare-advantage-and-part-d-final-rule-cms-4201-f"],
+];
+const sourceUrl = (source: string) => SOURCE_URLS.find(([prefix]) => source.startsWith(prefix))?.[1];
+
 export function DenialView(props: { summary: DenialSummary; letter: Letter; kase: Case | null; triage: Triage; draft: Draft | null }) {
   const { summary, letter, kase } = props;
   const [triage, setTriage] = useState(props.triage);
@@ -322,7 +330,13 @@ export function DenialView(props: { summary: DenialSummary; letter: Letter; kase
                         <li key={s.n} id={`source-${s.n}`}>
                           <span className="cite-num">{s.n}</span>
                           <span>
-                            <span className="source-name">{s.source}</span>
+                            {sourceUrl(s.source) ? (
+                              <a className="source-name" href={sourceUrl(s.source)} target="_blank" rel="noreferrer">
+                                {s.source}
+                              </a>
+                            ) : (
+                              <span className="source-name">{s.source}</span>
+                            )}
                             {s.quote && <q>{s.quote}</q>}
                           </span>
                         </li>

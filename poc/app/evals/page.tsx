@@ -1,5 +1,6 @@
 import { STRENGTH, URGENT_DAYS } from "@/lib/queue";
 import { HANDOFF_BAND } from "@/lib/handoff";
+import { REPO_URL } from "@/lib/http";
 import { Shell } from "../components/Shell";
 
 // Static summary of poc/evals/REPORT.md (holdout run once, 2026-10-04). Every number
@@ -21,7 +22,10 @@ export default function EvalsPage() {
           <h1>How well does the triage work?</h1>
           <p className="lede">
             A pre-registered test on 40 synthetic denial letters the engines never saw during tuning, run once. Full method and caveats in{" "}
-            <code>poc/evals/REPORT.md</code>.
+            <a href={`${REPO_URL}/blob/main/poc/evals/REPORT.md`} target="_blank" rel="noreferrer">
+              <code>poc/evals/REPORT.md</code>
+            </a>
+            .
           </p>
         </div>
       </header>
