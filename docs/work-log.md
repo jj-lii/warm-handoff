@@ -2,6 +2,15 @@
 
 Newest first, last 5 entries only; older ones are in `docs/work-log-archive.md`. Paths are as of the entry.
 
+## 2026-10-04 - App backend: cases, tripwire, checked Claude drafts, API
+Output: `poc/app/` (Astryx smoke page), `poc/lib/{cases,handoff,phi,draft,triage,queue,store,limits,http,api}.ts`, `poc/app/api/v1/*`, `poc/scripts/pregen.ts`, `poc/data/*.json`; ADRs 0019-0022; V33-V35
+Notes:
+- Grilled with the author first: no auth (caps plus pre-generated fallback), Claude drafts with checked references, ADR 0018 hand-off as a tunable default, deadline bands, dev letters as the demo set.
+- Astryx builds under Next 16 App Router (V24 build part). `check.ts` is hash-locked by the pre-registration, so `triage.ts` mirrors its findings logic.
+- PHI tripwire passes all 80 dev and golden letters. Claude (Haiku 4.5) pre-drafts for 7 Strong case letters, $0.03; first pass failed 3 on OCR and case in quotes, fixed by tolerant matching. Live Jev triage 203 ms.
+- Upstash keys are empty: caps are per-instance memory until set.
+Next: queue UI (two-pane letter and draft, citation highlighting, Run live), then the eval page; Upstash keys and console spend limits (author).
+
 ## 2026-10-04 - Holdout run once; report written
 Output: `poc/evals/PREREGISTRATION.md` (`876be56`); `poc/evals/REPORT.md`; `private/results/holdout-final.{json,md}` (aggregate only read); `private/holdout-final-run.json` (run marker); exact McNemar test in `evals/metrics.ts`; analysis code hash-locked
 Notes:
@@ -42,8 +51,3 @@ Notes:
 - Smoke test on the first 3 dev labels: keyword and Jev work; Haiku blocked (`ANTHROPIC_API_KEY` empty in root `.env`).
 - `dev.jsonl` has duplicate ids with different texts: two `generate -- dev` runs overlapped. The runner keeps the first row per id.
 Next: author fixes the dev duplicates and adds the Anthropic key; full dev run; golden adjudication.
-
-## 2026-10-04 - Verification queue pass (Claude-checkable items)
-Output: `docs/verify.md` (V10, V13, V16, V18, V20, V21, V22, V27 annotated), `docs/verify-closed.md` (V26)
-Notes: PSI PDF returns 403 to bots; checked via trade press only. PMC13127000 would not load in the fetch tool. Statuses stay open until the author confirms.
-Next: author confirms or rejects the annotated rows; remaining browser-only items (V6, V8, V14, V15, V17, V19, V24, V25, V28).
