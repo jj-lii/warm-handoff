@@ -2,6 +2,14 @@
 
 Newest first, last 5 entries only; older ones are in `docs/work-log-archive.md`. Paths are as of the entry.
 
+## 2026-10-04 - Queue UI, denial view and eval page
+Output: `poc/app/page.tsx`, `poc/app/components/{QueueRow,DeadlineRing}.tsx`, `poc/app/denials/[id]/`, `poc/app/evals/page.tsx`, `poc/lib/words.ts`; V36
+Notes:
+- Queue: four sections (due this week, later, quick fixes, needs a person), deadline ring, case strength in words, hover card with the plain reason and the Double-check note. 28 other dev letters listed below.
+- Denial view: letter left with highlighted passages the draft answers; draft right with citation chips, chart facts and Sources. Run live calls Jev then Claude and shows latency, or a fallback banner with the repo link.
+- Checked by headless-Edge screenshots at desktop width; phone width inconclusive (V36). Hover cards not exercised headless.
+Next: author checks V36 and the hover cards; adds Upstash keys and console spend limits; then the Vercel deploy (V25, V27, V35) and the deck.
+
 ## 2026-10-04 - App backend: cases, tripwire, checked Claude drafts, API
 Output: `poc/app/` (Astryx smoke page), `poc/lib/{cases,handoff,phi,draft,triage,queue,store,limits,http,api}.ts`, `poc/app/api/v1/*`, `poc/scripts/pregen.ts`, `poc/data/*.json`; ADRs 0019-0022; V33-V35
 Notes:
@@ -41,13 +49,3 @@ Notes:
 - Labels add reasons Gemini didn't intend (custodial +13, residency +7, no daily skilled need +7, no improvement +5); intent matches the labels exactly on 16/40 (40%).
 - The threshold sweep keeps the review band fixed, so "sent to a person" doesn't move with the threshold.
 Next: author decides the therapy labels (relabel or tighten the criterion); then tune Jev's residency and missing-documentation questions on dev; golden labelling and adjudication.
-
-## 2026-10-04 - Eval runner built
-Output: `poc/evals/{run,metrics,haiku}.ts`; `verdictOf` exported from `poc/lib/check.ts`; `@anthropic-ai/sdk` 0.131.0; `docs/verify.md` V30-V31
-Notes:
-- Engines: keyword, Claude Haiku 4.5 (same six questions, structured output, temperature 0, no reasoning field), Jev. Answers cached in `poc/.eval-cache/` by prompt and letter; never for the holdout.
-- Metric definitions (in `metrics.ts`; freeze them in the pre-registration): gold next step = `verdictOf(labels)`; top of queue = top quarter by max rules-conflict probability, ties averaged; wrongly contested = share of "contest on the rules" flags whose gold differs; sent to a person = no reason, or any probability in the review band.
-- Holdout guard: `--final` only; needs a committed `poc/evals/PREREGISTRATION.md` naming the sha256 of `rules.ts` and every split and label file; writes `private/holdout-final-run.json` so it can't run twice.
-- Smoke test on the first 3 dev labels: keyword and Jev work; Haiku blocked (`ANTHROPIC_API_KEY` empty in root `.env`).
-- `dev.jsonl` has duplicate ids with different texts: two `generate -- dev` runs overlapped. The runner keeps the first row per id.
-Next: author fixes the dev duplicates and adds the Anthropic key; full dev run; golden adjudication.
