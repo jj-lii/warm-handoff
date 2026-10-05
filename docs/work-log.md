@@ -2,6 +2,13 @@
 
 Newest first, last 5 entries only; older ones are in `docs/work-log-archive.md`. Paths are as of the entry.
 
+## 2026-10-05 - Letter dates: catch OCR-garbled dates too
+Output: `poc/lib/cases.ts`, `poc/lib/cases.test.ts`
+Notes:
+- The first fix missed the deliberately OCR-garbled dates (dev-002 "Apri1", dev-008 "1O/14/2O26", dev-039 "0CTOBER"). They now match loosely and the new date keeps the same swaps; all 12 queued letters agree.
+- Fixed a stray ",;" in a dev-005 chart fact.
+Next: send the email to the hiring team.
+
 ## 2026-10-05 - Letter dates follow the case's denial date
 Output: `poc/lib/cases.ts` (`redateLetter`), `poc/lib/cases.test.ts`, `poc/app/denials/[id]/DenialView.tsx`
 Notes:
@@ -35,12 +42,3 @@ Notes:
 - Typecheck passes; headless-Chrome screenshots at 1440 and 600 px look right.
 - Second pass: author's wording from `poc/languaging.md` (company unnamed); Jev price callout (V31, author-reported); REST API bullet; page card now fills the canvas so it lines up with the rail's user panel.
 Next: author reads the page; closes V31 and V38.
-
-## 2026-10-04 - Restyled the app after ExaCare's product screens
-Output: `poc/app/globals.css`, `poc/app/components/{Shell,Icon,Chips,QueueRow,SyntheticNotice}.tsx`, `poc/lib/words.ts`, `poc/app/page.tsx`, `poc/app/denials/[id]/`, `poc/app/evals/page.tsx`, `poc/app/layout.tsx`; ADRs 0023-0024; V37
-Notes:
-- References: `research/sources/product-screenshots/` (Screener table, Pre-Auth tab, citations, profile, modal).
-- Icon rail, blue-grey canvas, white cards, Roboto, sky-blue pill button; queue as a table with AI Suggestion and Case chips; detail has a patient bar, tabs, a document pane and Assessment/Draft panels with a Citations box.
-- Follow-up: hover cards forced light; captions cut; Urgency column (days left, "Due October 9th"); assessment redesigned; triage renders before the draft on Run live; synthetic chips replaced by a notice on every visit (ADR 0024). Hover checked in dark OS mode over CDP; Run live split not exercised live.
-- Own wordmark, no ExaCare logo or name. Light only. Typecheck and tests pass; headless-Chrome screenshots at 1600 px and 560 px (phone still V36).
-Next: author checks V36 and V37; then the Vercel deploy and the deck.

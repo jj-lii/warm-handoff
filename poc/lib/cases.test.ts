@@ -8,6 +8,12 @@ test("rewrites each letter date to the denial date, keeping its format", () => {
   assert.equal(r.text, "DATE: 09/05/2026\nDate of Review: September 5, 2026. End.");
 });
 
+test("rewrites OCR-garbled dates, keeping the swaps and capitals", () => {
+  const r = redateLetter("DATE: 1O/14/2O26 // DATE: 0CTOBER 18, 2026 // N0vember 14, 2026", "2026-10-10");
+  assert.equal(r.text, "DATE: 1O/1O/2O26 // DATE: 0CT0BER 10, 2026 // 0ct0ber 10, 2026");
+  assert.equal(redateLetter("Date: Apri1 12, 2026", "2026-07-10").text, "Date: Ju1y 10, 2026");
+});
+
 test("puts dates that precede the decision before the denial date", () => {
   assert.equal(redateLetter("submitted for review on March 14, 2026, the", "2026-09-05").text, "submitted for review on September 3, 2026, the");
   assert.equal(redateLetter("DOS REQ: 11/04/2026 - TBD", "2026-09-05").text, "DOS REQ: 09/02/2026 - TBD");
