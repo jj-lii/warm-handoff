@@ -23,3 +23,7 @@ node_modules/
 # Eval answer cache (Jev and Haiku responses keyed by prompt and letter)
 poc/.eval-cache/
 *.tsbuildinfo
+
+# Next.js build output
+poc/.next/
+poc/next-env.d.ts
