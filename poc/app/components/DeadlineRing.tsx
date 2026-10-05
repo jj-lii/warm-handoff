@@ -2,7 +2,7 @@ import { APPEAL_WINDOW_DAYS } from "@/lib/cases";
 import { URGENT_DAYS } from "@/lib/queue";
 
 // A ring that fills as the appeal window runs out; amber inside two weeks, red inside
-// URGENT_DAYS.
+// URGENT_DAYS. No number inside: the days-left text sits next to it.
 export function DeadlineRing({ daysLeft }: { daysLeft: number }) {
   const used = Math.min(1, Math.max(0, 1 - daysLeft / APPEAL_WINDOW_DAYS));
   const r = 15;
@@ -14,7 +14,6 @@ export function DeadlineRing({ daysLeft }: { daysLeft: number }) {
         <circle cx="18" cy="18" r={r} className="ring-track" />
         <circle cx="18" cy="18" r={r} className="ring-fill" strokeDasharray={`${used * c} ${c}`} transform="rotate(-90 18 18)" />
       </svg>
-      <span className="ring-days">{Math.max(0, daysLeft)}</span>
     </span>
   );
 }
