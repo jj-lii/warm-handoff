@@ -2,6 +2,14 @@
 
 Newest first, last 5 entries only; older ones are in `docs/work-log-archive.md`. Paths are as of the entry.
 
+## 2026-10-05 - Letter dates follow the case's denial date
+Output: `poc/lib/cases.ts` (`redateLetter`), `poc/lib/cases.test.ts`, `poc/app/denials/[id]/DenialView.tsx`
+Notes:
+- 9 of 12 queued letters printed fixed dates that disagreed with the app's moving "Denied" date; 4 were reviewed after the denial (Oct 14).
+- The denial view now rewrites the letter's date at display time; "submitted for review" and "DOS REQ" land 2-3 days earlier. Draft highlights are remapped.
+- Source data, triage and the text sent to Claude are unchanged.
+Next: send the email to the hiring team.
+
 ## 2026-10-05 - Deployed; README rewritten; verification queue closed
 Output: https://warm-handoff-nine.vercel.app/ (Vercel, root `poc`, branch `main`); `README.md`; `docs/verify-closed.md`
 Notes:
@@ -36,11 +44,3 @@ Notes:
 - Follow-up: hover cards forced light; captions cut; Urgency column (days left, "Due October 9th"); assessment redesigned; triage renders before the draft on Run live; synthetic chips replaced by a notice on every visit (ADR 0024). Hover checked in dark OS mode over CDP; Run live split not exercised live.
 - Own wordmark, no ExaCare logo or name. Light only. Typecheck and tests pass; headless-Chrome screenshots at 1600 px and 560 px (phone still V36).
 Next: author checks V36 and V37; then the Vercel deploy and the deck.
-
-## 2026-10-04 - Queue UI, denial view and eval page
-Output: `poc/app/page.tsx`, `poc/app/components/{QueueRow,DeadlineRing}.tsx`, `poc/app/denials/[id]/`, `poc/app/evals/page.tsx`, `poc/lib/words.ts`; V36
-Notes:
-- Queue: four sections (due this week, later, quick fixes, needs a person), deadline ring, case strength in words, hover card with the plain reason and the Double-check note. 28 other dev letters listed below.
-- Denial view: letter left with highlighted passages the draft answers; draft right with citation chips, chart facts and Sources. Run live calls Jev then Claude and shows latency, or a fallback banner with the repo link.
-- Checked by headless-Edge screenshots at desktop width; phone width inconclusive (V36). Hover cards not exercised headless.
-Next: author checks V36 and the hover cards; adds Upstash keys and console spend limits; then the Vercel deploy (V25, V27, V35) and the deck.

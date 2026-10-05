@@ -119,3 +119,39 @@ export function appealDeadline(kase: Pick<Case, "denial">): string {
 export function daysLeft(kase: Pick<Case, "denial">, today = new Date()): number {
   return Math.ceil((Date.parse(appealDeadline(kase)) - Date.parse(isoDay(today))) / DAY);
 }
+
+// The letters carry fixed dates; the case's denial date moves with today. Rewrite each
+// date in the letter to agree with the case, keeping the letter's own format. Dates that
+// precede the determination land a few days before it. `at` maps an offset in the
+// original text (draft highlights) to the rewritten one.
+const LETTER_DATE = /\b(?:(\d{1,2})\/(\d{1,2})\/(\d{4})|(January|February|March|April|May|June|July|August|September|October|November|December) (\d{1,2}), (\d{4}))\b/g;
+const MONTHS = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+const DAYS_BEFORE_DENIAL: [RegExp, number][] = [
+  [/submitted for review on\s*$/i, 2],
+  [/DOS REQ:\s*$/, 3],
+];
+
+export type Redated = { text: string; at: (offset: number) => number };
+
+export function redateLetter(text: string, denialDate: string): Redated {
+  const edits: { start: number; end: number; delta: number }[] = [];
+  const denied = Date.parse(denialDate);
+  const out = text.replace(LETTER_DATE, (match, _m, _d, _y, monthName, _md, _my, offset: number) => {
+    const before = DAYS_BEFORE_DENIAL.find(([re]) => re.test(text.slice(Math.max(0, offset - 40), offset)))?.[1] ?? 0;
+    const d = new Date(denied - before * DAY);
+    const repl = monthName
+      ? `${MONTHS[d.getUTCMonth()]} ${d.getUTCDate()}, ${d.getUTCFullYear()}`
+      : `${String(d.getUTCMonth() + 1).padStart(2, "0")}/${String(d.getUTCDate()).padStart(2, "0")}/${d.getUTCFullYear()}`;
+    edits.push({ start: offset, end: offset + match.length, delta: repl.length - match.length });
+    return repl;
+  });
+  const at = (offset: number) => {
+    let shift = 0;
+    for (const e of edits) {
+      if (offset >= e.end) shift += e.delta;
+      else if (offset > e.start) return e.start + shift + Math.min(offset - e.start, e.end - e.start + e.delta);
+    }
+    return offset + shift;
+  };
+  return { text: out, at };
+}
