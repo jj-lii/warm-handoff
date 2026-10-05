@@ -2,6 +2,15 @@
 
 Newest first, last 5 entries only; older ones are in `docs/work-log-archive.md`. Paths are as of the entry.
 
+## 2026-10-04 - About tab: the story behind the prototype
+Output: `poc/app/about/page.tsx`, `poc/app/components/{Shell,Icon}.tsx`, `poc/app/globals.css`; V38
+Notes:
+- Eight short chapters: brief, sources, shortlist, narrowing to long-stay residents, what we built, evals, the no list, next steps. First item in the rail.
+- Numbers from `reports/problem-statement.md` (OIG) and `poc/evals/REPORT.md`; OIG figures link to the report PDF.
+- Typecheck passes; headless-Chrome screenshots at 1440 and 600 px look right.
+- Second pass: author's wording from `poc/languaging.md` (company unnamed); Jev price callout (V31, author-reported); REST API bullet; page card now fills the canvas so it lines up with the rail's user panel.
+Next: author reads the page; closes V31 and V38.
+
 ## 2026-10-04 - Restyled the app after ExaCare's product screens
 Output: `poc/app/globals.css`, `poc/app/components/{Shell,Icon,Chips,QueueRow,SyntheticNotice}.tsx`, `poc/lib/words.ts`, `poc/app/page.tsx`, `poc/app/denials/[id]/`, `poc/app/evals/page.tsx`, `poc/app/layout.tsx`; ADRs 0023-0024; V37
 Notes:
@@ -39,12 +48,3 @@ Next, in order:
 1. Done: real slice labelled and run (REPORT.md, exploratory): Haiku 76%, Gemini 67%, Jev 62%, keyword 29%; 15 of 21 passages are "no daily skilled need", so it barely tests the rules-conflict reasons. Post-hoc: only 7 of Jev's 21 holdout hand-offs could change the next step.
 2. Claude: API routes, auth, rate limits, PHI tripwire, security headers; Astryx smoke build (V24); the triage queue UI; the thin Claude drafting layer (read the claude-api skill first). Cut line if behind: eval page, then Upstash, then UI polish.
 3. Deck (next session), then the Vercel deploy.
-
-## 2026-10-04 - Golden labelled, adjudicated (proposed) and run
-Output: `poc/evals/data/labels/golden.jsonl` (author); `poc/evals/data/golden-adjudication.md` (v1, 19 kept, 3 changes proposed); `poc/evals/results/golden.{json,md}`; `BRIEF.md` limitation (residency labels)
-Notes:
-- Rulings were written before any engine ran on golden. Author accepted all (golden v2): 3 `labeler: "adjudicated"` rows appended; blind rows kept. Blind labels match the adjudicated set on reasons 37/40 and next step 40/40; the run reports both.
-- Right next step on golden: keyword 70%, Haiku 90%, Jev 90% (36/40 each, 95% CI 77-96%). Haiku fell from 100% on dev (tuned) to 90%. Jev sends 48% to a person; Haiku 13%. Jev p50 137 ms vs Haiku 1,091 ms.
-- 4 of 5 next-step misses are the same boundary: "can be rendered at a custodial level / by non-licensed staff" read as custodial substitute (contest on rules) when the gold is no daily skilled need (contest on facts). Under Ch. 8 a custodial substitute is a rules conflict only when a daily skilled need exists. Golden has now been seen, so any fix must be tuned on dev and can't be judged fairly on golden.
-- Residency labels were left as the author labelled them (limitation in `BRIEF.md`).
-Next: decide whether to fix the custodial-vs-skilled boundary on dev; then holdout and real slice (author).
