@@ -55,6 +55,36 @@ Accuracy falls from dev to golden to holdout, as expected when questions are tun
 
 Most remaining errors are not engine failures but a genuine ambiguity in how payers write denials. "Her needs can be met by custodial staff" supports two different appeals: prove daily skilled need from the chart, or cite Chapter 8's rule that custodial or intermittent care can't substitute for a daily skilled need. Our own labeller read the same wording both ways across splits. A proposed fix, not yet tested, is to treat such letters as needing both arguments, chart evidence first, then the rule. Testing it would need fresh letters, not these splits.
 
+## Real slice (exploratory, not pre-registered)
+
+21 short passages (35-83 words) from public Medicare Appeals Council decisions on SNF coverage (ADR 0013), labelled blind by the author and run once with the frozen code. Per-passage results are in `private/results/real.*`.
+
+| Metric | keyword | Haiku | Gemini | Jev |
+|---|---|---|---|---|
+| Right next step | 29% (6/21) | 76% (16/21) | 67% (14/21) | 62% (13/21) |
+| Sent to a person | 86% | 24% | 10% | 57% |
+
+Jev vs Haiku p = 0.375; vs Gemini p = 1.000; vs keyword p = 0.065 (exact McNemar).
+
+- **It mostly tests one reason.** The author labelled 15 of 21 passages "no daily skilled need" (13 of them with no other reason) and none with residency, therapy participation or no improvement. Only 3 passages have a rules-conflict reason, so the slice says almost nothing about the product's core claim.
+- **It's out of domain.** These are adjudicators' reasoning, not plans' letters, and most decisions predate the 2013 Jimmo settlement (`research/external/dab-council-decisions-spike.md`). The questions are worded for a plan's denial letter.
+- **Takeaway:** the model engines still clearly beat keywords on real adjudication text, but accuracy drops about 10-20 points out of domain. Publicly available real text doesn't contain the rules-conflict reasoning this tool targets, so testing it on real denials needs real letters from facilities, which is a pilot question (V23).
+
+## Post-hoc: are Jev's hand-offs to a person justified?
+
+Analysis after the holdout run, from aggregate counts; not pre-registered. A letter goes to a person when any reason's probability falls between 0.3 and 0.7.
+
+| Holdout | Sent to a person | Could change the next step | Wrong among sent | Wrong among not sent |
+|---|---|---|---|---|
+| Haiku | 5 | 5 | 1 | 6 |
+| Gemini | 5 | 5 | 1 | 5 |
+| Jev | 21 | 7 | 2 | 5 |
+
+- 13 of Jev's 21 hand-offs come from uncertain residency scores, the reason whose labels are inconsistent. Haiku and Gemini give near-0 or near-1 answers on the same letters.
+- Only 7 of Jev's 21 could change the next step; the other 14 already have another rules-conflict reason, so the advice is the same either way.
+- No engine's hand-offs catch most of its errors: the custodial mix-ups are confident mistakes.
+- Proposed rule, untested: send a letter to a person only when an uncertain reason could change the next step. On the holdout that would have meant 7 letters (18%) for Jev. Confirming it needs fresh letters.
+
 ## Reproducibility note
 
 The header of `private/results/holdout-final.md` shows rules.ts sha256 `d4898e11…`. That is the raw bytes of the Windows (CRLF) working copy. With line endings normalised to LF it is `507021ca…`, the hash in the pre-registration, which is what the runner checked before running.

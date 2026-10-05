@@ -10,7 +10,7 @@ Notes:
 - Before the run: Gemini 3.1 Flash-Lite added (ADR 0016; 2.5 Flash-Lite is closed to new keys); custodial tightening stashed as post hoc; questions frozen at `f9cfc85`.
 - Report header shows rules.ts raw CRLF hash d4898e11; normalised it matches the pre-registration (noted in REPORT.md).
 Next, in order:
-1. Author: label the real slice (`npm run label -- real`); Claude runs it with the frozen code and reports it as exploratory.
+1. Done: real slice labelled and run (REPORT.md, exploratory): Haiku 76%, Gemini 67%, Jev 62%, keyword 29%; 15 of 21 passages are "no daily skilled need", so it barely tests the rules-conflict reasons. Post-hoc: only 7 of Jev's 21 holdout hand-offs could change the next step.
 2. Claude: API routes, auth, rate limits, PHI tripwire, security headers; Astryx smoke build (V24); the triage queue UI; the thin Claude drafting layer (read the claude-api skill first). Cut line if behind: eval page, then Upstash, then UI polish.
 3. Deck (next session), then the Vercel deploy.
 
