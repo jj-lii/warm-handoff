@@ -1,7 +1,7 @@
-import Link from "next/link";
-import { Badge } from "@astryxdesign/core/Badge";
 import { STRENGTH, URGENT_DAYS } from "@/lib/queue";
 import { HANDOFF_BAND } from "@/lib/handoff";
+import { SyntheticChip } from "../components/Chips";
+import { Shell } from "../components/Shell";
 
 // Static summary of poc/evals/REPORT.md (holdout run once, 2026-10-04). Every number
 // here is copied from that report; update both together.
@@ -15,10 +15,8 @@ const HOLDOUT: [string, string, string, string, string][] = [
 
 export default function EvalsPage() {
   return (
-    <main className="page">
-      <nav className="crumbs">
-        <Link href="/">← Queue</Link>
-      </nav>
+    <Shell active="evals">
+    <main className="card card-page card-narrow">
       <header className="top">
         <div>
           <h1>How well does the triage work?</h1>
@@ -27,7 +25,7 @@ export default function EvalsPage() {
             <code>poc/evals/REPORT.md</code>.
           </p>
         </div>
-        <Badge variant="orange" label="Synthetic letters" />
+        <SyntheticChip label="Synthetic letters" />
       </header>
 
       <section className="section">
@@ -84,5 +82,6 @@ export default function EvalsPage() {
         </ul>
       </section>
     </main>
+    </Shell>
   );
 }
