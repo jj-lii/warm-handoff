@@ -3,10 +3,11 @@
 Newest first, last 5 entries only; older ones are in `docs/work-log-archive.md`. Paths are as of the entry.
 
 ## 2026-10-04 - Restyled the app after ExaCare's product screens
-Output: `poc/app/globals.css`, `poc/app/components/{Shell,Icon,Chips,QueueRow}.tsx`, `poc/app/page.tsx`, `poc/app/denials/[id]/`, `poc/app/evals/page.tsx`, `poc/app/layout.tsx`; ADR 0023; V37
+Output: `poc/app/globals.css`, `poc/app/components/{Shell,Icon,Chips,QueueRow,SyntheticNotice}.tsx`, `poc/lib/words.ts`, `poc/app/page.tsx`, `poc/app/denials/[id]/`, `poc/app/evals/page.tsx`, `poc/app/layout.tsx`; ADRs 0023-0024; V37
 Notes:
 - References: `research/sources/product-screenshots/` (Screener table, Pre-Auth tab, citations, profile, modal).
 - Icon rail, blue-grey canvas, white cards, Roboto, sky-blue pill button; queue as a table with AI Suggestion and Case chips; detail has a patient bar, tabs, a document pane and Assessment/Draft panels with a Citations box.
+- Follow-up: hover cards forced light; captions cut; Urgency column (days left, "Due October 9th"); assessment redesigned; triage renders before the draft on Run live; synthetic chips replaced by a notice on every visit (ADR 0024). Hover checked in dark OS mode over CDP; Run live split not exercised live.
 - Own wordmark, no ExaCare logo or name. Light only. Typecheck and tests pass; headless-Chrome screenshots at 1600 px and 560 px (phone still V36).
 Next: author checks V36 and V37; then the Vercel deploy and the deck.
 
