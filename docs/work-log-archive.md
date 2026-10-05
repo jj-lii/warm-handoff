@@ -2,6 +2,15 @@
 
 Older entries moved from `docs/work-log.md`. Not read by default. Newest first.
 
+## 2026-10-04 - App backend: cases, tripwire, checked Claude drafts, API
+Output: `poc/app/` (Astryx smoke page), `poc/lib/{cases,handoff,phi,draft,triage,queue,store,limits,http,api}.ts`, `poc/app/api/v1/*`, `poc/scripts/pregen.ts`, `poc/data/*.json`; ADRs 0019-0022; V33-V35
+Notes:
+- Grilled with the author first: no auth (caps plus pre-generated fallback), Claude drafts with checked references, ADR 0018 hand-off as a tunable default, deadline bands, dev letters as the demo set.
+- Astryx builds under Next 16 App Router (V24 build part). `check.ts` is hash-locked by the pre-registration, so `triage.ts` mirrors its findings logic.
+- PHI tripwire passes all 80 dev and golden letters. Claude (Haiku 4.5) pre-drafts for 7 Strong case letters, $0.03; first pass failed 3 on OCR and case in quotes, fixed by tolerant matching. Live Jev triage 203 ms.
+- Upstash keys are empty: caps are per-instance memory until set.
+Next: queue UI (two-pane letter and draft, citation highlighting, Run live), then the eval page; Upstash keys and console spend limits (author).
+
 ## 2026-10-04 - Holdout run once; report written
 Output: `poc/evals/PREREGISTRATION.md` (`876be56`); `poc/evals/REPORT.md`; `private/results/holdout-final.{json,md}` (aggregate only read); `private/holdout-final-run.json` (run marker); exact McNemar test in `evals/metrics.ts`; analysis code hash-locked
 Notes:

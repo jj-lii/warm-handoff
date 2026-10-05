@@ -2,6 +2,14 @@
 
 Newest first, last 5 entries only; older ones are in `docs/work-log-archive.md`. Paths are as of the entry.
 
+## 2026-10-05 - Deployed; README rewritten; verification queue closed
+Output: https://warm-handoff-nine.vercel.app/ (Vercel, root `poc`, branch `main`); `README.md`; `docs/verify-closed.md`
+Notes:
+- Smoke test: all pages and read APIs 200; security headers present; PHI tripwire 422; live Jev (135 ms) and live Claude draft both `live: true`.
+- Secrets sweep of history and live JS bundles clean. `warm-handoff.vercel.app` belongs to someone else; share the `-nine` domain.
+- V30 and V32 confirmed with prices; all other rows closed by the author.
+Next: send the email to the hiring team.
+
 ## 2026-10-04 - Deploy prep: links, layout, repo public
 Output: `poc/app/{about,evals}/page.tsx`, `poc/app/denials/[id]/DenialView.tsx`, `poc/app/globals.css`, `.env.example`
 Notes:
@@ -36,12 +44,3 @@ Notes:
 - Denial view: letter left with highlighted passages the draft answers; draft right with citation chips, chart facts and Sources. Run live calls Jev then Claude and shows latency, or a fallback banner with the repo link.
 - Checked by headless-Edge screenshots at desktop width; phone width inconclusive (V36). Hover cards not exercised headless.
 Next: author checks V36 and the hover cards; adds Upstash keys and console spend limits; then the Vercel deploy (V25, V27, V35) and the deck.
-
-## 2026-10-04 - App backend: cases, tripwire, checked Claude drafts, API
-Output: `poc/app/` (Astryx smoke page), `poc/lib/{cases,handoff,phi,draft,triage,queue,store,limits,http,api}.ts`, `poc/app/api/v1/*`, `poc/scripts/pregen.ts`, `poc/data/*.json`; ADRs 0019-0022; V33-V35
-Notes:
-- Grilled with the author first: no auth (caps plus pre-generated fallback), Claude drafts with checked references, ADR 0018 hand-off as a tunable default, deadline bands, dev letters as the demo set.
-- Astryx builds under Next 16 App Router (V24 build part). `check.ts` is hash-locked by the pre-registration, so `triage.ts` mirrors its findings logic.
-- PHI tripwire passes all 80 dev and golden letters. Claude (Haiku 4.5) pre-drafts for 7 Strong case letters, $0.03; first pass failed 3 on OCR and case in quotes, fixed by tolerant matching. Live Jev triage 203 ms.
-- Upstash keys are empty: caps are per-instance memory until set.
-Next: queue UI (two-pane letter and draft, citation highlighting, Run live), then the eval page; Upstash keys and console spend limits (author).
