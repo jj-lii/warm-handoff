@@ -2,6 +2,18 @@
 
 Newest first, last 5 entries only; older ones are in `docs/work-log-archive.md`. Paths are as of the entry.
 
+## 2026-10-04 - Holdout run once; report written
+Output: `poc/evals/PREREGISTRATION.md` (`876be56`); `poc/evals/REPORT.md`; `private/results/holdout-final.{json,md}` (aggregate only read); `private/holdout-final-run.json` (run marker); exact McNemar test in `evals/metrics.ts`; analysis code hash-locked
+Notes:
+- All four predictions held. Right next step: keyword 60%, Haiku 83%, Gemini 85%, Jev 83%; Jev vs keyword p = 0.004; Jev vs Haiku and Gemini p = 1.0. Jev 124 ms p50 and 53% sent to a person; Gemini $0.00035 per letter.
+- Most model misses (5-6 of 6-7 each) are gold "facts" flagged as "rules": the custodial ambiguity named in advance. The combined "facts, then rules" next step is in `git stash` (stash@{0}), untested.
+- Before the run: Gemini 3.1 Flash-Lite added (ADR 0016; 2.5 Flash-Lite is closed to new keys); custodial tightening stashed as post hoc; questions frozen at `f9cfc85`.
+- Report header shows rules.ts raw CRLF hash d4898e11; normalised it matches the pre-registration (noted in REPORT.md).
+Next, in order:
+1. Author: label the real slice (`npm run label -- real`); Claude runs it with the frozen code and reports it as exploratory.
+2. Claude: API routes, auth, rate limits, PHI tripwire, security headers; Astryx smoke build (V24); the triage queue UI; the thin Claude drafting layer (read the claude-api skill first). Cut line if behind: eval page, then Upstash, then UI polish.
+3. Deck (next session), then the Vercel deploy.
+
 ## 2026-10-04 - Golden labelled, adjudicated (proposed) and run
 Output: `poc/evals/data/labels/golden.jsonl` (author); `poc/evals/data/golden-adjudication.md` (v1, 19 kept, 3 changes proposed); `poc/evals/results/golden.{json,md}`; `BRIEF.md` limitation (residency labels)
 Notes:
@@ -35,23 +47,3 @@ Next: author fixes the dev duplicates and adds the Anthropic key; full dev run; 
 Output: `docs/verify.md` (V10, V13, V16, V18, V20, V21, V22, V27 annotated), `docs/verify-closed.md` (V26)
 Notes: PSI PDF returns 403 to bots; checked via trade press only. PMC13127000 would not load in the fetch tool. Statuses stay open until the author confirms.
 Next: author confirms or rejects the annotated rows; remaining browser-only items (V6, V8, V14, V15, V17, V19, V24, V25, V28).
-
-## 2026-10-04 - POC planned; eval data generated; real-data spike (no-go)
-Output: branch `poc-denial-check`; ADRs 0010-0015; `LICENSE`; `poc/lib/{rules,jev,classify,check}.ts` (draft, untested; `rules.ts` holds the frozen keyword baseline); `poc/evals/{recipes,generate,label}.ts`; `poc/evals/data/{dev,golden}.jsonl` (40 each, Gemini 3.8 Flash); `private/real-slice.jsonl` (21 Council passages, gitignored); `research/external/dab-council-decisions-spike.md`; `research/sources/dab/` (32 decisions, indexed, private)
-Notes:
-- Decisions: triage queue with gated pre-drafting (ADR 0014); eval design (ADR 0015); public adjudication text allowed for evals only (ADR 0013).
-- Grill outcomes not in ADRs: REST API; auth with Web Crypto HMAC cookie + hashed bearer token, no auth lib; Upstash rate limit with in-memory fallback; root `.env` (Next must load it via `@next/env`); cut line, if behind: eval page, then Upstash, then UI polish; never cut holdout sealing, baselines or security basics; deck moves to the next session.
-- Population (OIG PDF): about 15.4K resident denials a year at the 19 largest MAOs, about 1 per facility per year; the general engine's market is about 162K SNF denials a year.
-- Gemini's free tier allows 20 requests a day; billing is now on. The generator defaults to one request at a time (`GEN_CONCURRENCY`, `GEN_INTERVAL_MS`).
-Next, in order:
-1. Author labels dev, then golden: `cd poc && npm run label -- dev|golden`.
-2. Claude: `evals/run.ts` (keyword + Claude Haiku baselines vs Jev; metrics per ADR 0015), then golden adjudication (intent vs blind labels).
-3. Author: generate and label the holdout (`npm run generate -- holdout`; Claude never opens `private/holdout.jsonl`) and the real slice (`npm run label -- real`).
-4. Claude: API routes, auth, rate limits, PHI tripwire, security headers; Astryx smoke build (V24); the triage queue UI; the thin Claude drafting layer (read the claude-api skill first).
-5. `PREREGISTRATION.md` committed, then a single `--final` holdout run, `evals/REPORT.md`, then the Vercel deploy.
-
-## 2026-10-04 - End of day: research phase merged
-Output: PR #2 merged to `main` (`c53bea0`)
-Notes: Problem chosen and written up: long-stay residents on MA denied short-term skilled care (39.5% vs 11.5%, OIG), reasoning that conflicts with Medicare manual Ch. 8 / Jimmo / CMS-4201-F, in a referral-first workflow. Start from `reports/problem-statement.md`, `docs/decisions/0009-problem-long-stay-residents.md` and `research/landscape.md`. Open checks before the deck: V17 (no in-house start point), V21 (cost per denied stay, try MedPAC/MACPAC), V18 (I-SNP share).
-Next: on a new branch, `reports/deck.md` (6-8 slides), then the prototype (synthetic resident cases plus real Ch. 8 and plan policies; Jev for denial-reason classification). The prototype is a stretch goal per BRIEF.
-
