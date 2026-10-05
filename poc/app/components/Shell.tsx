@@ -4,11 +4,12 @@ import { Icon, type IconName } from "./Icon";
 // App frame in the layout of a SNF admissions tool: icon rail on the left, white cards
 // on a blue-grey canvas (ADR 0023). Own wordmark; no ExaCare logo or name.
 const NAV: { key: string; href: string; label: string; icon: IconName }[] = [
+  { key: "about", href: "/about", label: "About this", icon: "info" },
   { key: "queue", href: "/", label: "Denials", icon: "inbox" },
   { key: "evals", href: "/evals", label: "Evals", icon: "chart" },
 ];
 
-export function Shell({ active, children }: { active: "queue" | "evals"; children: React.ReactNode }) {
+export function Shell({ active, children }: { active: "about" | "queue" | "evals"; children: React.ReactNode }) {
   return (
     <div className="shell">
       <nav className="rail" aria-label="Main">
