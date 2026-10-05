@@ -2,6 +2,14 @@
 
 Older entries moved from `docs/work-log.md`. Not read by default. Newest first.
 
+## 2026-10-04 - Queue UI, denial view and eval page
+Output: `poc/app/page.tsx`, `poc/app/components/{QueueRow,DeadlineRing}.tsx`, `poc/app/denials/[id]/`, `poc/app/evals/page.tsx`, `poc/lib/words.ts`; V36
+Notes:
+- Queue: four sections (due this week, later, quick fixes, needs a person), deadline ring, case strength in words, hover card with the plain reason and the Double-check note. 28 other dev letters listed below.
+- Denial view: letter left with highlighted passages the draft answers; draft right with citation chips, chart facts and Sources. Run live calls Jev then Claude and shows latency, or a fallback banner with the repo link.
+- Checked by headless-Edge screenshots at desktop width; phone width inconclusive (V36). Hover cards not exercised headless.
+Next: author checks V36 and the hover cards; adds Upstash keys and console spend limits; then the Vercel deploy (V25, V27, V35) and the deck.
+
 ## 2026-10-04 - App backend: cases, tripwire, checked Claude drafts, API
 Output: `poc/app/` (Astryx smoke page), `poc/lib/{cases,handoff,phi,draft,triage,queue,store,limits,http,api}.ts`, `poc/app/api/v1/*`, `poc/scripts/pregen.ts`, `poc/data/*.json`; ADRs 0019-0022; V33-V35
 Notes:

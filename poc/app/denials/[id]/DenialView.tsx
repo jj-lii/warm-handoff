@@ -5,7 +5,7 @@ import Link from "next/link";
 import { Banner } from "@astryxdesign/core/Banner";
 import type { DenialSummary } from "@/lib/api";
 import type { Verdict } from "@/lib/check";
-import { APPEAL_WINDOW_DAYS, type Case } from "@/lib/cases";
+import { APPEAL_WINDOW_DAYS, redateLetter, type Case } from "@/lib/cases";
 import type { Draft, Span } from "@/lib/draft";
 import type { Action } from "@/lib/rules";
 import type { Letter } from "@/lib/store";
@@ -136,7 +136,9 @@ export function DenialView(props: { summary: DenialSummary; letter: Letter; kase
   const [failed, setFailed] = useState<string | null>(null);
   const letterPane = useRef<HTMLDivElement>(null);
 
-  const marks = useMemo(() => marksFor(draft), [draft]);
+  // The letter's printed dates follow the case's denial date; highlights follow the text.
+  const shown = useMemo(() => (kase ? redateLetter(letter.text, kase.denial.date) : { text: letter.text, at: (i: number) => i }), [letter.text, kase]);
+  const marks = useMemo(() => marksFor(draft).map((m) => ({ ...m, start: shown.at(m.start), end: shown.at(m.end) })), [draft, shown]);
   const step = NEXT_STEP[triage.verdict];
   const busy = running.triage || running.draft;
   const deniedAgo = summary.days_left !== null ? APPEAL_WINDOW_DAYS - summary.days_left : null;
@@ -253,7 +255,7 @@ export function DenialView(props: { summary: DenialSummary; letter: Letter; kase
               <strong>{summary.member} - denial notice.txt</strong>
               <span>{kase ? `Received ${formatDate(kase.denial.date)}` : "Demo letter"}</span>
             </div>
-            <LetterText text={letter.text} marks={marks} active={active} onPick={pick} />
+            <LetterText text={shown.text} marks={marks} active={active} onPick={pick} />
           </div>
 
           <div className="pane pane-draft">
