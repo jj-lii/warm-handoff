@@ -2,8 +2,9 @@ import { resolve } from "node:path";
 import { loadEnvConfig } from "@next/env";
 import type { NextConfig } from "next";
 
-// Keys live in the repo-root .env, shared with the eval scripts.
-loadEnvConfig(resolve(__dirname, ".."));
+// Keys live in the repo-root .env, shared with the eval scripts. Next runs from poc/.
+// forceReload: Next has already loaded (and cached) env for poc/ by the time this runs.
+loadEnvConfig(resolve(process.cwd(), ".."), process.env.NODE_ENV !== "production", undefined, true);
 
 const dev = process.env.NODE_ENV !== "production";
 
