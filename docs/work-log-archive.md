@@ -2,6 +2,16 @@
 
 Older entries moved from `docs/work-log.md`. Not read by default. Newest first.
 
+## 2026-10-04 - First full dev run (40 letters, all labelled)
+Output: `poc/evals/data/labels/dev.jsonl` (author); `poc/evals/results/dev.{json,md}`
+Notes:
+- Right next step: keyword 63%, Haiku 93%, Jev 93% (37/40 each, 95% CI 80-97%). Haiku and Jev can't be told apart at n=40. Jev is 7x faster (p50 193 vs 1,413 ms); Haiku costs $0.0016 per letter; Jev's cost is unknown (V31).
+- Jev's weak spot: 53% sent to a person (21/40), mostly residency (8) and missing documentation (6) probabilities in the 0.3-0.7 band. Haiku sends 15%, but its probabilities cluster at a few values (0.92 etc.), so its threshold sweep is flat.
+- Label question: 7 of 9 letters written with a therapy-participation reason are labelled without it, though each says the member can't participate in or tolerate daily therapy; both engines say yes at 0.92-0.98. Therapy precision (22%) depends on this.
+- Labels add reasons Gemini didn't intend (custodial +13, residency +7, no daily skilled need +7, no improvement +5); intent matches the labels exactly on 16/40 (40%).
+- The threshold sweep keeps the review band fixed, so "sent to a person" doesn't move with the threshold.
+Next: author decides the therapy labels (relabel or tighten the criterion); then tune Jev's residency and missing-documentation questions on dev; golden labelling and adjudication.
+
 ## 2026-10-04 - Eval runner built
 Output: `poc/evals/{run,metrics,haiku}.ts`; `verdictOf` exported from `poc/lib/check.ts`; `@anthropic-ai/sdk` 0.131.0; `docs/verify.md` V30-V31
 Notes:

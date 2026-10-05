@@ -1,5 +1,5 @@
 # 0010 Design system: Astryx, themed with our own tokens
-Status: accepted
+Status: superseded by 0023
 Date: 2026-10-04
 Context: The POC should read as a feature that could sit in ExaCare's Pre-Auth tab (document left, summary/criteria/citations right) without copying its brand. The author asked for a neutral library and delegated the pick after reviews.
 Decision: Astryx (Meta, MIT, React 19 + StyleX, precompiled CSS), pinned to an exact 0.x version, themed with our own tokens. Borrow ExaCare's layout patterns, never its logo, name or exact styling.
