@@ -53,7 +53,7 @@ const SEEDS: Seed[] = [
   {
     id: "dev-005", member: { name: "Klay Thompson" }, plan: "Summit Ridge Advantage HMO-POS", facility: "Lakeshore Care Centre", denied_days_ago: 20,
     facts: [
-      ["Below-knee amputation, right,; prosthetic training planned", "Hospital discharge summary"],
+      ["Below-knee amputation, right; prosthetic training planned", "Hospital discharge summary"],
       ["PT and OT daily for transfers and residual-limb care", "Therapy plan of care"],
     ],
   },
@@ -124,24 +124,41 @@ export function daysLeft(kase: Pick<Case, "denial">, today = new Date()): number
 // date in the letter to agree with the case, keeping the letter's own format. Dates that
 // precede the determination land a few days before it. `at` maps an offset in the
 // original text (draft highlights) to the rewritten one.
-const LETTER_DATE = /\b(?:(\d{1,2})\/(\d{1,2})\/(\d{4})|(January|February|March|April|May|June|July|August|September|October|November|December) (\d{1,2}), (\d{4}))\b/g;
 const MONTHS = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+// Some letters simulate OCR (0 for O, 1 for l), on purpose: dates are matched loosely and
+// the rewritten date carries the same swaps.
+const OCR: Record<string, string> = { o: "[oO0]", l: "[lL1]", i: "[iI1l]" };
+const MONTH = MONTHS.map((m) => [...m.toLowerCase()].map((c) => OCR[c] ?? `[${c}${c.toUpperCase()}]`).join("")).join("|");
+const N = "[0-9OIl]";
+const LETTER_DATE = new RegExp(`\\b(?:${N}{1,2}/${N}{1,2}/${N}{4}|(${MONTH}) ${N}{1,2}, ${N}{4})\\b`, "g");
 const DAYS_BEFORE_DENIAL: [RegExp, number][] = [
   [/submitted for review on\s*$/i, 2],
   [/DOS REQ:\s*$/, 3],
 ];
+
+function ocrLike(original: string, clean: string): string {
+  const [word, digits] = /^[A-Za-z01]+ /.test(original) ? [original.split(" ")[0], original.slice(original.indexOf(" "))] : ["", original];
+  const [newWord, newDigits] = word ? [clean.split(" ")[0], clean.slice(clean.indexOf(" "))] : ["", clean];
+  let w = newWord, d = newDigits;
+  if (word.includes("0")) w = w.replace(/[oO]/g, "0");
+  if (word.includes("1")) w = w.replace(/[lL]/g, "1");
+  if (digits.includes("O")) d = d.replace(/0/g, "O");
+  for (const c of ["l", "I"]) if (digits.includes(c)) d = d.replace(/1/g, c);
+  return word ? `${w}${d}` : d;
+}
 
 export type Redated = { text: string; at: (offset: number) => number };
 
 export function redateLetter(text: string, denialDate: string): Redated {
   const edits: { start: number; end: number; delta: number }[] = [];
   const denied = Date.parse(denialDate);
-  const out = text.replace(LETTER_DATE, (match, _m, _d, _y, monthName, _md, _my, offset: number) => {
+  const out = text.replace(LETTER_DATE, (match, monthName: string | undefined, offset: number) => {
     const before = DAYS_BEFORE_DENIAL.find(([re]) => re.test(text.slice(Math.max(0, offset - 40), offset)))?.[1] ?? 0;
     const d = new Date(denied - before * DAY);
-    const repl = monthName
-      ? `${MONTHS[d.getUTCMonth()]} ${d.getUTCDate()}, ${d.getUTCFullYear()}`
-      : `${String(d.getUTCMonth() + 1).padStart(2, "0")}/${String(d.getUTCDate()).padStart(2, "0")}/${d.getUTCFullYear()}`;
+    const month = monthName && /[a-z]/.test(monthName) ? MONTHS[d.getUTCMonth()] : MONTHS[d.getUTCMonth()].toUpperCase();
+    const repl = ocrLike(match, monthName
+      ? `${month} ${d.getUTCDate()}, ${d.getUTCFullYear()}`
+      : `${String(d.getUTCMonth() + 1).padStart(2, "0")}/${String(d.getUTCDate()).padStart(2, "0")}/${d.getUTCFullYear()}`);
     edits.push({ start: offset, end: offset + match.length, delta: repl.length - match.length });
     return repl;
   });
